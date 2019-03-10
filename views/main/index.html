@@ -16,10 +16,12 @@
 
 <div id='content' class="panel panel-default">
 	<div class="panel-body">
-	   <div class='upSignio'></div>
+	   <div class='upSignio'>
+		   <a href='/admin'>进入后台</a>
+	   </div>
 	   <div class="row">
 			<div class='col-md-6 col-xs-6'>
-				<button type="button" class="btn btn-primary">注册</button>
+				<button type="button" class="btn btn-primary" id='register'>注册</button>
 			</div>
 			<div class='col-md-6 col-xs-6'>
 				<button type="button" class="btn btn-primary">登录</button>
@@ -30,7 +32,7 @@
 
 <script src='../../public/js/jquery.js'></script>
 <script src='../../public/js/bootstrap.js'></script>
-
+<script src="../../public/js/main.js"></script>
 <canvas id="c" width="300" height="150"></canvas>    
 	<script type="text/javascript">		
 		$(document).ready(function() {			

@@ -1,0 +1,35 @@
+let express = require('express');
+let path = require('path');
+let mongoose = require('mongoose');
+let bodyParser = require('body-parser');
+let swig = require('swig');
+
+app = express();
+
+app.use(bodyParser.urlencoded({extended:true}))//用来解析request中body的urlencoded字符，只支持utf-8的编码的字符，也支持自动的解析gzip和zlib。返回的对象是一个键值对，当extended为false的时候，键值对中的值就位‘String’或‘Array’形式，为true的时候，则可以为任何数据类型。
+//用来处理post请求
+app.engine('html',swig.renderFile);//定义当前应用户所使用的引擎模板，第一个是模板引擎名称，第二个是解析处理模板内容的方法
+app.set('views', path.join(__dirname, 'views'));//配置页面文件的根目录,设置为绝对路径
+app.set('view engine','html')//注册模板引擎
+swig.setDefaults({cache:false})//取消模板缓存
+//路由中间件
+app.use('/',require('./routers/main.js'));
+app.use('/admin',require('./routers/admin.js'));
+app.use('/api',require('./routers/api.js'));
+//静态文件托管
+app.use('/public',express.static(__dirname + '/public'));
+
+let url = 'mongodb://localhost:27017/baseCode';
+mongoose.Promise = global.Promise;
+mongoose.connect(url,{useNewUrlParser:true},function(err){
+    if(err!=null){
+        console.log('connect error');
+    }
+    else{
+        console.log('连接成功');
+        var server = app.listen(8080,function(){
+            console.log('服务器开启');
+        });
+    }
+});
+

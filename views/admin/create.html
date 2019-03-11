@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' href="/public/css/content-style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        [name='upnav']{
+            margin-bottom: 0;
+            position: relative;
+        }
+                    
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" name='upnav'>
+    <button type="button" class="btn btn-default back" aria-label="Left Align" onclick="window.location.href='/admin'">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    </button>
+</nav>
+<div id="content">
+    <form method="POST" action="/admin/create">
+        <div class="form-group">
+            <label for="inputName">钥匙名称</label>
+            <input type="input" class="form-control" id="inputName" placeholder="请输入你的钥匙名称" name='name'>    
+        </div>
+        <div class="form-group">
+            <label for="identify">账号</label>
+            <input type="input" class="form-control" id="identify" placeholder="请输入你的账号名称" name='id'>    
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="input" class="form-control" id="password" placeholder="请输入你的密码" name='password'>    
+        </div>
+        <div class="form-group">
+            <label for="newPassword">加密码</label>
+            <input type="input" class="form-control" id="newPassword" placeholder="可不填，在外面加密" name='newPassword'>    
+        </div>
+        <div class="form-group">
+            <label for="my-input">备注</label>
+            <textarea id="describe" class="form-control" rows="5" name='textarea'></textarea>
+        </div>
+        <button class="btn btn-primary" name='baseCode'>保存</button>
+    </form>            
+</div>
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
-let express = require('express');
-let path = require('path');
-let mongoose = require('mongoose');
-let bodyParser = require('body-parser');
-let swig = require('swig');
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const swig = require('swig');
 
 app = express();
 
@@ -19,7 +19,7 @@ app.use('/api',require('./routers/api.js'));
 //静态文件托管
 app.use('/public',express.static(__dirname + '/public'));
 
-let url = 'mongodb://localhost:27017/baseCode';
+const url = 'mongodb://localhost:27017/baseCode';
 mongoose.Promise = global.Promise;
 mongoose.connect(url,{useNewUrlParser:true},function(err){
     if(err!=null){
@@ -27,7 +27,7 @@ mongoose.connect(url,{useNewUrlParser:true},function(err){
     }
     else{
         console.log('连接成功');
-        var server = app.listen(8080,function(){
+        const server = app.listen(8080,function(){
             console.log('服务器开启');
         });
     }

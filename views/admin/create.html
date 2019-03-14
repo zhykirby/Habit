@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Create</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
@@ -22,7 +22,7 @@
     </button>
 </nav>
 <div id="content">
-    <form method="POST" action="/admin/create">
+    <form method="POST" action="/admin/content">
         <div class="form-group">
             <label for="inputName">钥匙名称</label>
             <input type="input" class="form-control" id="inputName" placeholder="请输入你的钥匙名称" name='name'>    
@@ -43,7 +43,7 @@
             <label for="my-input">备注</label>
             <textarea id="describe" class="form-control" rows="5" name='textarea'></textarea>
         </div>
-        <button class="btn btn-primary" name='baseCode'>保存</button>
+        <button class="btn btn-primary" name='baseCode' type="submit">保存</button>
     </form>            
 </div>
 

@@ -1,21 +1,21 @@
-let express = require('express');
-let routers = express.Router();
-let Content = require('../models/Content');
-let User = require('../models/User');
+const express = require('express');
+const routers = express.Router();
+const Content = require('../models/Content');
+const User = require('../models/User');
 
 routers.get('/',function(req,res,next){
     Content.find().then(function(contents){
         res.render('admin/content',{
             contents:contents
-        })
-    })
+        });
+    });
 });
 
 routers.get('/create',function(req,res,next){
     res.render('admin/create');
 });
 
-routers.post('/create',function(req,res,next){
+routers.post('/content',function(req,res,next){
     content = new Content({
         name:req.body.name,
         idName:req.body.id,
@@ -24,10 +24,8 @@ routers.post('/create',function(req,res,next){
         describe:req.body.textarea
     });
     content.save().then(function(){
-        res.render('admin/content',{
-            message:'success'
-        });
-    })
+        res.render('admin/status/success');
+    });
 });
 
 module.exports = routers;

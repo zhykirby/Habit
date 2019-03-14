@@ -1,20 +1,63 @@
-body{
+.myButt {
+    outline: none;
+    border: none;
+    padding: 20px;
+    display: block;
+    margin: 50px auto;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
     position: relative;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
 }
 
-#content{
+.five {
+    overflow: hidden;
+    color: #fff;
+}
+.five .layer {
+    color: #fff;
     position: absolute;
-    width: 30vw;height: 36vh;
-    background-color: aliceblue;
-    margin:auto;
-    left:35%;
-    top:32%;
-    
+    top: -70px;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+    background-color: #F44336;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
 }
-.upSignio{
-    width:100%;
-    height: 80%;
+.five:hover .layer {
+    top: 0;
 }
-.signio{
-    width:100%;
-}
+
+
+body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
+#content{text-transform:uppercase;text-align:center;width: 100vw;background: url('./image/576006.jpg') no-repeat;background-size: 100% 100%;background-attachment: fixer;}
+
+#intro{width: 100vw;height: 300px;}
+#title{height: 100px;width: 100%;}
+#login{display:none;}
+#admin{display: none;}
+#dl,#zc{background-color: #f8f8f8;height: 100%;}
+#dl:hover{background-color: #e7e7e7}
+#zc:hover{background-color: #e7e7e7}
+
+.three{width: 100%;height: 33.3333%;}
+.ind-btn{width: 40px;height: 100%;}
+.intro-p{height: 250px;}
+.linkclass{width: 100%;height: 100%;}
+.home{height:100%;position: absolute;left:0;}
+.h100{height: 100%;}
+.w100{width: 100%;}
+
+
+
+  

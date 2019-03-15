@@ -51,13 +51,17 @@ $(function(){
             },
             dataType:'json',
             success:function(data){
-                $('#log-but').next().html("<font color='red'>"+data.message+"</font>");
+                
                 if(data.code === 10){
                     clearTimeout;
                     setTimeout(function(){
                         window.location.href='/admin';
                     },4900)
                 }
+                clearTimeout;
+                setTimeout(function(){
+                    $('#log-but').next().html("<font color='red'>"+data.message+"</font>");
+                },5000);
             },
             error:function(err){
                 throw err;

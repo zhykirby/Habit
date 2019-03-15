@@ -27,7 +27,7 @@ mongoose.connect(url,{useNewUrlParser:true},function(err){
     }
     else{
         console.log('连接成功');
-        const server = app.listen(8080,function(){
+        const server = app.listen(8800,function(){
             console.log('服务器开启');
         });
     }

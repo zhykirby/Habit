@@ -15,6 +15,10 @@ routers.get('/create',function(req,res,next){
     res.render('admin/create');
 });
 
+routers.get('/test',function(req,res,next){
+    res.render('admin/test');
+})
+
 routers.post('/content',function(req,res,next){
     content = new Content({
         name:req.body.name,
@@ -27,5 +31,7 @@ routers.post('/content',function(req,res,next){
         res.render('admin/status/success');
     });
 });
+
+
 
 module.exports = routers;

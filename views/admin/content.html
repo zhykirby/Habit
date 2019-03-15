@@ -15,43 +15,52 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-default" name='upnav'>
-    <button type="button" class="btn btn-default create" aria-label="Left Align" onclick="window.location.href='/admin/create'">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    </button>
-</nav>
-<div id="content">
-    <table class="table table-responsive table-bordered table-striped">
-        <tr>
-            <th class="text-center">暂时</th>
-            <th class="text-center">先</th>
-            <th class="text-center">这样</th>
-            <th class="text-center">吧</th>
-            <th class="text-center">我累了</th>
-        </tr>
-        {% for content in contents %}
-        <tr>
-            <td>{{ content.idName }}</td>
-            <td>{{ content.name }}</td>
-            <td>{{ content.password }}</td>
-            <td>{{ content.describe }}</td>
-            <td>{{ content.newPassword }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
-<div class="navbar navbar-default navbar-fixed-bottom">
-    <div class="row container">
-        <div class='col-md-4 col-xs-4'>
-            <button class="btn btn-default below">aa</button>
-        </div>
-        <div class='col-md-4 col-xs-4'>
-            <button class="btn btn-default below">bb</button>
-        </div>
-        <div class='col-md-4 col-xs-4'>
-            <button class="btn btn-default below">cc</button>
-        </div>
+<!-- .visible-md .visible-lg-->
+<div>
+    <nav class="navbar navbar-default" name='upnav'>
+        <button type="button" class="btn btn-default create" aria-label="Left Align" onclick="window.location.href='/admin/create'">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+    </nav>
+    <div id="content">
+        <table class="table table-responsive table-bordered table-striped">
+            <tr>
+                <th class="text-center">暂时</th>
+                <th class="text-center">先</th>
+                <th class="text-center">这样</th>
+                <th class="text-center">吧</th>
+                <th class="text-center">我累了</th>
+            </tr>
+            {% for content in contents %}
+            <tr>
+                <td>{{ content.idName }}</td>
+                <td>{{ content.name }}</td>
+                <td>{{ content.password }}</td>
+                <td>{{ content.describe }}</td>
+                <td>{{ content.newPassword }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="row h100">
+            <div class='col-md-4 col-lg-4 h100 iconmid'>
+                <div class="midb">
+                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class='col-md-4 col-lg-4 h100 iconmid'>
+                <div class="midb">
+                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class='col-md-4 col-lg-4 h100 iconmid'  onclick="window.location.href='/admin/test'">
+                <div class='midb'>
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>    
 </div>
 
 

@@ -11,25 +11,33 @@
 <body>
 <!-- .visible-md .visible-lg -->
 <div>
-    <div class="navbar navbar-default navbar-fixed-bottom">
-        <div class="row h100">
-            <div class='col-md-4 col-lg-4 h100'  onclick="window.location.href='/admin'">
+    <nav class='navbar navbar-default' name='upnav'>
+        <div class="row h50">
+            <div class="col-md-1 col-lg-1 h50 curdiv">
+                <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+            </div>
+            <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin'">
+                <div class='midb'>
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+            </div> 
+            <div class='col-md-3 col-lg-3 h50 iconmid'>
                 <div class="midb">
                     <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
                 </div>
             </div>
-            <div class='col-md-4 col-xs-4 h100 iconmid'>
+            <div class='col-md-3 col-lg-3 h50 iconmid'>
                 <div class="midb">
                     <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
                 </div>
-            </div>
-            <div class='col-md-4 col-xs-4 h100 iconmid'>
-                <div class="midb"'>
-                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
-                </div>
-            </div>
+            </div>   
+            <div class="col-md-1 col-lg-1 h50"></div>
+            <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/create'">
+                <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+            </div>       
         </div>
-    </div>
+    </nav>
+
 </div>
     
 

@@ -4,26 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Content</title>
+    <title>个人中心</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
-        [name='upnav']{
-            margin-bottom: 0;
-            position: relative;
-        }
     </style>
 </head>
 <body>
 <!-- .visible-md .visible-lg-->
-<div>
-    <nav class="navbar navbar-default" name='upnav'>
-        <button type="button" class="btn btn-default create" aria-label="Left Align" onclick="window.location.href='/admin/create'">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </button>
-    </nav>
-    <div id="content">
-        <table class="table table-responsive table-bordered table-striped">
+<!-- <table class="table table-responsive table-bordered table-striped">
             <tr>
                 <th class="text-center">暂时</th>
                 <th class="text-center">先</th>
@@ -40,27 +29,52 @@
                 <td>{{ content.newPassword }}</td>
             </tr>
             {% endfor %}
-        </table>
+        </table>-->
+<div>
+    <div>
+        <nav class='navbar navbar-default' style="margin-bottom:0;border-bottom: 1px solid black">
+            <div class="row h50">
+                <div class="col-md-1 col-lg-1 h50 curdiv">
+                    <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+                </div>
+                <div class='col-md-3 col-lg-3 h50 iconmid'>
+                    <div class='midb'>
+                        <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                    </div>
+                </div> 
+                <div class='col-md-3 col-lg-3 h50 iconmid'>
+                    <div class="midb">
+                        <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/test'">
+                    <div class="midb">
+                        <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                    </div>
+                </div>   
+                <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
+                <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+                </div>       
+            </div>
+        </nav>        
     </div>
-    <div class="navbar navbar-default navbar-fixed-bottom">
-        <div class="row h100">
-            <div class='col-md-4 col-lg-4 h100 iconmid'>
-                <div class="midb">
-                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class='col-md-4 col-lg-4 h100 iconmid'>
-                <div class="midb">
-                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class='col-md-4 col-lg-4 h100 iconmid'  onclick="window.location.href='/admin/test'">
-                <div class='midb'>
-                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
-                </div>
-            </div>
-        </div>
-    </div>    
+    <div id="content">
+       <div id="userInfo">
+           <div id='userImg'>
+               <div id="circle">
+
+               </div>
+           </div>
+           <div id="userDes" class="row" style="margin:0;">
+                <div class="col-md-4 col-lg-4 h100"></div>
+                <div class="col-md-4 col-lg-4 h100"></div>
+                <div class="col-md-4 col-lg-4 h100"></div>
+           </div>
+       </div>
+       <div id="goNen"></div>
+    </div>
+        
 </div>
 
 

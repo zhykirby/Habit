@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编辑个人资料</title>
+    <link rel='stylesheet' href="/public/css/content-style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        #content{
+            width:802px;border: 1px solid black;border-top: 0;border-bottom: 0;display: flex;flex-wrap: wrap;
+        }
+        [name=describtion]{height: 150px;}
+        [name=userDes]{height: 130px;width: 600px;}
+        .sh50{height: 50px;}
+    </style>
+</head>
+<body>
+<nav class='navbar navbar-default' style="margin-bottom:0;border-bottom: 1px solid black">
+    <div class="row h50">
+        <div class="col-md-1 col-lg-1 h50 curdiv" title="更多">
+            <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+        </div>
+        <div class='col-md-3 col-lg-3 h50 iconmid' title="个人中心" onclick="window.location.href='/admin'">
+            <div class='midb'>
+                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class='col-md-3 col-lg-3 h50 iconmid'>
+            <div class="midb">
+                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/test'">
+            <div class="midb">
+                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+            </div>
+        </div>  
+        <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>  
+        <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录">
+            <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
+        </div>       
+    </div>        
+</nav>
+<div id='content' style="height:1000px;">
+    <div id='tou'></div>
+    <div id="userInput">
+        <div class="surround">
+            <div class="userInput">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    用户名：{{ userInfo.username }}（*用户名不可修改）
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="surround">
+            <div class="userInput input-group">
+                <span class="input-group-addon" id="basic-addon1">昵称</span>
+                <input type="text" name='name' class="form-control sh50" placeholder="{{ userInfo.name }}" aria-describedby="basic-addon1">              
+            </div>
+        </div>
+        <div class="surround">
+            <div class="userInput input-group">
+                <span class="input-group-addon" id="basic-addon2">出生日期</span>
+                <input type="date" name='birthday' class="form-control sh50" aria-describedby="basic-addon2">
+            </div>
+        </div>
+        <div class="surround">
+            <div class="userInput input-group">
+                <span class="input-group-addon" id="basic-addon3">邮箱</span>
+                <input type="email" name='email' class="form-control sh50" aria-describedby="basic-addon3">
+            </div>            
+        </div>
+        <div class="surround" style="height:200px;">
+            <div class="userInput input-group" name='describtion'>
+                <span>个人介绍：</span>
+                <textarea name='userDes' placeholder="{{ userInfo.describtion }}" aria-describedby="basic-addon4"></textarea>
+            </div>
+        </div>
+        <div class="surronud" class='sh50'>
+            <div class="submit curdiv">提交</div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+</body>
+</html>

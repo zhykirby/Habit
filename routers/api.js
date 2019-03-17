@@ -62,38 +62,51 @@ routers.post('/user/register',function(req,res,next){
 });
 
 routers.post('/user/login',function(req,res,next){
-    let userName = req.body.userName;
-    let passWord = req.body.passWord;
-    if(userName == ''){
+    let username = req.body.userName;
+    let password = req.body.passWord;
+    if(username == ''){
         responseData.code = 11;
         responseData.message = '用户名为空';
         res.json(responseData);
         return;
     }
-    if(passWord == ''){
+    if(password == ''){
         responseData.code = 12;
         responseData.message = '密码为空';
         res.json(responseData);
         return;
     }
     User.findOne({
-        username:userName
+        username:username,
     }).then(function(userInfo){
         if(userInfo == null){
             responseData.code = 13;
-            responseData.message = '用户不存在';
+            responseData.message = '用户名错误';
             res.json(responseData);
             return;
         }
-        if(userInfo.password != passWord){
+        if(userInfo.password != password){
             responseData.code = 14;
-            responseData.message = '密码不正确';
+            responseData.message = '密码错误';
             res.json(responseData);
             return;
         }
         else{
             responseData.code = 10;
             responseData.message = '登录成功~';
+            responseData.userInfo = {
+                _id : userInfo._id,
+                username : userInfo.username,
+                isUser : userInfo.isUser,
+                email : userInfo.email,
+                describtion : userInfo.describtion,
+                name : userInfo.name
+            };
+            req.cookies.set('userInfo',JSON.stringify({
+                _id:userInfo._id,
+                username:userInfo.username,
+                isUser:userInfo.isUser
+            }));
             res.json(responseData);
             return;
         }

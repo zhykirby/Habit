@@ -4,10 +4,8 @@ const Content = require('../models/Content');
 const User = require('../models/User');
 
 routers.get('/',function(req,res,next){
-    Content.find().then(function(contents){
-        res.render('admin/content',{
-            contents:contents
-        });
+    res.render('admin/content',{
+        userInfo:req.userInfo
     });
 });
 
@@ -17,6 +15,14 @@ routers.get('/create',function(req,res,next){
 
 routers.get('/test',function(req,res,next){
     res.render('admin/test');
+});
+
+routers.get('/userInfo',function(req,res,next){
+    console.log(req.userInfo);
+    console.log(req.userInfo._id);
+    res.render('admin/userInfo',{
+        userInfo:req.userInfo
+    })
 })
 
 routers.post('/content',function(req,res,next){

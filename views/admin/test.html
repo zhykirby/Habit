@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        [name=upnav]{margin-bottom:0;border-bottom: 1px solid black}
+    </style>
 </head>
 <body>
 <!-- .visible-md .visible-lg -->
@@ -16,7 +19,7 @@
             <div class="col-md-1 col-lg-1 h50 curdiv">
                 <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
             </div>
-            <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin'">
+            <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin'" title="个人中心">
                 <div class='midb'>
                     <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
                 </div>
@@ -31,9 +34,11 @@
                     <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
                 </div>
             </div>   
-            <div class="col-md-1 col-lg-1 h50"></div>
             <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/create'">
                 <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-1 col-lg-1 h50 curdiv">
+                <span class="glyphicon glyphicon-off midb mida" aria-hidden="true" title="退出登录"></span>
             </div>       
         </div>
     </nav>

@@ -17,7 +17,7 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 
 <body>
 <!--  适配于电脑端用户 .visible-md .visible-lg  -->
-<div>
+<div class="visible-md visible-lg">
 	<div id='content'>
 		<nav class="navbar navbar-default" style="position:relative;margin-bottom: 0;">
 			<button type="button" class="btn btn-default home" aria-label="Home" onclick="window.location.href='/'">
@@ -29,7 +29,7 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 				<div class="col-md-4 col-lg-4 h100"></div>
 				<div class="col-md-4 col-lg-4 h100">
 					<div class="three w100"></div>
-					<div class="three row w100">
+					<div class="three w100">
 						
 						<button class="myButt five" onclick="window.location.href='/login'">
 							<div class="layer">立刻注册</div>
@@ -58,10 +58,57 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 		</div>
 	</div>
 </div>
+<div class="hidden-md hidden-lg">
+	<div id="mobile-main" class="page">
+		<button class="regB">
+			立刻注册
+		</button>
+		<div class="jian-xia-1" onclick="window.location.hash='#page1'"></div>
+	</div>
+	<div class="page" id="page1">
+		<div class="jian-shang" onclick="window.location.hash='#mobile-main'"></div>
+		<div class="txt">
+			___________________标题！
+		</div>
+		<div class="jian-xia" onclick="window.location.hash='#page2'"></div>
+	</div>
+	<div class="page" id="page2">
+		<div class="jian-shang" onclick="window.location.hash='#page1'"></div>
+		<div class="txt">
+
+		</div>
+		<div class="jian-xia" onclick="window.location.hash='#page3'"></div>
+	</div>
+	<div class="page" id="page3">
+		<div class="jian-shang" onclick="window.location.hash='#page2'"></div>
+		<div class="txt"></div>
+		<div class="jian-xia" onclick="window.location.hash='#page4'"></div>
+	</div>
+	<div class="page" id="page4">
+		<div class="jian-shang" onclick="window.location.hash='#page3'"></div>
+		<div class="txt"></div>
+	</div>
+</div>
 
 
 <script src='../../public/js/jquery.js'></script>
 <script src='../../public/js/bootstrap.js'></script>
 <script src="../../public/js/main.js"></script>
+<script>
+	$('body').on('touchstart',function(e){
+		startx = e.originalEvent.changedTouches[0].pageX;
+		starty = e.originalEvent.changedTouches[0].pageY;
+		$('.jian-shang').hide();
+		$('.jian-xia').hide();
+	});
+	$('body').on('touchend',function(e){
+		moveEndx = e.originalEvent.changedTouches[0].pageX;
+		moveEndy = e.originalEvent.changedTouches[0].pageY;
+		X = moveEndx - startx;
+		Y = moveEndy - starty;
+		$('.jian-shang').show();
+		$('.jian-xia').show();		
+	})
+</script>
 
 </body></html>

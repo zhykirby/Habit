@@ -75,7 +75,6 @@ body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
         overflow: hidden;color: #fff;font-size: 4rem;}
     .jian-xia{width: 420px;height: 80px;margin:0 auto;margin-left: calc(50% - 210px);margin-bottom: 0;background: url('./image/below-1.png') transparent no-repeat;cursor: pointer;align-self: flex-end;opacity: 1.4;}
     .jian-xia:hover{opacity: 0.7;}
-    .jian-xia-1{width:420px;height: 80px;margin:auto;margin-bottom: 0;background: url('./image/below-1.png') transparent;}
     .jian-shang{width: 420px;height: 80px;margin:0 auto;margin-left: calc(50% - 210px);margin-top: 0;background: url('./image/up-1.png') transparent no-repeat;opacity: 1.5;cursor: pointer;align-self: flex-start;}
     .jian-shang:hover{opacity: 0.7;}
     .txt{width:100vw;height:calc(100vh - 160px);font-size: 7rem;color: #ffffff;}

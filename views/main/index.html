@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <meta charset="utf-8">
-<title>index</title>
+<title>阴天的web应用-首页</title>
 
 <style>
 body { margin: 0; padding: 0;background: black; overflow: hidden;}
@@ -60,10 +60,10 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 </div>
 <div class="hidden-md hidden-lg">
 	<div id="mobile-main" class="page">
-		<button class="regB">
+		<button class="regB" onclick="window.location.href='/login'">
 			立刻注册
 		</button>
-		<div class="jian-xia-1" onclick="window.location.hash='#page1'"></div>
+		<div class="jian-xia" onclick="window.location.hash='#page1'"></div>
 	</div>
 	<div class="page" id="page1">
 		<div class="jian-shang" onclick="window.location.hash='#mobile-main'"></div>
@@ -98,16 +98,16 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 	$('body').on('touchstart',function(e){
 		startx = e.originalEvent.changedTouches[0].pageX;
 		starty = e.originalEvent.changedTouches[0].pageY;
-		$('.jian-shang').hide();
-		$('.jian-xia').hide();
+		$('.jian-shang').css('visibility','hidden');
+		$('.jian-xia').css('visibility','hidden');
 	});
 	$('body').on('touchend',function(e){
 		moveEndx = e.originalEvent.changedTouches[0].pageX;
 		moveEndy = e.originalEvent.changedTouches[0].pageY;
 		X = moveEndx - startx;
 		Y = moveEndy - starty;
-		$('.jian-shang').show();
-		$('.jian-xia').show();		
+		$('.jian-shang').css('visibility','visible');
+		$('.jian-xia').css('visibility','visible');
 	})
 </script>
 

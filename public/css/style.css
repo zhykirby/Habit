@@ -52,9 +52,9 @@ body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
 #dl:hover{background-color: #e7e7e7}
 #zc:hover{background-color: #e7e7e7}
 #mobile-main{ background: url('./image/576006.jpg') no-repeat;background-size: 100% 100%;display: flex;flex-wrap: wrap;}
-#page1{background: url('./image/black.jpg') no-repeat;background-size: 100% 100%;}
-#page2{background: url('./image/black2.jpg') no-repeat;background-size: 100% 100%;}
-#page3{background: url('./image/black3.jpg') no-repeat;background-size: 100% 100%;}
+#page1{background: url('./image/black2.jpg') no-repeat;background-size: 100% 100%;}
+#page2{background: url('./image/index3.jpg') no-repeat;background-size: 100% 100%;}
+#page3{background: url('./image/index2.jpg') no-repeat;background-size: 100% 100%;}
 #page4{background: url('./image/index1.jpeg') no-repeat;background-size: 100% 100%;}
 
 

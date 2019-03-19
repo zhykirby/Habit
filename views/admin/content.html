@@ -24,7 +24,7 @@
                         <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
                     </div>
                 </div> 
-                <div class='col-md-3 col-lg-3 h50 iconmid'>
+                <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/diary'">
                     <div class="midb">
                         <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
                     </div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>   
                 <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
-                <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录">
+                <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录" onclick="window.location.href='/'">
                     <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
                 </div>       
             </div>
@@ -44,14 +44,22 @@
     <div id="content">
        <div id="userInfo">
            <div id='userImg'>
-               背景图（占位）
                <div id="circle">
                     头像（占位）
                </div>
            </div>
            <div id="userDes" class="row" style="margin:0;">
                 <div class="col-md-4 col-lg-4 h100"></div>
-                <div class="col-md-4 col-lg-4 h100">个人资料（占位）</div>
+                <div class="col-md-4 col-lg-4 h100 doc">
+                    {% for user in users %}
+                        {% if user._id == userInfo._id %}
+                            {{ user.name }}<br/>
+                            {{ user.birthday }}<br/>
+                            {{ user.email }}<br/>
+                            {{ user.describtion }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
                 <div class="col-md-4 col-lg-4 h100"></div>
            </div>
        </div>

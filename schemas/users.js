@@ -15,10 +15,6 @@ const userSchema = new Schema({
         type:String,
         default:'新用户'
     },
-    isUser:{
-        type:Boolean,
-        default:true
-    },
     birthday:{
         type:String,
         default:''

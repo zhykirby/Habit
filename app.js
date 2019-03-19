@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const swig = require('swig');
 const Cookies = require('cookies');
+const User = require('./models/User')
 
 app = express();
 
@@ -20,10 +21,8 @@ app.use(function(req,res,next){
     if(req.cookies.get('userInfo')){
         try{
             req.userInfo=JSON.parse(req.cookies.get('userInfo'));
-            User.findById(req.userInfo._id).then(function(userInfo){
-                req.userInfo.isAdmin = Boolean(userInfo.isAdmin);
-                next();
-            })
+
+            next()
         }catch(e) {
             next();
         }

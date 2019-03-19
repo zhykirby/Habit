@@ -53,6 +53,8 @@ $(function(){
             success:function(data){
                 
                 if(data.code === 10){
+                    localStorage.setItem('token',data.token);
+                    localStorage.setItem('userName',data.userName);
                     clearTimeout;
                     setTimeout(function(){
                         window.location.href='/admin';

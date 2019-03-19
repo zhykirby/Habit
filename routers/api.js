@@ -8,7 +8,9 @@ var responseData;
 routers.use(function(req,res,next){
     responseData={
         code:0,
-        message:'注册成功！'
+        message:'注册成功！',
+        token:"",
+        userName:''
     };
     next();
 })
@@ -59,6 +61,8 @@ routers.post('/user/register',function(req,res,next){
         responseData.code = 0;
         responseData.message = '注册成功！';
         res.json(responseData);
+    }).catch(function(error){
+        console.log(error);
     });
 });
 
@@ -93,25 +97,59 @@ routers.post('/user/login',function(req,res,next){
             return;
         }
         else{
+            const payload = {
+                username:username,
+                user:true
+            };
+            const secret = 'howie';
+            const token = jwt.sign(payload,secret,{expiresIn:60*60*1});
             responseData.code = 10;
             responseData.message = '登录成功~';
+            responseData.token = token;
+            responseData.userName = userInfo.username;
             responseData.userInfo = {
                 _id : userInfo._id,
                 username : userInfo.username,
-                isUser : userInfo.isUser,
                 email : userInfo.email,
                 describtion : userInfo.describtion,
-                name : userInfo.name
+                name : userInfo.name,
+                token:token
             };
             req.cookies.set('userInfo',JSON.stringify({
                 _id:userInfo._id,
                 username:userInfo.username,
-                isUser:userInfo.isUser
+                token:token
             }));
             res.json(responseData);
             return;
         }
+    }).catch(function(error){
+        console.log(error);
+    });
+});
+
+routers.post('/user/userInfo',function(req,res,next){ 
+    let name = req.body.name;
+    let birthday = req.body.birthday;
+    let email = req.body.email;
+    let describtion = req.body.describtion;
+    let username = req.body.username;
+    User.findOne({
+        username:username
+    }).then(function(userInfo){;
+        userInfo.name = name;
+        userInfo.birthday = birthday;
+        userInfo.email = email;
+        userInfo.describtion = describtion;
+        return userInfo.save();
+    }).then(function(newInfo){
+        responseData.code = 20;
+        responseData.message = '保存成功';
+        res.json(responseData);
+    }).catch(function(err){
+        console.log(err);
     });
 });
 
 module.exports = routers;
+

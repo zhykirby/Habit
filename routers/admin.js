@@ -1,12 +1,24 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const routers = express.Router();
 const Content = require('../models/Content');
 const User = require('../models/User');
 
 routers.get('/',function(req,res,next){
-    res.render('admin/content',{
-        userInfo:req.userInfo
-    });
+    jwt.verify(req.userInfo.token,'howie',function(err,decode){
+        if(err){
+            console.log('error')
+            res.render('main/index');
+        }else{
+            User.find().then(function(users){
+                res.render('admin/content',{
+                    userInfo:req.userInfo,
+                    users:users
+                });
+            })
+            
+        }
+    });      
 });
 
 routers.get('/create',function(req,res,next){
@@ -18,12 +30,26 @@ routers.get('/test',function(req,res,next){
 });
 
 routers.get('/userInfo',function(req,res,next){
-    console.log(req.userInfo);
-    console.log(req.userInfo._id);
-    res.render('admin/userInfo',{
-        userInfo:req.userInfo
-    })
-})
+    User.find().then(function(users){
+        res.render('admin/userInfo',{
+            userInfo:req.userInfo,
+            users:users
+        });
+    }).catch(function(e){
+        console.log(e);
+    });
+});
+
+routers.get('/diary',function(req,res,next){
+    User.find().then(function(users){
+        res.render('admin/diary',{
+            userInfo:req.userInfo,
+            users:users
+        });
+    }).catch(function(e){
+        console.log(e);
+    });
+});
 
 routers.post('/content',function(req,res,next){
     content = new Content({

@@ -8,12 +8,14 @@
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
+
         #content{
             width:802px;border: 1px solid black;border-top: 0;border-bottom: 0;display: flex;flex-wrap: wrap;
         }
         [name=describtion]{height: 150px;}
         [name=userDes]{height: 130px;width: 600px;}
         .sh50{height: 50px;}
+        #username{width: 1px;height: 1px;visibility: hidden;}
     </style>
 </head>
 <body>
@@ -27,7 +29,7 @@
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid'>
+        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/diary'">
             <div class="midb">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
             </div>
@@ -43,7 +45,9 @@
         </div>       
     </div>        
 </nav>
-<div id='content' style="height:1000px;">
+{% for user in users %}
+{% if user._id == userInfo._id %}
+<div id='content' style="height:1000px;background: lightyellow;">
     <div id='tou'></div>
     <div id="userInput">
         <div class="surround">
@@ -55,10 +59,11 @@
                 </div>
             </div>
         </div>
+        
         <div class="surround">
             <div class="userInput input-group">
                 <span class="input-group-addon" id="basic-addon1">昵称</span>
-                <input type="text" name='name' class="form-control sh50" placeholder="{{ userInfo.name }}" aria-describedby="basic-addon1">              
+                <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">              
             </div>
         </div>
         <div class="surround">
@@ -70,13 +75,13 @@
         <div class="surround">
             <div class="userInput input-group">
                 <span class="input-group-addon" id="basic-addon3">邮箱</span>
-                <input type="email" name='email' class="form-control sh50" aria-describedby="basic-addon3">
+                <input type="email" name='email' placeholder="{{ user.email }}" class="form-control sh50" aria-describedby="basic-addon3">
             </div>            
         </div>
         <div class="surround" style="height:200px;">
             <div class="userInput input-group" name='describtion'>
                 <span>个人介绍：</span>
-                <textarea name='userDes' placeholder="{{ userInfo.describtion }}" aria-describedby="basic-addon4"></textarea>
+                <textarea class='userDes' name='userDes' placeholder="{{ user.describtion }}" aria-describedby="basic-addon4"></textarea>
             </div>
         </div>
         <div class="surronud" class='sh50' id="userInfoSub">
@@ -84,9 +89,16 @@
         </div>
     </div>
     
+    <div id='username'>
+        <input name="username" value="{{ user.username }}">
+    </div>
+    
 </div>
+{% endif %}
+{% endfor %}
 
 <script src="../../public/js/jquery.js"></script>
 <script src="../../public/js/bootstrap.js"></script>
+<script src="../../public/js/userInfo.js"></script>
 </body>
 </html>

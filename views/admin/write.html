@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>记录点点滴滴</title>
+    <title>记录你的心得吧~</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        .sh50{height: 50px;}
+    </style>
 </head>
 <body>
 <nav class='navbar navbar-default' style="margin-bottom:0;border-bottom: 1px solid black">
@@ -19,7 +22,7 @@
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
         </div> 
-        <div class='col-md-3 col-lg-3 h50 iconmid'>
+        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/diary'">
             <div class="midb">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
             </div>
@@ -29,16 +32,31 @@
                 <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
             </div>
         </div>   
-        <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/write'">
-            <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
-        </div>
+        <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
         <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录">
             <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
         </div>       
     </div>
 </nav>
-<div id='content'>
-    
+<div id="content" class="write">
+    <div class="write-title input-group">
+        <span class="input-group-addon" id="basic-addon1">  标题  </span>
+        <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">                      
+    </div>
+    <div class="write-content">
+        <div class="panel panel-default">
+            <div class="panel-heading">记录你的养成习惯时的心得和点点滴滴吧~</div>
+            <div class="panel-body">
+                <textarea name="content" class="writeContent"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="submit curdiv">
+        提交
+    </div>
 </div>
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
 </body>
 </html>

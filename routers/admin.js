@@ -29,6 +29,10 @@ routers.get('/test',function(req,res,next){
     res.render('admin/test');
 });
 
+routers.get('/write',function(req,res,next){
+    res.render('admin/write');
+})
+
 routers.get('/userInfo',function(req,res,next){
     User.find().then(function(users){
         res.render('admin/userInfo',{

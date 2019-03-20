@@ -10,6 +10,7 @@ body{overflow:hidden;overflow-y: scroll;background: url('./image/admin06.jpg');b
 #cards{display:flex;justify-content: center;flex-wrap: wrap;margin: auto;width: 750px;height: 270px;opacity: 1;}
 #tou{width:100px;height:100px;margin:25px 350px 25px 350px;border:1px solid black;overflow: hidden;}
 #userInput{width: 800px;height: 800px;}
+#moblie{display: hidden;}
 
 
 .back{height: 100%;position: absolute;left: 0;}
@@ -36,3 +37,13 @@ body{overflow:hidden;overflow-y: scroll;background: url('./image/admin06.jpg');b
 .surround{width: 800px;height: 100px;margin-bottom:-25px;}
 
 .userInput{width:600px;height: 50px;margin:25px 100px 25px 100px;}
+
+.write{display: flex;flex-flow: row wrap;}
+.write-title{width: 500px;height: 50px;margin: 50px 150px 0px 150px;align-self: flex-start;}
+.write-content{width: 700px;height: 400px;margin: 50px auto;margin-top:0;}
+.writeContent{width: 670px;height: 400px}
+
+@media only screen and (min-device-width:320px) and (max-device-width:450px){
+    #mobile{display: visible;width: 100vw;height: 100vh;}
+    #mobile-content{width: 100vw;height: 100vh;background: url('./image/admin01.jpg') no-repeat;background-attachment: fixed;background-size: 100% 100%;overflow: hidden;overflow-y: scroll;}
+}

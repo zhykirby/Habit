@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const routers = express.Router();
 const Content = require('../models/Content');
 const User = require('../models/User');
+const Daily = require('../models/Daily');
+
 
 routers.get('/',function(req,res,next){
     jwt.verify(req.userInfo.token,'howie',function(err,decode){
@@ -26,14 +28,19 @@ routers.get('/create',function(req,res,next){
 });
 
 routers.get('/test',function(req,res,next){
-    res.render('admin/test');
+    res.render('admin/test',{
+        userInfo:req.userInfo
+    });
 });
 
 routers.get('/write',function(req,res,next){
-    res.render('admin/write');
+    res.render('admin/write',{
+        userInfo:req.userInfo
+    });
 })
 
 routers.get('/userInfo',function(req,res,next){
+    
     User.find().then(function(users){
         res.render('admin/userInfo',{
             userInfo:req.userInfo,
@@ -45,15 +52,17 @@ routers.get('/userInfo',function(req,res,next){
 });
 
 routers.get('/diary',function(req,res,next){
-    User.find().then(function(users){
+    Daily.find({user:req.userInfo.username}).then(function(dailies){
         res.render('admin/diary',{
             userInfo:req.userInfo,
-            users:users
-        });
-    }).catch(function(e){
-        console.log(e);
-    });
+            dailies:dailies
+        })
+    })
 });
+
+routers.get('/status/success',function(req,res,next){
+    res.render('admin/status/success');
+})
 
 routers.post('/content',function(req,res,next){
     content = new Content({

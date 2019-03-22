@@ -14,17 +14,17 @@
         <div class="col-md-1 col-lg-1 h50 curdiv" title="更多">
             <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' title="个人中心" onclick="window.location.href='/admin'">
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
             <div class='midb'>
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
         </div> 
-        <div class='col-md-3 col-lg-3 h50 iconmid'>
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
             <div class="midb">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
             </div>
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/test'">
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
             <div class="midb">
                 <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
             </div>
@@ -32,13 +32,35 @@
         <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/write'">
             <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
         </div>
-        <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录">
+        <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
             <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
         </div>       
     </div>
 </nav>
 <div id='content'>
-    
+{% for daily in dailies %}
+    <div class="daily">
+        <div class="daily-title">
+            <span>{{ daily.title }}</span>
+        </div>
+        <div class="daily-date">
+            <span>{{ daily.date }}</span>
+        </div>
+        <div class="daily-content">
+            <p>{{ daily.content }}</p>
+        </div>
+        <div class="daily-hide">
+            <span>……</span>
+        </div>
+        <div class="read-more curdiv">
+            点击展开
+        </div>
+    </div>      
+{% endfor %}
 </div>
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/admin.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
 </body>
 </html>

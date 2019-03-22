@@ -17,7 +17,7 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 
 <body>
 <!--  适配于电脑端用户 .visible-md .visible-lg  -->
-<div class="visible-lg visible-md">
+<div id="pc">
 	<div id='content'>
 		<nav class="navbar navbar-default" style="position:relative;margin-bottom: 0;">
 			<button type="button" class="btn btn-default home" aria-label="Home" onclick="window.location.href='/'">
@@ -58,7 +58,7 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 		</div>
 	</div>
 </div>
-<div class="hidden-md hidden-lg">
+<div id="mobile">
 	<div id="mobile-main" class="page">
 		<button class="regB" onclick="window.location.href='/login'">
 			立刻注册

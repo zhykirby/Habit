@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
         .sh50{height: 50px;}
+        .white{width: 100%;height: 300px;}
     </style>
 </head>
 <body>
@@ -17,23 +18,23 @@
         <div class="col-md-1 col-lg-1 h50 curdiv" title="更多">
             <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' title="个人中心" onclick="window.location.href='/admin'">
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
             <div class='midb'>
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
         </div> 
-        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/diary'">
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
             <div class="midb">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
             </div>
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' onclick="window.location.href='/admin/test'">
+        <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
             <div class="midb">
                 <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
             </div>
         </div>   
         <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
-        <div class="col-md-1 col-lg-1 h50 curdiv" title="退出登录">
+        <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
             <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
         </div>       
     </div>
@@ -41,22 +42,31 @@
 <div id="content" class="write">
     <div class="write-title input-group">
         <span class="input-group-addon" id="basic-addon1">  标题  </span>
-        <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">                      
+        <input type="text" name='write-title' class="form-control sh50" aria-describedby="basic-addon1">                      
     </div>
     <div class="write-content">
         <div class="panel panel-default">
             <div class="panel-heading">记录你的养成习惯时的心得和点点滴滴吧~</div>
             <div class="panel-body">
-                <textarea name="content" class="writeContent"></textarea>
+                <textarea name="write-content" class="writeContent"></textarea>
             </div>
         </div>
     </div>
-    <div class="submit curdiv">
+    <div class="write-time input-group">
+        <span class="input-group-addon" id="basic-addon2">发表时间</span>
+        <input type="date" name='write-time' class="form-control sh50" aria-describedby="basic-addon2">                      
+    </div>
+    <div class="submit curdiv" id="write-sub">
         提交
     </div>
+    <div>
+        <input value="{{ userInfo.username }}" id="write-id" style="width: 0.1px;height: 0.1px;border:0;padding:0;">
+    </div>
+    <div class="white"></div>
 </div>
 
 <script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/admin.js"></script>
 <script src="../../public/js/bootstrap.js"></script>
 </body>
 </html>

@@ -1,49 +1,71 @@
 body{overflow:hidden;overflow-y: scroll;background: url('./image/admin06.jpg');background-attachment: fixed;background-size: contain;}
-#content{width:800px;height: 800px;margin-left: auto;margin-right: auto;background: url('./image/admin01.jpg') no-repeat;background-size: 100% 100%;opacity: 0.95;}
-#success{width: 100%;height: 60vh;}
-#img{margin: 10%;width: 80%;height: 60%;background: url('image/d454cdcd7b899e51c50d08504ba7d933c9950d25.jpg') no-repeat;background-attachment: fixed;background-size: 100% 100%;}
-#goNen{display:flex;width:100%;height: 300px;}
-#userInfo{width:100%;height: 500px;}
-#userImg{width: 100%;height: 300px;overflow: hidden;}
-#userDes{width: 100%;height: 200px;border-top: 1px solid black;border-top: 0;opacity: 0.5;}
-#circle{background: #fff;margin:100px 350px 100px 350px;width: 100px;height: 100px;border: 1px solid black;}
-#cards{display:flex;justify-content: center;flex-wrap: wrap;margin: auto;width: 750px;height: 270px;opacity: 1;}
-#tou{width:100px;height:100px;margin:25px 350px 25px 350px;border:1px solid black;overflow: hidden;}
-#userInput{width: 800px;height: 800px;}
-#moblie{display: hidden;}
+@media only screen and (min-device-width:769px){
+    #content{display: flex;flex-flow: row wrap;border:10px solid white;border-top:0;border-bottom: 0;width: 800px;margin-left: auto;margin-right: auto;background: url('./image/admin01.jpg') no-repeat;background-size: 100% 100%;opacity: 0.95;}
+    #success{width: 100%;height: 60vh;}
+    #img{margin: 10%;width: 80%;height: 60%;background: url('image/d454cdcd7b899e51c50d08504ba7d933c9950d25.jpg') no-repeat;background-attachment: fixed;background-size: 100% 100%;}
+    #goNen{display:flex;width:100%;height: 300px;}
+    #userInfo{width:100%;height: 500px;}
+    #userImg{width: 100%;height: 300px;overflow: hidden;}
+    #userDes{width: 100%;height: 200px;border-top: 1px solid black;border-top: 0;opacity: 0.5;}
+    #circle{background: #fff;margin:100px 350px 100px 350px;width: 100px;height: 100px;border: 1px solid black;}
+    #cards{display:flex;justify-content: center;flex-wrap: wrap;margin: auto;width: 750px;height: 270px;opacity: 1;}
+    #tou{width:100px;height:100px;margin:25px 350px 25px 350px;border:1px solid black;overflow: hidden;}
+    #userInput{width: 800px;height: 800px;}
+    #moblie{display: none;}
+    #pc{display: inline;}
+    #daily-container{width:100%;height: 100vh;margin:0;display: flex;flex-flow: row wrap;}
 
+    .back{height: 100%;position: absolute;left: 0;}
+    .below{width: 100%;height: 100%;}
+    .but{cursor: pointer;}
 
-.back{height: 100%;position: absolute;left: 0;}
-.below{width: 100%;height: 100%;}
-.but{cursor: pointer;}
+    .create{height: 100%;position: absolute;right: 0;}
+    .curdiv{cursor: pointer;background-color: #f8f8f8;}
+    .curdiv:hover{background-color: #e7e7e7;}
+    .cards{flex-wrap: wrap;width: 250px;height: 135px;}
 
-.create{height: 100%;position: absolute;right: 0;}
-.curdiv{cursor: pointer;background-color: #f8f8f8;}
-.curdiv:hover{background-color: #e7e7e7;}
-.cards{flex-wrap: wrap;width: 250px;height: 135px;}
+    .doc{background: #fff;}
+    .daily{background: #fff;overflow:hidden;border: 5px solid black;margin:25px 50px 25px 50px;width:700px;height:400px}
+    .daily-title{width: 100%;height: 60px;text-align: center;line-height: 60px;font-size: 3rem;}
+    .daily-date{width: 100%;height: 20px;text-align: center}
+    .daily-hide{width: 100%;height: 20px;text-align: center}
+    .daily-content{width: 100%;height: 200px;overflow: hidden;padding: 30px;}
+    .daily-null{width: 100%;height: 800px;}
 
-.doc{background: #fff;}
+    .h50{height: 50px;border-left: 1px solid black;}
+    .h100{height: 100%;}
 
-.h50{height: 50px;border-left: 1px solid black;}
-.h100{height: 100%;}
+    .iconmid{width:100%;margin:0;height: 100%;background-color: #f8f8f8;cursor: pointer;}
+    .iconmid:hover{background-color: #e7e7e7;}
 
-.iconmid{width:100%;margin:0;height: 100%;background-color: #f8f8f8;cursor: pointer;}
-.iconmid:hover{background-color: #e7e7e7;}
+    .mida{margin:0 auto;left: calc(50% - 6px);top:50%;width:2rem;height: 2rem;}
+    .midb{margin-top:1.5rem;}
+    
+    p:first-letter{
+        display: block;
+        margin-top: -4rem;
+        float: left;
+        color: #ff3366;
+        font-size: 8rem;
+        font-family: Georgia, Times New Roman, serif;
+    }
 
-.mida{margin:0 auto;left: calc(50% - 6px);top:50%;width:2rem;height: 2rem;}
-.midb{margin-top:1.5rem;}
+    .read-more{margin-left: 0;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
 
-.submit{width: 150px;height: 50px;margin-left:325px;border-radius: 10px;box-shadow: 5px 5px 5px #888888;text-align: center;line-height: 50px;}
-.surround{width: 800px;height: 100px;margin-bottom:-25px;}
+    .submit{width: 150px;height: 50px;margin-left:325px;border-radius: 10px;box-shadow: 5px 5px 5px #888888;text-align: center;line-height: 50px;}
+    .surround{width: 800px;height: 100px;margin-bottom:-25px;}
 
-.userInput{width:600px;height: 50px;margin:25px 100px 25px 100px;}
+    .userInput{width:600px;height: 50px;margin:25px 100px 25px 100px;}
 
-.write{display: flex;flex-flow: row wrap;}
-.write-title{width: 500px;height: 50px;margin: 50px 150px 0px 150px;align-self: flex-start;}
-.write-content{width: 700px;height: 400px;margin: 50px auto;margin-top:0;}
-.writeContent{width: 670px;height: 400px}
+    .write{display: flex;flex-flow: row wrap;}
+    .write-title{width: 500px;height: 50px;margin: 50px 150px 25px 150px;align-self: flex-start;}
+    .write-content{width: 700px;height: 400px;margin: 50px auto;margin-top:25px;}
+    .writeContent{width: 670px;height: 400px}
+    .write-time{width: 700px;height: 50px;margin:50px auto;}
+}
 
-@media only screen and (min-device-width:320px) and (max-device-width:450px){
-    #mobile{display: visible;width: 100vw;height: 100vh;}
+@media only screen and (min-device-width:320px) and (max-device-width:768px){
+    #pc{display: none;}
+    #mobile{display: block;width: 100vw;height: 100vh;}
     #mobile-content{width: 100vw;height: 100vh;background: url('./image/admin01.jpg') no-repeat;background-attachment: fixed;background-size: 100% 100%;overflow: hidden;overflow-y: scroll;}
 }

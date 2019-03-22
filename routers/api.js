@@ -2,6 +2,7 @@ const express = require('express');
 const routers = express.Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const Daily = require('../models/Daily')
 
 var responseData;
 
@@ -149,6 +150,24 @@ routers.post('/user/userInfo',function(req,res,next){
     }).catch(function(err){
         console.log(err);
     });
+});
+
+routers.post("/write",function(req,res,next){
+    let title = req.body.title;
+    let content = req.body.content;
+    let date = req.body.date;
+    let user = req.body.user;
+    const daily = new Daily({
+        user:user,
+        title:title,
+        content:content,
+        date:date
+    });
+    daily.save();
+    responseData.code = 30;
+    responseData.message = "保存成功";
+    res.json(responseData);
+    
 });
 
 module.exports = routers;

@@ -32,4 +32,15 @@ $(function(){
     $("#exit").click(function(){
         window.location.href = "/";
     });
-})
+    var i = 0;
+    $("#more").click(function(){
+        if(i === 0){
+            $("#more-content").show();
+            i = 1;
+        }
+        else{
+            $("#more-content").hide();         
+            i = 0;
+        }
+    });
+});

@@ -8,13 +8,14 @@
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
+        .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
 <body>
 <!-- .visible-md .visible-lg-->
 <div id="pc">
     <div>
-        <nav class='navbar navbar-default' style="margin-bottom:0;border-bottom: 1px solid black">
+        <nav class='navbar navbar-default nav-border'>
             <div class="row h50">
                 <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
                     <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
@@ -41,44 +42,51 @@
             </div>
         </nav>        
     </div>
-    <div id="content">
-       <div id="userInfo">
-           <div id='userImg'>
-               <div id="circle">
-                    头像（占位）
+    <div style="display:flex;flex-wrap:nowrap;">
+        <div id="more-content">
+        
+        </div>
+        <div id="content" name="admin-content">
+           <div id="userInfo">
+               <div id='userImg'>
+                   <div id="circle">
+                        头像（占位）
+                   </div>
+               </div>
+               <div id="userDes" class="row" style="margin:0;">
+                    <div class="col-md-4 col-lg-4 h100"></div>
+                    <div class="col-md-4 col-lg-4 h100 doc">
+                        {% for user in users %}
+                            {% if user._id == userInfo._id %}
+                                {{ user.name }}<br/>
+                                {{ user.birthday }}<br/>
+                                {{ user.email }}<br/>
+                                {{ user.describtion }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4 col-lg-4 h100"></div>
                </div>
            </div>
-           <div id="userDes" class="row" style="margin:0;">
-                <div class="col-md-4 col-lg-4 h100"></div>
-                <div class="col-md-4 col-lg-4 h100 doc">
-                    {% for user in users %}
-                        {% if user._id == userInfo._id %}
-                            {{ user.name }}<br/>
-                            {{ user.birthday }}<br/>
-                            {{ user.email }}<br/>
-                            {{ user.describtion }}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-4 col-lg-4 h100"></div>
+           <div id="goNen">
+               <div id="cards">
+                   <div class="cards curdiv" onclick="window.location.href='/admin/userInfo'">编辑个人资料页（占位）</div>               
+                   <div class="cards curdiv"></div>               
+                   <div class="cards curdiv"></div>               
+                   <div class="cards curdiv"></div>               
+                   <div class="cards curdiv"></div>               
+                   <div class="cards curdiv">修改密码</div>               
+               </div>
            </div>
-       </div>
-       <div id="goNen">
-           <div id="cards">
-               <div class="cards curdiv" onclick="window.location.href='/admin/userInfo'">编辑个人资料页（占位）</div>               
-               <div class="cards curdiv"></div>               
-               <div class="cards curdiv"></div>               
-               <div class="cards curdiv"></div>               
-               <div class="cards curdiv"></div>               
-               <div class="cards curdiv"></div>               
-           </div>
-       </div>
+        </div>
     </div>
         
 </div>
 <!-- mobile-->
 <div id="mobile">
-    <div id="mobile-content"></div>
+    <div id="mobile-content">
+        
+    </div>
 </div>
 
 

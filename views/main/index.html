@@ -5,7 +5,7 @@
 
 <style>
 body { margin: 0; padding: 0;background: black; overflow: hidden;}
-#container{width: 100%;height: 600px;}
+#container{width: 100%;height: 800px;}
 </style>
 
 <link rel='stylesheet' href="/public/css/style.css">
@@ -26,8 +26,8 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 		</nav>
 		<div id='contain'>
 			<div class="row" id='container'>
-				<div class="col-md-4 col-lg-4 h100"></div>
-				<div class="col-md-4 col-lg-4 h100">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
 					<div class="three w100"></div>
 					<div class="three w100">
 						
@@ -38,21 +38,27 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 					</div>
 					<div class="three w100"></div>
 				</div>
-				<div class="col-md-4 col-lg-4 h100"></div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
 			</div>
 			
 		</div>
 	</div>
 	<div id='intro' class="container-fluid">
-		<div id='title'>产品特点 & 产品功能</div>
+		<div id='title'>
+			<p class="title-title">Habit</p>
+			<p class="title-mid">冰冻三尺，非一日之寒。</p>
+			<p class="title-mid">滴水穿石，非一日之攻。</p>
+			<p class="title-xl">但养成一个<span class="under-bold">好习惯</span>，只要<span class="under-bold">21天</span>。</p>
+			<p class="title-l">现在开始使用<span class="under-italic" onclick="window.location.href='/login'">Habit</span>，开始养成你的好习惯。</p>
+		</div>
 		<div class="row intro-p">
-			<div class="col-md-4 col-lg-4 h100">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
 				特点
 			</div>
-			<div class="col-md-4 col-lg-4 h100">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
 				功能
 			</div>
-			<div class="col-md-4 col-lg-4 h100">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
 				？？
 			</div>
 		</div>
@@ -68,7 +74,11 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 	<div class="page" id="page1">
 		<div class="jian-shang" onclick="window.location.hash='#mobile-main'"></div>
 		<div class="txt">
-			___________________标题！
+			<p class="mobile-title-title">Habit</p>
+			<p class="mobile-title-mid">冰冻三尺，非一日之寒。</p>
+			<p class="mobile-title-mid">滴水穿石，非一日之攻。</p>
+			<p class="mobile-title-mid">但养成一个<span class="mobile-under-bold">好习惯</span>，只要<span class="mobile-under-bold">21天</span>。</p>
+			<p class="mobile-title-l">现在开始使用<span class="mobile-under-italic" onclick="window.location.href='/login'">Habit</span>，开始养成你的好习惯。</p>
 		</div>
 		<div class="jian-xia" onclick="window.location.hash='#page2'"></div>
 	</div>
@@ -86,7 +96,13 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 	</div>
 	<div class="page" id="page4">
 		<div class="jian-shang" onclick="window.location.hash='#page3'"></div>
-		<div class="txt"></div>
+		<div class="txt" style="text-align:center;">
+			<p>现在</p>
+			<p>进入新的旅程</p>
+			<p>从养成</p>
+			<p class="mobile-under-italic" onclick="window.location.href='/login'">Habit</p>
+			<p>开始吧。</p>
+		</div>
 	</div>
 </div>
 

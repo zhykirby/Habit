@@ -42,10 +42,10 @@
 
 
 body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
-#content{text-transform:uppercase;text-align:center;width: 100vw;background: url('./image/576006.jpg') no-repeat;background-size: 100% 100%;background-attachment: fixed;}
+#content{text-transform:uppercase;text-align:center;width: 100vw;background: url('./image/576006.jpg') no-repeat;background-size: 100% 100%;}
 
-#intro{width: 100vw;height: 300px;}
-#title{height: 100px;width: 100%;}
+#intro{width: 100vw;height: 600px;}
+#title{vertical-align: bottom;height: 300px;width: 100%;padding: 25px 100px 25px 100px;display: flex;flex-wrap: wrap;}
 #login{display:none;}
 #admin{display: none;}
 #dl,#zc{background-color: #f8f8f8;height: 100%;}
@@ -66,6 +66,12 @@ body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
 .home{height:100%;position: absolute;left:0;}
 .h100{height: 100%;}
 .w100{width: 100%;}
+.title-title{margin: 0;width: 100%;height: 100px;line-height: 100px;font: 7rem bold;}
+.title-mid{width: 100%;height: 30px;margin: 0;font-size:1.5em;}
+.title-xl{width: 100%;height: 50px;margin: 0;font-size:1.5em}
+.title-l{width: 100%;height: 40px;margin: 0;font-size:1.5em}
+.under-bold{text-decoration: underline;font: 3rem bold;}
+.under-italic{font-style: italic;text-decoration: underline;color:blue;cursor: pointer;}
 
 @media only screen and (max-device-width:768px){
     #pc{display: none;}
@@ -73,11 +79,15 @@ body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
     .page{width: 100vw;height: 100vh;display: flex;flex-flow: row wrap;}
     .regB{outline:none;border:none;padding:20px;display:block;width:40vw;height: 20vh;margin-left:calc(50% - 20vw);
         margin-top:40%;border:10px solid #fff;cursor:pointer;background-color:transparent;
-        overflow: hidden;color: #fff;font-size: 4rem;}
+        overflow: hidden;color: #fff;font-size: 7rem;}
     .jian-xia{width: 420px;height: 80px;margin:0 auto;margin-left: calc(50% - 210px);margin-bottom: 8vh;background: url('./image/below-1.png') transparent no-repeat;cursor: pointer;align-self: flex-end;opacity: 1.4;}
     .jian-xia:hover{opacity: 0.7;}
     .jian-shang{width: 420px;height: 80px;margin:0 auto;margin-left: calc(50% - 210px);margin-top: 8vh;background: url('./image/up-1.png') transparent no-repeat;opacity: 1.5;cursor: pointer;align-self: flex-start;}
     .jian-shang:hover{opacity: 0.7;}
+    .mobile-title-title{width:100%;font:3em bold;}
+    .mobile-title-mid{font-size: 5rem;}
+    .mobile-under-italic{font-style: italic;text-decoration: underline;color:black;cursor: pointer;}
+    .mobile-under-bold{text-decoration: underline;font: 1.5em bold;}
     .txt{width:100vw;height:calc(84vh - 160px);font-size: 7rem;color: #ffffff;}
 }
 

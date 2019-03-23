@@ -44,6 +44,12 @@ routers.post('/user/register',function(req,res,next){
         res.json(responseData);
         return;
     }
+    if(password.length < 6){
+        responseData.code = 5;
+        responseData.message = "密码长度不够";
+        res.json(responseData);
+        return;
+    }
     User.findOne({
         username:username
     }).then(function(userInfo){

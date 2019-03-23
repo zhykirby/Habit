@@ -56,8 +56,8 @@ routers.get('/diary',function(req,res,next){
         res.render('admin/diary',{
             userInfo:req.userInfo,
             dailies:dailies
-        })
-    })
+        });
+    });
 });
 
 routers.get('/status/success',function(req,res,next){

@@ -7,63 +7,119 @@
     <title>记录点点滴滴</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <script src="../../public/js/jquery.js"></script>
     <style>
         .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
 <body>
-<nav class='navbar navbar-default nav-border'>
-    <div class="row h50">
-        <div class="col-md-1 col-lg-1 h50 curdiv" title="更多">
-            <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+<div id='pc'>
+    <nav class='navbar navbar-default nav-border'>
+        <div class="row h50">
+            <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
+                <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+            </div>
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
+                <div class='midb'>
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+            </div> 
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
+                <div class="midb">
+                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
+                <div class="midb">
+                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                </div>
+            </div>   
+            <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/write'">
+                <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
+                <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
+            </div>       
         </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
-            <div class='midb'>
+    </nav>
+    <div id='content'>
+        <div id="null">
+            <p>还没开始记录呢~</p>
+        </div>
+    <script> 
+        var i = 1 ;
+    </script>
+    {% for daily in dailies %}
+    <script>
+        i = i + 1;
+    </script>
+    {% endfor %}
+    <script>
+        if(i === 1){
+            $("#null").show();
+            $("#content").css('height','100vh');
+        }
+        else if(1<i<3){
+            $("#null").hide();
+            $("#content").css('height','calc(100vh + '+200*(i-1)+'px');
+        }
+    </script>
+    {% for daily in dailies %}
+        <div class="daily">
+            <div class="daily-title">
+                <span>{{ daily.title }}</span>
+                <input value="{{ daily.title }}" class="none" id="d-t">
+            </div>
+            <div class="daily-date">
+                <span>{{ daily.date }}</span>
+                <input value="{{ daily.date }}" class="none" id="d-d">
+            </div>
+            <div class="daily-content">
+                <p>{{ daily.content }}</p>
+                <input value="{{ daily.content }}" class="none" id="d-c">
+            </div>
+            <div class="daily-hide">
+                <span>……</span>
+            </div>
+            <div style="display:flex;flex-flow:row nowrap;width: 100%;height: 100px;;">
+                <div class="edit-more curdiv">
+                    编辑心得
+                </div>
+                <div class="read-more curdiv">
+                    阅读更多
+                </div>
+                <div class="deleteDaily curdiv">
+                    删除
+                </div>
+                <input value="{{ daily.user }}" class="none" id="d-u">
+                <input value="{{ daily.id }}" class="none" id="d-i">
+            </div>
+        </div>      
+    {% endfor %}
+    </div>
+</div>
+<!--mobile-->
+<div id="mobile">
+    <div id="mobile-content">
+        <nav class="navbar navbar-default navbar-fixed-bottom vh10">
+            <div class="vw34" id="mobile-user">
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
-        </div> 
-        <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
-            <div class="midb">
+            <div class="vw33 active" id="mobile-diary">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
             </div>
-        </div>
-        <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
-            <div class="midb">
+            <div class="vw33" id="mobile-edit">
                 <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
             </div>
-        </div>   
-        <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/write'">
-            <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
-        </div>
-        <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
-            <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
-        </div>       
+        </nav>
     </div>
-</nav>
-<div id='content'>
-{% for daily in dailies %}
-    <div class="daily">
-        <div class="daily-title">
-            <span>{{ daily.title }}</span>
-        </div>
-        <div class="daily-date">
-            <span>{{ daily.date }}</span>
-        </div>
-        <div class="daily-content">
-            <p>{{ daily.content }}</p>
-        </div>
-        <div class="daily-hide">
-            <span>……</span>
-        </div>
-        <div class="read-more curdiv">
-            点击展开
-        </div>
-    </div>      
-{% endfor %}
 </div>
 
-<script src="../../public/js/jquery.js"></script>
 <script src="../../public/js/admin.js"></script>
 <script src="../../public/js/bootstrap.js"></script>
+<script>
+    
+</script>
+
 </body>
 </html>

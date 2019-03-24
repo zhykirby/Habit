@@ -8,46 +8,63 @@
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
-        [name=upnav]{margin-bottom:0;border-bottom: 1px solid black}
+        [name=upnav]{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
 <body>
 <!-- .visible-md .visible-lg -->
-<div>
-    <nav class='navbar navbar-default' name='upnav'>
-        <div class="row h50">
-            <div class="col-md-1 col-lg-1 h50 curdiv">
-                <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
-            </div>
-            <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
-                <div class='midb'>
-                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+<div id="pc">
+    <div>
+        <nav class='navbar navbar-default' name='upnav'>
+            <div class="row h50">
+                <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
+                    <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
                 </div>
-            </div> 
-            <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
-                <div class="midb">
-                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
+                    <div class='midb'>
+                        <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                    </div>
+                </div> 
+                <div class='col-md-3 col-lg-3 h50 iconmid' id="diary" title="记录心得">
+                    <div class="midb">
+                        <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                    </div>
                 </div>
-            </div>
-            <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
-                <div class="midb">
-                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                <div class='col-md-3 col-lg-3 h50 iconmid' id="edit" title="习惯养成">
+                    <div class="midb">
+                        <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                    </div>
+                </div>   
+                <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
                 </div>
-            </div>   
-            <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align">
-                <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+                <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
+                    <span class="glyphicon glyphicon-off midb mida" aria-hidden="true" title="退出登录"></span>
+                </div>       
             </div>
-            <div class="col-md-1 col-lg-1 h50 curdiv" id="exit">
-                <span class="glyphicon glyphicon-off midb mida" aria-hidden="true" title="退出登录"></span>
-            </div>       
-        </div>
-    </nav>
+        </nav>
 
+    </div>
+    <div id="content">
+        
+    </div>
 </div>
-<div id="content">
-    
+<!--mobile-->
+<div id="mobile">
+    <div id="mobile-content">
+        <nav class="navbar navbar-default navbar-fixed-bottom vh10">
+            <div class="vw34" id="mobile-user">
+                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+            </div>
+            <div class="vw33" id="mobile-diary">
+                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+            </div>
+            <div class="vw33 active" id="mobile-edit">
+                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+            </div>
+        </nav>
+    </div>
 </div>
-    
 
 <script src="../../public/js/jquery.js"></script>
 <script src="../../public/js/admin.js"></script>

@@ -17,26 +17,26 @@
     <div>
         <nav class='navbar navbar-default nav-border'>
             <div class="row h50">
-                <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
+                <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
                     <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
                 </div>
-                <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
+                <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
                     <div class='midb'>
                         <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
                     </div>
                 </div> 
-                <div class='col-md-3 col-lg-3 h50 iconmid' id="diary"">
+                <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="diary" title="记录心得">
                     <div class="midb">
                         <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
                     </div>
                 </div>
-                <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
+                <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="edit" title="习惯养成">
                     <div class="midb">
                         <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
                     </div>
                 </div>   
-                <div class="col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
-                <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
+                <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
+                <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
                     <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
                 </div>       
             </div>
@@ -54,8 +54,8 @@
                    </div>
                </div>
                <div id="userDes" class="row" style="margin:0;">
-                    <div class="col-md-4 col-lg-4 h100"></div>
-                    <div class="col-md-4 col-lg-4 h100 doc">
+                    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 h100"></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 h100 doc">
                         {% for user in users %}
                             {% if user._id == userInfo._id %}
                                 {{ user.name }}<br/>
@@ -65,7 +65,7 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <div class="col-md-4 col-lg-4 h100"></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 h100"></div>
                </div>
            </div>
            <div id="goNen">
@@ -85,7 +85,17 @@
 <!-- mobile-->
 <div id="mobile">
     <div id="mobile-content">
-        
+        <nav class="navbar navbar-default navbar-fixed-bottom vh10">
+            <div class="vw34 active" id="mobile-user">
+                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+            </div>
+            <div class="vw33" id="mobile-diary">
+                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+            </div>
+            <div class="vw33" id="mobile-edit">
+                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+            </div>
+        </nav>
     </div>
 </div>
 

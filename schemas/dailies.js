@@ -16,6 +16,10 @@ const dailySchema = new Schema({
     date:{
         type:String,
         default:''
+    },
+    id:{
+        type:String,
+        default:''
     }
 });
 module.exports = dailySchema;

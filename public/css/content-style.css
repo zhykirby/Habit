@@ -1,5 +1,5 @@
-body{overflow: hidden;overflow-y: scroll;width: calc(100vw + 400px);background: url('./image/admin06.jpg');background-attachment: fixed;background-size: contain;}
 @media only screen and (min-device-width:769px){
+    body{overflow: hidden;overflow-y: scroll;width: calc(100vw + 400px);background: url('./image/admin06.jpg');background-attachment: fixed;background-size: contain;}
     #content{margin-left: calc(50vw - 400px);display: flex;flex-flow: row wrap;border:10px solid white;border-top:0;border-bottom: 0;width: 800px;margin-right: auto;background: url('./image/admin01.jpg') no-repeat;background-size: 100% 100%;opacity: 0.95;}
     #success{width: 100%;height: 60vh;}
     #img{margin: 10%;width: 80%;height: 60%;background: url('image/d454cdcd7b899e51c50d08504ba7d933c9950d25.jpg') no-repeat;background-attachment: fixed;background-size: 100% 100%;}
@@ -15,7 +15,7 @@ body{overflow: hidden;overflow-y: scroll;width: calc(100vw + 400px);background: 
     #pc{display: inline;}
     #daily-container{width:100%;height: 100vh;margin:0;display: flex;flex-flow: row wrap;}
     #more-content{width: 400px;height: 800px;display: none;background: #f8f8f8;border-right: 1px solid black;}
-
+    #null{margin:50px 100px 50px 100px;width: 600px;height: 100px;font: 7rem bold;}
 
     .back{height: 100%;position: absolute;left: 0;}
     .below{width: 100%;height: 100%;}
@@ -33,18 +33,25 @@ body{overflow: hidden;overflow-y: scroll;width: calc(100vw + 400px);background: 
     .daily-hide{width: 100%;height: 20px;text-align: center}
     .daily-content{width: 100%;height: 190px;overflow: hidden;padding: 30px;}
     .daily-null{width: 100%;height: 800px;}
+    .deleteDaily{margin-left: 210px;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
+
+    .editContent{width: 670px;height: 400px}
 
     .h50{height: 50px;border-left: 1px solid black;}
     .h100{height: 100%;}
+    .vh100{height: 100vh}
 
     .iconmid{width:100%;margin:0;height: 100%;background-color: #f8f8f8;cursor: pointer;}
     .iconmid:hover{background-color: #e7e7e7;}
 
     .mida{margin:0 auto;left: calc(50% - 6px);top:50%;width:2rem;height: 2rem;}
     .midb{margin-top:1.5rem;}
+
+    .none{width: 0;height: 0;margin: 0;padding: 0;border: 0;}
     
     p:first-letter{display: block;margin: 0;padding: 0;margin-top: -2rem;float: left;color: #ff3366;font-size: 8rem;font-family: Georgia, Times New Roman, serif;}
 
+    .edit-more{margin-left: 0;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
     .read-more{margin-left: 0;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
 
     .submit{width: 150px;height: 50px;margin-left:325px;border-radius: 10px;box-shadow: 5px 5px 5px #888888;text-align: center;line-height: 50px;}
@@ -62,7 +69,14 @@ body{overflow: hidden;overflow-y: scroll;width: calc(100vw + 400px);background: 
 @media only screen and (min-device-width:320px) and (max-device-width:768px){
     #pc{display: none;}
     #mobile{display: block;width: 100vw;height: 100vh;}
-    #mobile-content{width: 100vw;height: 100vh;display: flex;flex-flow: row wrap;align-content: flex-start;}
+    #mobile-content{width: 100vw;height: 100vh;display: flex;flex-flow: row nowrap;align-content: flex-start;}
 
+    .active{background: #e7e7e7;}
+
+    .mida{margin:0 auto;font-size: 2em;}
+
+    .vh10{height: 10vh;width: 100vw;display: flex;}
+    .vw34{width: 34%;height: 100%;padding-top:calc(5vh - 1em);padding-left: calc(17% - 1em);}
+    .vw33{width: 33%;height: 100%;padding-top:calc(5vh - 1em);padding-left: calc(16.5% - 1em);}
     
 }

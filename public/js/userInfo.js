@@ -8,7 +8,7 @@ $(function(){
                 name:$("input[name='name']").val(),
                 birthday:$("input[name='birthday']").val(),
                 email:$("input[name='email']").val(),
-                describtion:$("#userDes").val()
+                describtion:$(".userDes").val()
             },
             dataType:'json',
             success:function(data){

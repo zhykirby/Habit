@@ -2,7 +2,8 @@ const express = require('express');
 const routers = express.Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const Daily = require('../models/Daily')
+const Daily = require('../models/Daily');
+const mongoose = require('mongoose');
 
 var responseData;
 
@@ -11,7 +12,8 @@ routers.use(function(req,res,next){
         code:0,
         message:'注册成功！',
         token:"",
-        userName:''
+        userName:'',
+        daily_id:''
     };
     next();
 })
@@ -163,18 +165,66 @@ routers.post("/write",function(req,res,next){
     let content = req.body.content;
     let date = req.body.date;
     let user = req.body.user;
+    let id = user+title+date;
     const daily = new Daily({
         user:user,
         title:title,
         content:content,
-        date:date
+        date:date,
+        id:id
     });
     daily.save();
     responseData.code = 30;
     responseData.message = "保存成功";
-    res.json(responseData);
-    
+    res.json(responseData);    
 });
+
+routers.post("/daily",function(req,res,next){
+    let daily_title = req.body.title;
+    let daily_date = req.body.date;
+    let daily_user = req.body.user;
+    let daily_id = daily_user+daily_title+daily_date;
+    responseData.code = 40;
+    req.cookies.set('daily',JSON.stringify({
+        daily_id:daily_id
+    }));
+    res.json(responseData);
+});
+
+routers.post("/dailyedit",function(req,res,next){
+    let title = req.body.title;
+    let content = req.body.content;
+    let date = req.body.date;
+    let user = req.body.user;
+    let id = id;
+    Daily.find({id:id}).then(function(dailies){
+        dailies.title = title;
+        dailies.content = content;
+        dailies.date = date;
+        return dailies.save();
+    }).then(function(newdaily){
+        responseData.code = 41;
+        responseData.message = "修改成功";
+        res.json(responseData);
+    }).catch(function(e){
+        console.log(e);
+    });       
+});
+
+routers.post("/dailydelete",function(req,res,next){
+    let id = req.body.id;
+    Daily.deleteMany({id:id},function(err,docs){
+        if(err){
+            console.log(err);
+        }
+        else{
+            responseData.code = 42;
+            responseData.message = "删除成功";
+            res.json(responseData);
+        }
+    })
+    
+})
 
 module.exports = routers;
 

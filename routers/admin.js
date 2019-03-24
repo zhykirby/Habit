@@ -4,7 +4,8 @@ const routers = express.Router();
 const Content = require('../models/Content');
 const User = require('../models/User');
 const Daily = require('../models/Daily');
-
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 routers.get('/',function(req,res,next){
     jwt.verify(req.userInfo.token,'howie',function(err,decode){
@@ -59,6 +60,17 @@ routers.get('/diary',function(req,res,next){
         });
     });
 });
+
+routers.get('/daily-edit',function(req,res,next){
+    console.log(req.daily.daily_id);
+    Daily.find({id:req.daily.daily_id}).then(function(dailies){
+        res.render("admin/daily-edit",{
+            userInfo:req.userInfo,
+            dailies:dailies,
+            daily:req.daily
+        })
+    })
+})
 
 routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');

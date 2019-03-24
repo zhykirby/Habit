@@ -43,4 +43,74 @@ $(function(){
             i = 0;
         }
     });
+
+    $(".edit-more").click(function(){
+        $.ajax({
+            url:'/api/daily',
+            type:"POST",
+            data:{
+                title:$('#d-t').val(),
+                date:$("#d-d").val(),
+                user:$("#d-u").val()
+            },
+            dataType:"json",
+            success:function(data){
+                if(data.code === 40){
+                    window.location.href = '/admin/daily-edit';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+    $("#dailyEdit-sub").click(function(){
+        $.ajax({
+            url:"/api/dailyedit",
+            type:"POST",
+            data:{
+                title:$("input[name='dailyEdit-title']").val(),
+                content:$(".editContent").val(),
+                date:$("input[name='dailyEdit-time']").val(),
+                user:$("#write-id").val(),
+                id:$("#daily-id").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 41){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+    $(".deleteDaily").click(function(){
+        $.ajax({
+            url:"/api/dailydelete",
+            type:"POST",
+            data:{
+                id:$("#d-i").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 42){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+    $("#mobile-user").click(function(){
+        window.location.href = "/admin";
+    });
+    $("#mobile-diary").click(function(){
+        window.location.href = "/admin/diary";
+    });
+    $("#mobile-edit").click(function(){
+        window.location.href = "/admin/test";
+    });
 });

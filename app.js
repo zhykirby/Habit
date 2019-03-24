@@ -22,7 +22,7 @@ app.use(function(req,res,next){
         try{
             req.userInfo=JSON.parse(req.cookies.get('userInfo'));
 
-            next()
+            next();
         }catch(e) {
             next();
         }
@@ -31,6 +31,21 @@ app.use(function(req,res,next){
         next();
     }    
 })
+app.use(function(req,res,next){
+    req.daily = {};
+    if(req.cookies.get('daily')){
+        try{
+            req.daily = JSON.parse(req.cookies.get('daily'));
+            next();
+        }
+        catch(e){
+            next();
+        }
+    }
+    else{
+        next();
+    }
+});
 //路由中间件
 app.use('/',require('./routers/main.js'));
 app.use('/admin',require('./routers/admin.js'));

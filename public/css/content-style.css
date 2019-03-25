@@ -74,7 +74,7 @@
     #mobile{display: block;width: 100vw;height: 100vh;background: #f1f1f1;}
     #mobile-content{width: 100vw;background: #fff;display: flex;flex-flow: row wrap;align-content: flex-start;}
     #mobile-none{display: flex;border-top: 1px solid gray;}
-    #mobile-img{width:100vw;height: 180px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
+    #mobile-img{width:100vw;height: 150px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
     #mobile-title{width:100vw;height: 50px;text-align: center;font-size: 2em;}
 
     .active{background: #c0c0c0;color: #fff;}
@@ -91,19 +91,19 @@
     .h60:active{background: #cfcfcf;}
 
     .mida{margin:0 auto;font-size: 2em;}
-    .mobile-image{background: url('./image/新建画布1\ -\ 副本.jpg');border: 1px solid black;margin: 50px 20px 50px 20px;width: 80px;height: 80px;}
-    .mobile-username{width: 200px;margin-top: 50px;margin-bottom: 50px;height: 60px;display: flex;flex-wrap: wrap;}
+    .mobile-image{background-size: 100% 100%;background: url('./image/新建画布1\ -\ 副本.jpg');border: 1px solid black;margin: 35px 20px 35px 20px;width: 80px;height: 80px;}
+    .mobile-username{width: 200px;margin-top: 35px;margin-bottom: 35px;height: 60px;display: flex;flex-wrap: wrap;}
 
-    .sp1{display:inline-block;height:50px;width:200px;line-height:50px;font-size:2em;}
-    .sp2{display:inline-block;height:30px;width:200px;line-height:30px;font-size:1em;}
-    .sp3{margin-top:50px;margin-bottom:50px;width:60px;height:80px;font-size: 2rem;margin-left: auto;padding-left: calc(30px - 1rem);padding-top: calc(40px - 1rem);}
-    .sp4{width:60px;height:60px;font-size: 2rem;margin-left: auto;padding-left: calc(30px - 1rem);padding-top: calc(30px - 1rem);}
-    .sp5{margin: 0;width:80px;height:60px;font-size: 2rem;padding-left: calc(40px - 1rem);padding-top: calc(30px - 1rem);}
+    .sp1{display:inline-block;height: 50px;width: 200px;line-height: 50px;font-size: 2em;}
+    .sp2{display:inline-block;height: 30px;width: 200px;line-height: 30px;font-size: 1em;}
+    .sp3{margin-top: 35px;margin-bottom: 35px;width: 60px;height: 80px;font-size: 2rem;margin-left: auto;padding-left: calc(30px - 1rem);padding-top: calc(40px - 1rem);}
+    .sp4{width: 60px;height: 60px;font-size: 2rem;margin-left: auto;padding-left: calc(30px - 1rem);padding-top: calc(30px - 1rem);}
+    .sp5{margin: 0;width: 80px;height: 60px;font-size: 2rem;padding-left: calc(40px - 1rem);padding-top: calc(30px - 1rem);}
     .sp6{width: 220px;height: 60px;line-height: 60px;font-size: 2rem;}
 
-    .vh10{height: 10vh;width: 100vw;display: flex;}
-    .vw34{width: 34%;height: 100%;padding-top:calc(5vh - 1em);padding-left: calc(17% - 1em);}
-    .vw33{width: 33%;height: 100%;padding-top:calc(5vh - 1em);padding-left: calc(16.5% - 1em);}
+    .vh10{height: 70px;width: 100vw;display: flex;}
+    .vw34{width: 34%;height: 100%;padding-top:calc(35px - 1em);padding-left: calc(17% - 1em);}
+    .vw33{width: 33%;height: 100%;padding-top:calc(35px - 1em);padding-left: calc(16.5% - 1em);}
     
     
 }

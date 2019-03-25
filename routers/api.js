@@ -179,18 +179,6 @@ routers.post("/write",function(req,res,next){
     res.json(responseData);    
 });
 
-routers.post("/daily",function(req,res,next){
-    let daily_title = req.body.title;
-    let daily_date = req.body.date;
-    let daily_user = req.body.user;
-    let daily_id = daily_user+daily_title+daily_date;
-    responseData.code = 40;
-    req.cookies.set('daily',JSON.stringify({
-        daily_id:daily_id
-    }));
-    res.json(responseData);
-});
-
 routers.post("/dailyedit",function(req,res,next){
     let title = req.body.title;
     let content = req.body.content;
@@ -211,20 +199,34 @@ routers.post("/dailyedit",function(req,res,next){
     });       
 });
 
-routers.post("/dailydelete",function(req,res,next){
-    let id = req.body.id;
-    Daily.deleteMany({id:id},function(err,docs){
-        if(err){
-            console.log(err);
-        }
-        else{
-            responseData.code = 42;
-            responseData.message = "删除成功";
-            res.json(responseData);
-        }
-    })
-    
-})
+
 
 module.exports = routers;
 
+
+/*
+routers.post("/daily",function(req,res,next){
+    let daily_title = req.body.title;
+    let daily_date = req.body.date;
+    let daily_user = req.body.user;
+    let daily_id = daily_user+daily_title+daily_date;
+    responseData.code = 40;
+    req.cookies.set('daily',JSON.stringify({
+        daily_id:daily_id
+    }));
+    res.json(responseData);
+});
+
+
+routers.post("/dailydelete",function(req,res,next){
+    let id = req.body.id;
+    Daily.find({id:id}).then(function(dailies){
+        dailies.remove();
+    }).catch(function(e){
+        console.log(e);
+    });
+    responseData.code = 42;
+    responseData.message = "删除成功";
+    res.json(responseData);
+})
+**/

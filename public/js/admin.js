@@ -43,27 +43,8 @@ $(function(){
             i = 0;
         }
     });
-
-    $(".edit-more").click(function(){
-        $.ajax({
-            url:'/api/daily',
-            type:"POST",
-            data:{
-                title:$('#d-t').val(),
-                date:$("#d-d").val(),
-                user:$("#d-u").val()
-            },
-            dataType:"json",
-            success:function(data){
-                if(data.code === 40){
-                    window.location.href = '/admin/daily-edit';
-                }
-            },
-            error:function(err){
-                throw err;
-            }
-        });
-    });
+    
+   
     $("#dailyEdit-sub").click(function(){
         $.ajax({
             url:"/api/dailyedit",
@@ -86,6 +67,52 @@ $(function(){
             }
         });
     });
+    
+    $("#mobile-user").click(function(){
+        window.location.href = "/admin";
+    });
+    $("#mobile-diary").click(function(){
+        window.location.href = "/admin/diary";
+    });
+    $("#mobile-edit").click(function(){
+        window.location.href = "/admin/test";
+    });
+    $("#mobile-userInfo").click(function(){
+        window.location.href = "/admin/userInfo";        
+    });
+    $("#mobile-dailywrite").click(function(){
+        window.location.href = "/admin/write";        
+    });
+    $("#mobile-userInfo").click(function(){
+        window.location.href = "/admin/userInfo";        
+    });
+});
+
+
+
+
+ /*
+    $(".edit-more").click(function(){
+        $.ajax({
+            url:'/api/daily',
+            type:"POST",
+            data:{
+                title:$('#d-t').val(),
+                date:$("#d-d").val(),
+                user:$("#d-u").val()
+            },
+            dataType:"json",
+            success:function(data){
+                if(data.code === 40){
+                    window.location.href = '/admin/daily-edit';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+
     $(".deleteDaily").click(function(){
         $.ajax({
             url:"/api/dailydelete",
@@ -104,13 +131,4 @@ $(function(){
             }
         });
     });
-    $("#mobile-user").click(function(){
-        window.location.href = "/admin";
-    });
-    $("#mobile-diary").click(function(){
-        window.location.href = "/admin/diary";
-    });
-    $("#mobile-edit").click(function(){
-        window.location.href = "/admin/test";
-    });
-});
+    **/

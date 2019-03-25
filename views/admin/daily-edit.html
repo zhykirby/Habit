@@ -15,7 +15,6 @@
 </head>
 <body>
 <div id="pc">
-{% for dai in dailies %}
     <nav class='navbar navbar-default nav-border'>
         <div class="row h50">
             <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
@@ -45,7 +44,7 @@
         </div>
     </nav>
     
-       
+    {% for dai in dailies %}   
     <div id="content" class="write">
         <div class="write-title input-group">
             <span class="input-group-addon" id="basic-addon1">  修改标题  </span>
@@ -63,20 +62,18 @@
         </div>
         <div class="write-time input-group">
             <span class="input-group-addon" id="basic-addon2">修改发表时间</span>
-            <input type="date" name='dailyEdit-time' class="form-control sh50" aria-describedby="basic-addon2" placeholder="{{ dai.date }}">                      
+            <input type="datetime-local" name='dailyEdit-time' class="form-control sh50" aria-describedby="basic-addon2" placeholder="{{ dai.date }}">                      
         </div>
         <div class="submit curdiv" id="dailyEdit-sub">
             提交
         </div>
         <div>
             <input value="{{ userInfo.username }}" id="write-id" class="none">
-            <input value="{{ daily.daily_id }}" id="daily-id" class="none">
+            <input value="{{ dai.id }}" id="daily-id" class="none">
         </div>
         <div class="white"></div>
     </div>
-    {% if dai.id == daily.daily_id %} 
-    {% endif %}
-{% endfor %}    
+    {% endfor %}  
 </div>
 
 <script src="../../public/js/jquery.js"></script>

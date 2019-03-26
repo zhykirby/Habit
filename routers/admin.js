@@ -24,7 +24,14 @@ routers.get('/',function(req,res,next){
 });
 
 routers.get('/create',function(req,res,next){
-    res.render('admin/create');
+    res.render('admin/create',{
+        userInfo:req.userInfo
+    });
+});
+routers.get('/mobile-write',function(req,res,next){
+    res.render('admin/mobile-write',{
+        userInfo:req.userInfo
+    });
 });
 
 routers.get('/test',function(req,res,next){

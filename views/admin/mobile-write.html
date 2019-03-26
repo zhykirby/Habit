@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>修改个人资料</title>
+    <title>记录心得</title>
     <link rel='stylesheet' href="/public/css/mobile.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
@@ -23,29 +23,19 @@
     </div>
 </nav>
 <div id="content">
-    用户名：
-    <div class="panel panel-default">
-        <div class="panel-body">
-            {{ userInfo.username }}<span style="color:red;">（*用户名不可修改）</span>
+    <div class="form-group">
+        <label for="mobile-title">标题:</label>
+        <input type="input" class="form-control" id="mobile-title" placeholder="请输入标题">    
+    </div>
+    <div class="form-group">
+        <label for="mobile-writeContent">心得:</label>
+        <textarea id="mobile-writeContent" class="form-control" rows="8"></textarea>
+    </div>
+    <div class="form-group">
+            <label for="mobile-date">发表日期：</label>
+            <input type="datetime-local" class="form-control" id="mobile-date">    
         </div>
-    </div>
-    <div class="form-group">
-        <label for="mobile-name">昵称:</label>
-        <input type="input" class="form-control" id="mobile-name" placeholder="请输入新的昵称">    
-    </div>
-    <div class="form-group">
-        <label for="mobile-email">邮箱:</label>
-        <input type="input" class="form-control" id="mobile-email" placeholder="请输入你的邮箱">    
-    </div>
-    <div class="form-group">
-        <label for="mobile-birthday">出生日期</label>
-        <input type="date" class="form-control" id="mobile-birthday" placeholder="请输入你的出生日期">    
-    </div>
-    <div class="form-group">
-        <label for="mobile-describe">个人介绍:</label>
-        <textarea id="mobile-describe" class="form-control" rows="5"></textarea>
-    </div>
-    <button class="btn btn-default" id="userInfo-sub">提交</button>           
+    <button class="btn btn-default" id="mobileWrite-sub">提交</button>           
 </div>
 
 <input class="mobile-username" value="{{ userInfo.username }}">

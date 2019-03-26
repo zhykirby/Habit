@@ -18,6 +18,10 @@ const userSchema = new Schema({
     birthday:{
         type:String,
         default:''
+    },
+    ser:{
+        type:String,
+        default:'男'
     }
 });
 module.exports = userSchema;

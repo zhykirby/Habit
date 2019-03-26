@@ -33,15 +33,8 @@ $(function(){
         window.location.href = "/";
     });
     var i = 0;
-    $("#more").click(function(){
-        if(i === 0){
-            $("#more-content").show();
-            i = 1;
-        }
-        else{
-            $("#more-content").hide();         
-            i = 0;
-        }
+    $("#more").on('click',function(){
+        $("#more-content").animate({width:'toggle'});
     });
     
    
@@ -78,13 +71,57 @@ $(function(){
         window.location.href = "/admin/test";
     });
     $("#mobile-userInfo").click(function(){
-        window.location.href = "/admin/userInfo";        
+        window.location.href = "/admin/create";        
     });
     $("#mobile-dailywrite").click(function(){
-        window.location.href = "/admin/write";        
+        window.location.href = "/admin/mobile-write";        
     });
-    $("#mobile-userInfo").click(function(){
-        window.location.href = "/admin/userInfo";        
+    
+    $("#userInfo-sub").click(function(){
+        $.ajax({
+            url:"/api/user/userInfo",
+            type:"POST",
+            data:{
+                name:$("#mobile-name").val(),
+                birthday:$("#mobile-birthday").val(),
+                email:$("#mobile-email").val(),
+                username:$(".mobile-username").val(),
+                describtion:$("#mobile-describe").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 20){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+    $("#back").on('click',function(){
+        window.location.href = "/admin";
+    });
+    $("#mobileWrite-sub").click(function(){
+        $.ajax({
+            url:"/api/write",
+            type:"POST",
+            data:{
+                title:$("#mobile-title").val(),
+                content:$("#mobile-writeContent").val(),
+                date:$("#mobile-date").val(),
+                user:$(".mobile-username").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 30){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
     });
 });
 

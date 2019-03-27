@@ -44,6 +44,12 @@ routers.get('/write',function(req,res,next){
     res.render('admin/write',{
         userInfo:req.userInfo
     });
+});
+
+routers.get('/mobile-pwd',function(req,res,next){
+    res.render('admin/mobile-pwd',{
+        userInfo:req.userInfo
+    });
 })
 
 routers.get('/userInfo',function(req,res,next){
@@ -68,9 +74,18 @@ routers.get('/diary',function(req,res,next){
 });
 
 routers.get('/daily-edit',function(req,res,next){
-    let id = req.query.id||'';
-    Daily.find({id:id}).then(function(dailies){
+    let id = req.query.id;
+    Daily.findOne({_id:id}).then(function(dailies){
         res.render("admin/daily-edit",{
+            userInfo:req.userInfo,
+            dailies:dailies
+        });
+    });
+});
+routers.get('/mobile-edit',function(req,res,next){
+    let id = req.query.id;
+    Daily.findOne({_id:id}).then(function(dailies){
+        res.render("admin/mobile-edit",{
             userInfo:req.userInfo,
             dailies:dailies
         });
@@ -81,18 +96,7 @@ routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');
 })
 
-routers.post('/content',function(req,res,next){
-    content = new Content({
-        name:req.body.name,
-        idName:req.body.id,
-        password:req.body.password,
-        newPassword:req.body.newPassword,
-        describe:req.body.textarea
-    });
-    content.save().then(function(){
-        res.render('admin/status/success');
-    });
-});
+
 
 
 

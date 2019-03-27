@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>记录心得</title>
+    <title>编辑心得</title>
     <link rel='stylesheet' href="/public/css/mobile.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
@@ -22,23 +22,30 @@
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
     </div>
 </nav>
+
 <div id="content">
     <div class="form-group">
-        <label for="mobile-title">标题:</label>
-        <input type="input" class="form-control" id="mobile-title" placeholder="请输入标题">    
+        <label for="mobileE-title">修改标题:</label>
+        <input type="input" class="form-control" id="mobileE-title" placeholder="{{ dailies.title }}">    
     </div>
     <div class="form-group">
-        <label for="mobile-writeContent">心得:</label>
-        <textarea id="mobile-writeContent" class="form-control" rows="8"></textarea>
+        <label for="mobileE-writeContent">修改心得:</label>
+        <textarea id="mobileE-writeContent" class="form-control" rows="8">
+            {{ dailies.content }}
+        </textarea>
     </div>
     <div class="form-group">
-            <label for="mobile-date">发表日期：</label>
-            <input type="datetime-local" class="form-control" id="mobile-date">    
+            <label for="mobileE-date">修改日期：</label>
+            <input type="datetime-local" class="form-control" id="mobileE-date">    
         </div>
-    <button class="btn btn-default mb" id="mobileWrite-sub">提交</button>           
+    <button class="btn btn-default mb" id="mobileE-sub">提交</button>    
+    
+    <input class="mobile-username" value="{{ userInfo.username }}">
+    <input class="mobile-dailyid" value="{{ dailies._id }}">
 </div>
 
-<input class="mobile-username" value="{{ userInfo.username }}">
+
+
 
 
 

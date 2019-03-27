@@ -43,7 +43,7 @@
 			<div class="login-center clearfix">
 				<div class="login-center-img"><img src="/public/css/image/name.png"/></div>
 				<div class="login-center-input">
-					<input type="text" name="username" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
+					<input type="text" name="username" value="" placeholder="请输入您的用户名,不能使用汉字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
 					<div class="login-center-input-text">用户名</div>
 				</div>
 			</div>
@@ -109,7 +109,7 @@
 					removeClass(document.querySelector(".login"), "active")
 					removeClass(document.querySelector(".sk-rotating-plane"), "active")
 					document.querySelector(".login").style.display = "block"	
-				},5000)
+				},3000)
 		}
 		
 </script>

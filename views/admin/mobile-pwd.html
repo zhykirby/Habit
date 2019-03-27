@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>记录心得</title>
+    <title>编辑心得</title>
     <link rel='stylesheet' href="/public/css/mobile.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
@@ -22,23 +22,27 @@
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
     </div>
 </nav>
+
 <div id="content">
     <div class="form-group">
-        <label for="mobile-title">标题:</label>
-        <input type="input" class="form-control" id="mobile-title" placeholder="请输入标题">    
+        <label for="mobile-opwd">输入旧密码：</label>
+        <input type="password" class="form-control" id="mobile-opwd">    
     </div>
     <div class="form-group">
-        <label for="mobile-writeContent">心得:</label>
-        <textarea id="mobile-writeContent" class="form-control" rows="8"></textarea>
+        <label for="mobile-npwd">输入新密码：</label>
+        <input type="password" class="form-control" id="mobile-npwd">    
     </div>
     <div class="form-group">
-            <label for="mobile-date">发表日期：</label>
-            <input type="datetime-local" class="form-control" id="mobile-date">    
-        </div>
-    <button class="btn btn-default mb" id="mobileWrite-sub">提交</button>           
+        <label for="mobile-cpwd">再次输入新密码：</label>
+        <input type="password" class="form-control" id="mobile-cpwd">    
+    </div>
+    <button class="btn btn-default mb" id="mobilep">提交</button>    
+    <div></div>
+    <input class="mobile-username" value="{{ userInfo.username }}">
 </div>
 
-<input class="mobile-username" value="{{ userInfo.username }}">
+
+
 
 
 

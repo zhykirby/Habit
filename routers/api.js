@@ -59,17 +59,17 @@ routers.post('/user/register',function(req,res,next){
             responseData.code = 5;
             responseData.message = '用户名已存在';
             res.json(responseData);
+            return;
         }else{
             let user = new User({
                 username:username,
                 password:password
             });
-            return user.save();
+            user.save();
+            responseData.code = 0;
+            responseData.message = '注册成功！';
+            res.json(responseData);
         }
-    }).then(function(newUser){
-        responseData.code = 0;
-        responseData.message = '注册成功！';
-        res.json(responseData);
     }).catch(function(error){
         console.log(error);
     });
@@ -165,13 +165,11 @@ routers.post("/write",function(req,res,next){
     let content = req.body.content;
     let date = req.body.date;
     let user = req.body.user;
-    let id = user+title+date;
     const daily = new Daily({
         user:user,
         title:title,
         content:content,
         date:date,
-        id:id
     });
     daily.save();
     responseData.code = 30;
@@ -183,9 +181,8 @@ routers.post("/dailyedit",function(req,res,next){
     let title = req.body.title;
     let content = req.body.content;
     let date = req.body.date;
-    let user = req.body.user;
     let id = id;
-    Daily.find({id:id}).then(function(dailies){
+    Daily.findById(id).then(function(dailies){
         dailies.title = title;
         dailies.content = content;
         dailies.date = date;
@@ -199,6 +196,44 @@ routers.post("/dailyedit",function(req,res,next){
     });       
 });
 
+routers.post("/changePwd",function(req,res,next){
+    let opwd = req.body.opwd;
+    let npwd = req.body.npwd;
+    let cpwd = req.body.cpwd;
+    let username = req.body.user;
+    if(opwd === "" || npwd === "" || cpwd === ""){
+        responseData.code = 51;
+        responseData.message = "输入不得为空";
+        res.json(responseData);
+        return;
+    }
+    if(npwd != cpwd){
+        responseData = 52;
+        responseData.message = "两次输入密码不一致";
+        res.json(responseData);
+        return;
+    }
+    User.findOne({
+        username:username
+    }).then(function(users){
+        if(opwd != users.passWord){
+            responseData.code = 53;
+            responseData.message = "输入密码错误";
+            res.json(responseData);
+            return;
+        }
+        else{
+            users.passWord = npwd;
+            users.save();
+            responseData.code = 50;
+            responseData.message = "修改成功~";
+            res.json(responseData);
+            return;
+        }
+    }).catch(function(e){
+        console.log(e);
+    });
+});
 
 
 module.exports = routers;

@@ -58,12 +58,12 @@ $(function(){
                     clearTimeout;
                     setTimeout(function(){
                         window.location.href='/admin';
-                    },4900)
+                    },2900)
                 }
                 clearTimeout;
                 setTimeout(function(){
                     $('#log-but').next().html("<font color='red'>"+data.message+"</font>");
-                },5000);
+                },3000);
             },
             error:function(err){
                 throw err;

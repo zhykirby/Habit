@@ -123,6 +123,53 @@ $(function(){
             }
         });
     });
+
+    $("#dailyEdit-sub").click(function(){
+        $.ajax({
+            url:"/api/dailyedit",
+            type:"POST",
+            data:{
+                title:$("#mobileE-title").val(),
+                content:$("#mobileE-writeContent").val(),
+                date:$("#mobileE-date").val(),
+                id:$(".mobile-dailyid").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 41){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
+    $("#mobilep").click(function(){
+        $.ajax({
+            url:"/api/changePwd",
+            type:"POST",
+            data:{
+                opwd:$("#mobile-opwd").val(),
+                npwd:$("#mobile-npwd").val(),
+                cpwd:$("#mobile-cpwd").val(),
+                user:$(".mobile-username").val()
+            },
+            dataType:'json',
+            success:function(data){
+                $('#mobilep').next().html("<font color='red'>"+data.message+"</font>");
+                clearTimeout;
+                if(data.code === 50){
+                    setTimeout(function(){
+                        window.location.href = "/admin/status/success";
+                    },1000);
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
 });
 
 

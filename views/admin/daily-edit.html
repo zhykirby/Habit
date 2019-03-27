@@ -44,36 +44,36 @@
         </div>
     </nav>
     
-    {% for dai in dailies %}   
+       
     <div id="content" class="write">
         <div class="write-title input-group">
             <span class="input-group-addon" id="basic-addon1">  修改标题  </span>
-            <input type="text" name='dailyEdit-title' class="form-control sh50" aria-describedby="basic-addon1" placeholder="{{ dai.title }}">                      
+            <input type="text" name='dailyEdit-title' class="form-control sh50" aria-describedby="basic-addon1" placeholder="{{ dailies.title }}">                      
         </div>
         <div class="write-content">
             <div class="panel panel-default">
                 <div class="panel-heading">修改心得</div>
                 <div class="panel-body">
                     <textarea name="dailyEdit-content" class="editContent">
-                        {{ dai.content }}
+                        {{ dailies.content }}
                     </textarea>
                 </div>
             </div>
         </div>
         <div class="write-time input-group">
             <span class="input-group-addon" id="basic-addon2">修改发表时间</span>
-            <input type="datetime-local" name='dailyEdit-time' class="form-control sh50" aria-describedby="basic-addon2" placeholder="{{ dai.date }}">                      
+            <input type="datetime-local" name='dailyEdit-time' class="form-control sh50" aria-describedby="basic-addon2">                      
         </div>
         <div class="submit curdiv" id="dailyEdit-sub">
             提交
         </div>
         <div>
             <input value="{{ userInfo.username }}" id="write-id" class="none">
-            <input value="{{ dai.id }}" id="daily-id" class="none">
+            <input value="{{ dailies._id }}" id="daily-id" class="none">
         </div>
         <div class="white"></div>
     </div>
-    {% endfor %}  
+     
 </div>
 
 <script src="../../public/js/jquery.js"></script>

@@ -80,7 +80,7 @@
     #mobile-none{display: flex;border-top: 1px solid gray;}
     #mobile-img{width:100vw;height: 130px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
     #mobile-title{width:100vw;height: 50px;text-align: center;font-size: 2em;}
-    #mobile-null{width: 100vw;height: 100px;font-size: 4rem;visibility: hidden;}
+    #mobile-null{width: 100vw;height: 100px;font-size: 4rem;display: none;}
 
     .active{background: #c0c0c0;color: #fff;}
 

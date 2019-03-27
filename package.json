@@ -1,6 +1,6 @@
 {
     "name": "habit",
-    "version": "0.7.3",
+    "version": "0.7.4",
     "description": "manage your life with Habit!",
     "scripts": {
         "start": "node app.js"

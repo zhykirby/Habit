@@ -216,14 +216,14 @@ routers.post("/changePwd",function(req,res,next){
     User.findOne({
         username:username
     }).then(function(users){
-        if(opwd != users.passWord){
+        if(opwd != users.password){
             responseData.code = 53;
             responseData.message = "输入密码错误";
             res.json(responseData);
             return;
         }
         else{
-            users.passWord = npwd;
+            users.password = npwd;
             users.save();
             responseData.code = 50;
             responseData.message = "修改成功~";

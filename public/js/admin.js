@@ -161,7 +161,7 @@ $(function(){
                 clearTimeout;
                 if(data.code === 50){
                     setTimeout(function(){
-                        window.location.href = "/admin/status/success";
+                        window.location.href = "/admin";
                     },1000);
                 }
             },

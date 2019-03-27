@@ -1,7 +1,7 @@
 {
-    "name": "codex",
-    "version": "0.6.9",
-    "description": "manage your life",
+    "name": "habit",
+    "version": "0.7.3",
+    "description": "manage your life with Habit!",
     "scripts": {
         "start": "node app.js"
     },

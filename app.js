@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const swig = require('swig');
 const Cookies = require('cookies');
-const User = require('./models/User')
 
 app = express();
 

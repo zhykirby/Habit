@@ -3,8 +3,6 @@ const routers = express.Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const Daily = require('../models/Daily');
-const mongoose = require('mongoose');
-
 var responseData;
 
 routers.use(function(req,res,next){
@@ -16,8 +14,7 @@ routers.use(function(req,res,next){
         daily_id:''
     };
     next();
-})
-
+});
 routers.post('/user/register',function(req,res,next){
     let username = req.body.username;
     let password = req.body.password;
@@ -74,7 +71,6 @@ routers.post('/user/register',function(req,res,next){
         console.log(error);
     });
 });
-
 routers.post('/user/login',function(req,res,next){
     let username = req.body.userName;
     let password = req.body.passWord;
@@ -111,7 +107,7 @@ routers.post('/user/login',function(req,res,next){
                 user:true
             };
             const secret = 'howie';
-            const token = jwt.sign(payload,secret,{expiresIn:60*60*1});
+            const token = jwt.sign(payload,secret,{expiresIn:'1h'});
             responseData.code = 10;
             responseData.message = '登录成功~';
             responseData.token = token;
@@ -136,7 +132,6 @@ routers.post('/user/login',function(req,res,next){
         console.log(error);
     });
 });
-
 routers.post('/user/userInfo',function(req,res,next){ 
     let name = req.body.name;
     let birthday = req.body.birthday;
@@ -159,7 +154,6 @@ routers.post('/user/userInfo',function(req,res,next){
         console.log(err);
     });
 });
-
 routers.post("/write",function(req,res,next){
     let title = req.body.title;
     let content = req.body.content;
@@ -176,7 +170,6 @@ routers.post("/write",function(req,res,next){
     responseData.message = "保存成功";
     res.json(responseData);    
 });
-
 routers.post("/dailyedit",function(req,res,next){
     let title = req.body.title;
     let content = req.body.content;
@@ -195,7 +188,6 @@ routers.post("/dailyedit",function(req,res,next){
         console.log(e);
     });       
 });
-
 routers.post("/changePwd",function(req,res,next){
     let opwd = req.body.opwd;
     let npwd = req.body.npwd;
@@ -234,34 +226,4 @@ routers.post("/changePwd",function(req,res,next){
         console.log(e);
     });
 });
-
-
 module.exports = routers;
-
-
-/*
-routers.post("/daily",function(req,res,next){
-    let daily_title = req.body.title;
-    let daily_date = req.body.date;
-    let daily_user = req.body.user;
-    let daily_id = daily_user+daily_title+daily_date;
-    responseData.code = 40;
-    req.cookies.set('daily',JSON.stringify({
-        daily_id:daily_id
-    }));
-    res.json(responseData);
-});
-
-
-routers.post("/dailydelete",function(req,res,next){
-    let id = req.body.id;
-    Daily.find({id:id}).then(function(dailies){
-        dailies.remove();
-    }).catch(function(e){
-        console.log(e);
-    });
-    responseData.code = 42;
-    responseData.message = "删除成功";
-    res.json(responseData);
-})
-**/

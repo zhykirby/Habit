@@ -42,66 +42,118 @@
             </div>       
         </div>
     </nav>
-    <div id='content'>
-        <div id="null">
-            <p>还没开始记录呢~</p>
+    <div class="flex">
+        <div id="more-content">
+            <div class="flex-s">
+                <div class="contentChoice curdiv" id="choice1">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    个人中心
+                </div>
+                <div id="forChoice1" class="forc">
+                    <div class="forChoice curdiv" id="choice11">个人中心</div>
+                    <div class="forChoice curdiv" id="choice12">编辑资料</div>
+                    <div class="forChoice curdiv" id="choice13">修改密码</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice2">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </div>
+                    个人心得
+                </div>
+                <div id="forChoice2" class="forc">
+                    <div class="forChoice curdiv" id="choice21">个人心得</div>
+                    <div class="forChoice curdiv" id="choice22">添加心得</div>
+                    <div class="forChoice curdiv" id="choice23">编辑心得</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice3">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                    </div>
+                    Habit
+                </div>
+                <div id="forChoice3" class="forc">
+                    <div class="forChoice curdiv" id="choice31">Habit</div>
+                    <div class="forChoice curdiv" id="choice32">添加Habit</div>
+                    <div class="forChoice curdiv" id="choice33">编辑Habit</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice4">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                    </div>
+                    关于我们
+                </div>
+                <div class="contentChoice curdiv" id="choice5">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </div>
+                    退出登录
+                </div>
+            </div>
         </div>
-    <script> 
-        var i = 1 ;
-    </script>
-    {% for daily in dailies %}
-    <script>
-        i = i + 1;
-    </script>
-    {% endfor %}
-    <script>
-        if(i === 1){
-            $("#null").show();
-            $("#content").css('height','100vh');
-        }
-        else{
-            $("#null").hide();
-            $("#content").css('height','calc(100vh + '+400*(i-2)+'px');
-        }
-    </script>
-    {% for daily in dailies %}
-        <div class="daily">
-            <div class="daily-title">
-                <span>{{ daily.title }}</span>
-                <input value="{{ daily.title }}" class="none" id="d-t">
+        <div id='content' class="fixed">
+            <div id="null">
+                <p>还没开始记录呢~</p>
             </div>
-            <div class="daily-date">
-                <span>{{ daily.date }}</span>
-                <input value="{{ daily.date }}" class="none" id="d-d">
-            </div>
-            <div class="daily-content">
-                <p>{{ daily.content }}</p>
-                <input value="{{ daily.content }}" class="none" id="d-c">
-            </div>
-            <div class="daily-hide">
-                <span>……</span>
-            </div>
-            <div style="display:flex;flex-flow:row nowrap;width: 100%;height: 100px;;">
-                <div class="edit-more curdiv">
-                    <a href="/admin/daily-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
+        <script> 
+            var i = 1 ;
+        </script>
+        {% for daily in dailies %}
+        <script>
+            i = i + 1;
+        </script>
+        {% endfor %}
+        <script>
+            if(i === 1){
+                $("#null").show();
+                $("#content").css('height','100vh');
+            }
+            else{
+                $("#null").hide();
+                $("#content").css('height','calc(100vh + '+400*(i-2)+'px');
+            }
+        </script>
+        {% for daily in dailies %}
+            <div class="daily">
+                <div class="daily-title">
+                    <span>{{ daily.title }}</span>
+                    <input value="{{ daily.title }}" class="none" id="d-t">
                 </div>
-                <div class="read-more curdiv">
-                    <a class="daily-a">阅读更多</a>
+                <div class="daily-date">
+                    <span>{{ daily.date }}</span>
+                    <input value="{{ daily.date }}" class="none" id="d-d">
                 </div>
-                <div class="deleteDaily curdiv">
-                    删除
+                <div class="daily-content">
+                    <p>{{ daily.content }}</p>
+                    <input value="{{ daily.content }}" class="none" id="d-c">
                 </div>
-                <input value="{{ daily.user }}" class="none" id="d-u">
-                <input value="{{ daily._id }}" class="none" id="d-i">
-            </div>
-        </div>      
-    {% endfor %}
+                <div class="daily-hide">
+                    <span>……</span>
+                </div>
+                <div style="display:flex;flex-flow:row nowrap;width: 100%;height: 100px;;">
+                    <div class="edit-more curdiv">
+                        <a href="/admin/daily-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
+                    </div>
+                    <div class="read-more curdiv">
+                        <a class="daily-a">阅读更多</a>
+                    </div>
+                    <div class="deleteDaily curdiv">
+                        删除
+                    </div>
+                    <input value="{{ daily.user }}" class="none" id="d-u">
+                    <input value="{{ daily._id }}" class="none" id="d-i">
+                </div>
+            </div>      
+        {% endfor %}
+        </div>
     </div>
 </div>
 <!--mobile-->
 <div id="mobile">
-    <div id="mobile-content">
-        <div>
+    <div id="mobile-content"  class="mobile-diary">
+        <div id="mobile-title">个人心得</div>
+        <div class="jintianhaoleia">
             <div id="mobile-null">
                 <span>还没开始记录呢~</span>
             </div>
@@ -119,6 +171,8 @@
             }
             else{
                 $("#mobile-null").hide();
+                $("#mobile-content").css('height','calc(100vh + '+264*(j-3)+'px - 60px');
+                
             }
         </script>
         {% for daily in dailies %}
@@ -136,7 +190,7 @@
                     <input value="{{ daily.content }}" class="none" id="md-c">
                 </div>
                 <div class="mobileDaily-hide">
-                    <span>……</span>
+                    <span>…………</span>
                 </div>
                 <div style="display:flex;flex-flow:row nowrap;width: 100%;">
                     <div class="dailyRead">

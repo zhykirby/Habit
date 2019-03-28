@@ -170,49 +170,22 @@ $(function(){
             }
         });
     });
+    $("#choice1").on('click',function(){
+        $("#forChoice1").slideToggle();
+    });
+    $("#choice2").on('click',function(){
+        $("#forChoice2").slideToggle();
+    });
+    $("#choice3").on('click',function(){
+        $("#forChoice3").slideToggle();
+    });
+    $("#choice11").on('click',function(){
+        window.location.href="/admin";
+    });
+    $("#choice12").on('click',function(){
+        window.location.href="/admin/userInfo";
+    });
+    $("#choice13").on('click',function(){
+        window.location.href="/admin/pwd";
+    });
 });
-
-
-
-
- /*
-    $(".edit-more").click(function(){
-        $.ajax({
-            url:'/api/daily',
-            type:"POST",
-            data:{
-                title:$('#d-t').val(),
-                date:$("#d-d").val(),
-                user:$("#d-u").val()
-            },
-            dataType:"json",
-            success:function(data){
-                if(data.code === 40){
-                    window.location.href = '/admin/daily-edit';
-                }
-            },
-            error:function(err){
-                throw err;
-            }
-        });
-    });
-
-    $(".deleteDaily").click(function(){
-        $.ajax({
-            url:"/api/dailydelete",
-            type:"POST",
-            data:{
-                id:$("#d-i").val()
-            },
-            dataType:'json',
-            success:function(data){
-                if (data.code === 42){
-                    window.location.href = '/admin/status/success';
-                }
-            },
-            error:function(err){
-                throw err;
-            }
-        });
-    });
-    **/

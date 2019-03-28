@@ -4,7 +4,6 @@ const routers = express.Router();
 const Content = require('../models/Content');
 const User = require('../models/User');
 const Daily = require('../models/Daily');
-const mongoose = require('mongoose');
 
 routers.get('/',function(req,res,next){
     jwt.verify(req.userInfo.token,'howie',function(err,decode){
@@ -35,9 +34,16 @@ routers.get('/mobile-write',function(req,res,next){
 });
 
 routers.get('/test',function(req,res,next){
-    res.render('admin/test',{
-        userInfo:req.userInfo
-    });
+    jwt.verify(req.userInfo.token,'howie',function(err,decode){
+        if(err){
+            console.log('error')
+            res.render('main/index');
+        }else{
+            res.render('admin/test',{
+                userInfo:req.userInfo
+            });    
+        }
+    }); 
 });
 
 routers.get('/write',function(req,res,next){
@@ -48,6 +54,11 @@ routers.get('/write',function(req,res,next){
 
 routers.get('/mobile-pwd',function(req,res,next){
     res.render('admin/mobile-pwd',{
+        userInfo:req.userInfo
+    });
+});
+routers.get('/pwd',function(req,res,next){
+    res.render('admin/pwd',{
         userInfo:req.userInfo
     });
 })
@@ -65,12 +76,19 @@ routers.get('/userInfo',function(req,res,next){
 });
 
 routers.get('/diary',function(req,res,next){
-    Daily.find({user:req.userInfo.username}).then(function(dailies){
-        res.render('admin/diary',{
-            userInfo:req.userInfo,
-            dailies:dailies
-        });
-    });
+    jwt.verify(req.userInfo.token,'howie',function(err,decode){
+        if(err){
+            console.log('error')
+            res.render('main/index');
+        }else{
+            Daily.find({user:req.userInfo.username}).then(function(dailies){
+                res.render('admin/diary',{
+                    userInfo:req.userInfo,
+                    dailies:dailies
+                });
+            });    
+        }
+    }); 
 });
 
 routers.get('/daily-edit',function(req,res,next){

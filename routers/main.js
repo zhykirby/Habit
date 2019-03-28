@@ -2,6 +2,7 @@ const express = require('express');
 const routers = express.Router();
 
 routers.get('/',function(req,res,next){
+    req.cookies.set('userInfo',{});
     res.render('main/index',{
         userInfo:req.userInfo
     });

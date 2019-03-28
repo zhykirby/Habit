@@ -10,7 +10,7 @@
     <style>
 
         #content{
-            width:802px;border: 1px solid black;border-top: 0;border-bottom: 0;display: flex;flex-wrap: wrap;
+            height:1020px;width:802px;border: 1px solid black;border-top: 0;border-bottom: 0;display: flex;flex-wrap: wrap;
         }
         [name=describtion]{height: 150px;}
         [name=userDes]{height: 130px;width: 600px;}
@@ -48,52 +48,103 @@
 </nav>
 {% for user in users %}
 {% if user._id == userInfo._id %}
-<div id='content' style="height:1000px;">
-    <div id='tou'></div>
-    <div id="userInput">
-        <div class="surround">
-            <div class="userInput">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                    用户名：{{ userInfo.username }}（*用户名不可修改）
+<div class="flex">
+    <div id="more-content">
+        <div class="flex-s">
+            <div class="contentChoice curdiv" id="choice1">
+                <div class="sp10">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </div>
+                个人中心
+            </div>
+            <div id="forChoice1" class="forc">
+                <div class="forChoice curdiv" id="choice11">个人中心</div>
+                <div class="forChoice curdiv" id="choice12">编辑资料</div>
+                <div class="forChoice curdiv" id="choice13">修改密码</div>
+            </div>
+            <div class="contentChoice curdiv" id="choice2">
+                <div class="sp10">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </div>
+                个人心得
+            </div>
+            <div id="forChoice2" class="forc">
+                <div class="forChoice curdiv" id="choice21">个人心得</div>
+                <div class="forChoice curdiv" id="choice22">添加心得</div>
+                <div class="forChoice curdiv" id="choice23">编辑心得</div>
+            </div>
+            <div class="contentChoice curdiv" id="choice3">
+                <div class="sp10">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                </div>
+                Habit
+            </div>
+            <div id="forChoice3" class="forc">
+                <div class="forChoice curdiv" id="choice31">Habit</div>
+                <div class="forChoice curdiv" id="choice32">添加Habit</div>
+                <div class="forChoice curdiv" id="choice33">编辑Habit</div>
+            </div>
+            <div class="contentChoice curdiv" id="choice4">
+                <div class="sp10">
+                    <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                </div>
+                关于我们
+            </div>
+            <div class="contentChoice curdiv" id="choice5">
+                <div class="sp10">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                </div>
+                退出登录
+            </div>
+        </div>
+    </div>
+    <div id='content'>
+        <div id='tou'></div>
+        <div id="userInput">
+            <div class="surround">
+                <div class="userInput">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                        用户名：{{ userInfo.username }}（*用户名不可修改）
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="surround">
+                <div class="userInput input-group">
+                    <span class="input-group-addon" id="basic-addon1">昵称</span>
+                    <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">              
+                </div>
+            </div>
+            <div class="surround">
+                <div class="userInput input-group">
+                    <span class="input-group-addon" id="basic-addon2">出生日期</span>
+                    <input type="date" name='birthday' class="form-control sh50" aria-describedby="basic-addon2">
+                </div>
+            </div>
+            <div class="surround">
+                <div class="userInput input-group">
+                    <span class="input-group-addon" id="basic-addon3">邮箱</span>
+                    <input type="email" name='email' placeholder="{{ user.email }}" class="form-control sh50" aria-describedby="basic-addon3">
+                </div>            
+            </div>
+            <div class="surround" style="height:200px;">
+                <div class="userInput input-group" name='describtion'>
+                    <span>个人介绍：</span>
+                    <textarea class='userDes' name='userDes' placeholder="{{ user.describtion }}" aria-describedby="basic-addon4"></textarea>
+                </div>
+            </div>
+            <div class="surronud" class='sh50' id="userInfoSub">
+                <div class="submit curdiv">提交</div>
+            </div>
         </div>
         
-        <div class="surround">
-            <div class="userInput input-group">
-                <span class="input-group-addon" id="basic-addon1">昵称</span>
-                <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">              
-            </div>
+        <div id='username'>
+            <input name="username" value="{{ user.username }}">
         </div>
-        <div class="surround">
-            <div class="userInput input-group">
-                <span class="input-group-addon" id="basic-addon2">出生日期</span>
-                <input type="date" name='birthday' class="form-control sh50" aria-describedby="basic-addon2">
-            </div>
-        </div>
-        <div class="surround">
-            <div class="userInput input-group">
-                <span class="input-group-addon" id="basic-addon3">邮箱</span>
-                <input type="email" name='email' placeholder="{{ user.email }}" class="form-control sh50" aria-describedby="basic-addon3">
-            </div>            
-        </div>
-        <div class="surround" style="height:200px;">
-            <div class="userInput input-group" name='describtion'>
-                <span>个人介绍：</span>
-                <textarea class='userDes' name='userDes' placeholder="{{ user.describtion }}" aria-describedby="basic-addon4"></textarea>
-            </div>
-        </div>
-        <div class="surronud" class='sh50' id="userInfoSub">
-            <div class="submit curdiv">提交</div>
-        </div>
+        
     </div>
-    
-    <div id='username'>
-        <input name="username" value="{{ user.username }}">
-    </div>
-    
 </div>
 {% endif %}
 {% endfor %}

@@ -185,7 +185,5 @@ $(function(){
     $("#choice12").on('click',function(){
         window.location.href="/admin/userInfo";
     });
-    $("#choice13").on('click',function(){
-        window.location.href="/admin/pwd";
-    });
+    
 });

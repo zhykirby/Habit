@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>修改密码</title>
+    <title>我的资料</title>
     <link rel='stylesheet' href="/public/css/mobile.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
@@ -12,6 +12,8 @@
             margin-bottom: 0;
             position: relative;
             width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
         }
                     
     </style>
@@ -21,24 +23,35 @@
     <div id="back" class="sp11">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
     </div>
+    <div class="mobile-title">个人资料</div>
 </nav>
 
-<div id="content">
-    <div class="form-group">
-        <label for="mobile-opwd">输入旧密码：</label>
-        <input type="password" class="form-control" id="mobile-opwd">    
+<div id="user-content">
+    <div class="user-img"></div>
+{% for user in users %}
+    
+    {% if user._id == userInfo._id %}
+    <div class="user-content">
+        用户名：
+        <div class="mla">{{ user.username }}</div>
     </div>
-    <div class="form-group">
-        <label for="mobile-npwd">输入新密码：</label>
-        <input type="password" class="form-control" id="mobile-npwd">    
+    <div class="user-content">
+        昵称：
+        <div class="mla">{{ user.name }}</div>
     </div>
-    <div class="form-group">
-        <label for="mobile-cpwd">再次输入新密码：</label>
-        <input type="password" class="form-control" id="mobile-cpwd">    
+    <div class="user-content">
+        生日：
+        <div class="mla">{{ user.birthday }}</div>
     </div>
-    <button class="btn btn-default mb" id="mobilep">提交</button>    
-    <div></div>
-    <input class="mobile-username" value="{{ userInfo.username }}">
+    <div class="user-content">
+        邮箱： 
+        <div class="mla">{{ user.email }}</div>
+    </div>
+    <div class="user-des">
+        简介： {{ user.describtion }}
+    </div>
+    {% endif %}
+{% endfor %}
 </div>
 
 

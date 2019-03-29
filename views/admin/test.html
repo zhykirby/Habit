@@ -65,10 +65,9 @@
                     </div>
                     个人心得
                 </div>
-                <div id="forChoice2" class="forc">
+                <div id="forChoice2" class="forcc">
                     <div class="forChoice curdiv" id="choice21">个人心得</div>
                     <div class="forChoice curdiv" id="choice22">添加心得</div>
-                    <div class="forChoice curdiv" id="choice23">编辑心得</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice3">
                     <div class="sp10">
@@ -76,10 +75,9 @@
                     </div>
                     Habit
                 </div>
-                <div id="forChoice3" class="forc">
+                <div id="forChoice3" class="forcc">
                     <div class="forChoice curdiv" id="choice31">Habit</div>
                     <div class="forChoice curdiv" id="choice32">添加Habit</div>
-                    <div class="forChoice curdiv" id="choice33">编辑Habit</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice4">
                     <div class="sp10">
@@ -98,22 +96,68 @@
         <div id="content">
         
         </div>
+    </div>    
 </div>
 <!--mobile-->
 <div id="mobile">
-    <div id="mobile-content">
-        还在写呢！
-        <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
-            <div class="vw34" id="mobile-user">
-                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+    <div id="mobile-title" class="flex now">
+        <div id="showMore">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </div>
+        Habit
+    </div>
+    <div class="mobile-add">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </div>
+    <div class="flex now">
+        <div id="mobile-more">
+            <div class="more-UI">
+                <div class="more-img"></div>
+                <div class="more-p">
+                {% for user in users %}
+                    {{ user.name }}
+                {% endfor %}
+                </div>
             </div>
-            <div class="vw33" id="mobile-diary">
-                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+            <div class="more-choice" id="mChoice1">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </div>
+                我的资料
             </div>
-            <div class="vw33 active" id="mobile-edit">
-                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+            <div class="more-choice" id="mChoice2">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
+                </div>
+                添加Habit
             </div>
-        </nav>
+            <div class="more-choice" id="mChoice3">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-superscript" aria-hidden="true"></span>
+                </div>
+                添加心得
+            </div>
+            <div class="more-choice" id="mChoice4">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                </div>
+                关于我们
+            </div>
+        </div>
+        <div id="mobile-content">
+            还在写呢！
+            <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
+                <div class="vw34" id="mobile-user">
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+                <div class="vw33" id="mobile-diary">
+                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                </div>
+                <div class="vw33 active" id="mobile-edit">
+                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                </div>
+            </nav>
+        </div>
     </div>
 </div>
 

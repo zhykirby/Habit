@@ -19,7 +19,7 @@ const userSchema = new Schema({
         type:String,
         default:''
     },
-    ser:{
+    sex:{
         type:String,
         default:'男'
     }

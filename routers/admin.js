@@ -16,11 +16,19 @@ routers.get('/',function(req,res,next){
                     userInfo:req.userInfo,
                     users:users
                 });
-            })
+            });
             
         }
     });      
 });
+routers.get("/mobile-user",function(req,res,next){
+    User.find().then(function(users){
+        res.render('admin/mobile-user',{
+            userInfo:req.userInfo,
+            users:users
+        });
+    });
+})
 
 routers.get('/create',function(req,res,next){
     res.render('admin/create',{
@@ -39,13 +47,21 @@ routers.get('/test',function(req,res,next){
             console.log('error')
             res.render('main/index');
         }else{
-            res.render('admin/test',{
-                userInfo:req.userInfo
-            });    
+            User.findOne({username:req.userInfo.username}).then(function(users){
+                res.render("admin/test",{
+                    userInfo:req.userInfo,
+                    users:users
+                });
+            });
         }
     }); 
 });
-
+routers.get("/mobile-about",function(req,res,next){
+    res.render("admin/mobile-about");
+});
+routers.get("/about",function(req,res,next){
+    res.render("admin/about");
+});
 routers.get('/write',function(req,res,next){
     res.render('admin/write',{
         userInfo:req.userInfo

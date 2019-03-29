@@ -63,10 +63,9 @@
                     </div>
                     个人心得
                 </div>
-                <div id="forChoice2" class="forc">
+                <div id="forChoice2" class="forcc">
                     <div class="forChoice curdiv" id="choice21">个人心得</div>
                     <div class="forChoice curdiv" id="choice22">添加心得</div>
-                    <div class="forChoice curdiv" id="choice23">编辑心得</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice3">
                     <div class="sp10">
@@ -74,10 +73,9 @@
                     </div>
                     Habit
                 </div>
-                <div id="forChoice3" class="forc">
+                <div id="forChoice3" class="forcc">
                     <div class="forChoice curdiv" id="choice31">Habit</div>
                     <div class="forChoice curdiv" id="choice32">添加Habit</div>
-                    <div class="forChoice curdiv" id="choice33">编辑Habit</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice4">
                     <div class="sp10">
@@ -119,9 +117,9 @@
                    <div class="cards curdiv" onclick="window.location.href='/admin/userInfo'">编辑个人资料页（占位）</div>               
                    <div class="cards curdiv">添加Habit</div>               
                    <div class="cards curdiv" onclick="window.location.href='/admin/write'">记录心得</div>               
-                   <div class="cards curdiv">仍在开发</div>               
-                   <div class="cards curdiv">仍在开发</div>               
-                   <div class="cards curdiv">修改密码</div>               
+                   <div class="cards curdiv">仍在开发</div>                             
+                   <div class="cards curdiv">修改密码</div>         
+                   <div class="cards curdiv" onclick="window.location.href='/admin/about'">关于我们</div>       
                </div>
            </div>
         </div>
@@ -130,104 +128,108 @@
 </div>
 <!-- mobile-->
 <div id="mobile">
-    <div id="mobile-content" class="white">
-        <div id="mobile-title">个人中心</div>
-        <div id="mobile-img">
-            <div class="mobile-image"></div>
-            <div class="mobile-username">
-            {% for user in users %}
-                {% if user._id == userInfo._id %}
-                <span class="sp1">
-                    {{ user.name }}
-                </span>
-                <span class="sp2">
-                    {{ user.username }}
-                </span>
-                {% endif %}
-            {% endfor %}
-            </div>
-            <div class="sp3">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    <div id="mobile-title">个人中心</div>
+    <div class="flex now">
+        <div class="layer-g">
+            <div id="mobile-content" class="white">
+                <div id="mobile-img">
+                    <div class="mobile-image"></div>
+                    <div class="mobile-username">
+                    {% for user in users %}
+                        {% if user._id == userInfo._id %}
+                        <span class="sp1">
+                            {{ user.name }}
+                        </span>
+                        <span class="sp2">
+                            {{ user.username }}
+                        </span>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                    <div class="sp3" onclick="window.location.href='/admin/mobile-user'">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="gap"></div>
+                <div class="h60" id="mobile-userInfo">
+                    <div class="flex">
+                        <div class="sp5">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </div>
+                        <div class="sp6">
+                            修改资料
+                        </div>
+                    </div>
+                    <div class="sp4">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="h60">
+                    <div class="flex">
+                        <div class="sp5">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        </div>
+                        <div class="sp6 border1">
+                            添加Habit
+                        </div>
+                    </div>
+                    <div class="sp4">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="h60">
+                    <div class="flex">
+                        <div class="sp5">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </div>
+                        <div class="sp6 border1" id="mobile-dailywrite">
+                            记录心得
+                        </div>
+                    </div>
+                    <div class="sp4">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="h60 border" onclick="window.location.href='/admin/mobile-pwd'">
+                    <div class="flex">
+                        <div class="sp5">
+                            <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                        </div>
+                        <div class="sp6 border1">
+                            修改密码
+                        </div>
+                    </div>
+                    <div class="sp4">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="gap"></div>
+                <div class="h60 border" onclick="window.location.href='/'">
+                    <div class="flex">
+                        <div class="sp5">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </div>
+                        <div class="sp6">
+                            退出登录
+                        </div>
+                    </div>
+                    <div class="sp4">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
+                    <div class="vw34 active" id="mobile-user">
+                        <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                    </div>
+                    <div class="vw33" id="mobile-diary">
+                        <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                    </div>
+                    <div class="vw33" id="mobile-edit">
+                        <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                    </div>
+                </nav>
             </div>
         </div>
-        <div class="gap"></div>
-        <div class="h60" id="mobile-userInfo">
-            <div class="flex">
-                <div class="sp5">
-                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                </div>
-                <div class="sp6">
-                    修改资料
-                </div>
-            </div>
-            <div class="sp4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-        <div class="h60">
-            <div class="flex">
-                <div class="sp5">
-                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                </div>
-                <div class="sp6 border1">
-                    添加Habit
-                </div>
-            </div>
-            <div class="sp4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-        <div class="h60">
-            <div class="flex">
-                <div class="sp5">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                </div>
-                <div class="sp6 border1" id="mobile-dailywrite">
-                    记录心得
-                </div>
-            </div>
-            <div class="sp4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-        <div class="h60 border" onclick="window.location.href='/admin/mobile-pwd'">
-            <div class="flex">
-                <div class="sp5">
-                    <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
-                </div>
-                <div class="sp6 border1">
-                    修改密码
-                </div>
-            </div>
-            <div class="sp4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-        <div class="gap"></div>
-        <div class="h60 border" onclick="window.location.href='/'">
-            <div class="flex">
-                <div class="sp5">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                </div>
-                <div class="sp6">
-                    退出登录
-                </div>
-            </div>
-            <div class="sp4">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-        <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
-            <div class="vw34 active" id="mobile-user">
-                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
-            </div>
-            <div class="vw33" id="mobile-diary">
-                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
-            </div>
-            <div class="vw33" id="mobile-edit">
-                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
-            </div>
-        </nav>
     </div>
 </div>
 

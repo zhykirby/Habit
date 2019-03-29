@@ -62,10 +62,9 @@
                     </div>
                     个人心得
                 </div>
-                <div id="forChoice2" class="forc">
+                <div id="forChoice2" class="forcc">
                     <div class="forChoice curdiv" id="choice21">个人心得</div>
                     <div class="forChoice curdiv" id="choice22">添加心得</div>
-                    <div class="forChoice curdiv" id="choice23">编辑心得</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice3">
                     <div class="sp10">
@@ -73,10 +72,9 @@
                     </div>
                     Habit
                 </div>
-                <div id="forChoice3" class="forc">
+                <div id="forChoice3" class="forcc">
                     <div class="forChoice curdiv" id="choice31">Habit</div>
                     <div class="forChoice curdiv" id="choice32">添加Habit</div>
-                    <div class="forChoice curdiv" id="choice33">编辑Habit</div>
                 </div>
                 <div class="contentChoice curdiv" id="choice4">
                     <div class="sp10">
@@ -93,6 +91,7 @@
             </div>
         </div>
         <div id='content' class="fixed">
+            <div class="daily-title">个人心得</div>  
             <div id="null">
                 <p>还没开始记录呢~</p>
             </div>
@@ -151,75 +150,120 @@
 </div>
 <!--mobile-->
 <div id="mobile">
-    <div id="mobile-content"  class="mobile-diary">
-        <div id="mobile-title">个人心得</div>
-        <div class="jintianhaoleia">
-            <div id="mobile-null">
-                <span>还没开始记录呢~</span>
-            </div>
-        <script> 
-            var j = 1 ;
-        </script>
-        {% for daily in dailies %}
-        <script>
-            j = j + 1;
-        </script>
-        {% endfor %}
-        <script>
-            if(j === 1){
-                $("#mobile-null").show();
-            }
-            else{
-                $("#mobile-null").hide();
-                $("#mobile-content").css('height','calc(100vh + '+264*(j-3)+'px - 60px');
-                
-            }
-        </script>
-        {% for daily in dailies %}
-            <div class="mobileDaily">
-                <div class="mobileDaily-title">
-                    <span>{{ daily.title }}</span>
-                    <input value="{{ daily.title }}" class="none" id="md-t">
-                </div>
-                <div class="mobileDaily-date">
-                    <span>{{ daily.date }}</span>
-                    <input value="{{ daily.date }}" class="none" id="md-d">
-                </div>
-                <div class="mobileDaily-content">
-                    <p>{{ daily.content }}</p>
-                    <input value="{{ daily.content }}" class="none" id="md-c">
-                </div>
-                <div class="mobileDaily-hide">
-                    <span>…………</span>
-                </div>
-                <div style="display:flex;flex-flow:row nowrap;width: 100%;">
-                    <div class="dailyRead">
-                        <a href="/admin/mobile-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
-                    </div>
-                    <div class="dailyRead">
-                        <a class="daily-a">阅读更多</a>
-                    </div>
-                    <div class="dailyRead none">
-                        <a class="daily-a">删除</a>
-                    </div>
-                    <input value="{{ daily.user }}" class="none" id="md-u">
-                    <input value="{{ daily._id }}" class="none" id="md-i">
-                </div>
-            </div>      
-        {% endfor %}
+    <div id="mobile-title" class="flex now">
+        <div id="showMore">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
         </div>
+        个人心得
+    </div>
+    <div class="mobile-add" id="addDiary">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </div>
+    <div class="flex now">
+        <div id="mobile-more">
+            <div class="more-UI">
+                <div class="more-img"></div>
+                <div class="more-p">
+                {% for user in users %}
+                    {{ user.name }}
+                {% endfor %}
+                </div>
+            </div>
+            <div class="more-choice" id="mChoice1">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </div>
+                我的资料
+            </div>
+            <div class="more-choice" id="mChoice2">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
+                </div>
+                添加Habit
+            </div>
+            <div class="more-choice" id="mChoice3">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-superscript" aria-hidden="true"></span>
+                </div>
+                添加心得
+            </div>
+            <div class="more-choice" id="mChoice4">
+                <div class="more-ico">
+                    <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                </div>
+                关于我们
+            </div>
+        </div>
+        <div id="mobile-content"  class="mobile-diary">
+            
+            <div class="jintianhaoleia">
+                <div id="mobile-null">
+                    <span>还没开始记录呢~</span>
+                </div>
+            <script> 
+                var j = 1 ;
+            </script>
+            {% for daily in dailies %}
+            <script>
+                j = j + 1;
+            </script>
+            {% endfor %}
+            <script>
+                if(j === 1){
+                    $("#mobile-null").show();
+                }
+                else{
+                    $("#mobile-null").hide();
+                    $("#mobile-content").css('height','calc(100vh + '+264*(j-2)+'px - 60px');
+                    
+                }
+            </script>
+            {% for daily in dailies %}
+                <div class="mobileDaily">
+                    <div class="mobileDaily-title">
+                        <span>{{ daily.title }}</span>
+                        <input value="{{ daily.title }}" class="none" id="md-t">
+                    </div>
+                    <div class="mobileDaily-date">
+                        <span>{{ daily.date }}</span>
+                        <input value="{{ daily.date }}" class="none" id="md-d">
+                    </div>
+                    <div class="mobileDaily-content">
+                        <p>{{ daily.content }}</p>
+                        <input value="{{ daily.content }}" class="none" id="md-c">
+                    </div>
+                    <div class="mobileDaily-hide">
+                        <span>…………</span>
+                    </div>
+                    <div style="display:flex;flex-flow:row nowrap;width: 100%;">
+                        <div class="dailyRead">
+                            <a href="/admin/mobile-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
+                        </div>
+                        <div class="dailyRead">
+                            <a class="daily-a">阅读更多</a>
+                        </div>
+                        <div class="dailyRead">
+                            <a class="daily-a">删除</a>
+                        </div>
+                        <input value="{{ daily.user }}" class="none" id="md-u">
+                        <input value="{{ daily._id }}" class="none" id="md-i">
+                    </div>
+                </div>      
+            {% endfor %}
+            </div>
 
-        <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
-            <div class="vw34" id="mobile-user">
-                <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
-            </div>
-            <div class="vw33 active" id="mobile-diary">
-                <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
-            </div>
-            <div class="vw33" id="mobile-edit">
-                <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
-            </div>
-        </nav>
+            <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
+                <div class="vw34" id="mobile-user">
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+                <div class="vw33 active" id="mobile-diary">
+                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                </div>
+                <div class="vw33" id="mobile-edit">
+                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                </div>
+            </nav>
+        </div>
     </div>
 </div>
 

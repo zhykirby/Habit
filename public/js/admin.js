@@ -36,8 +36,9 @@ $(function(){
     $("#more").on('click',function(){
         $("#more-content").animate({width:'toggle'});
     });
-    
-   
+    $("#showMore").on('click',function(){
+        $("#mobile-more").animate({width:'toggle'});
+    })
     $("#dailyEdit-sub").click(function(){
         $.ajax({
             url:"/api/dailyedit",
@@ -185,5 +186,28 @@ $(function(){
     $("#choice12").on('click',function(){
         window.location.href="/admin/userInfo";
     });
-    
+    $("#choice21").on('click',function(){
+        window.location.href="/admin/diary";
+    });
+    $("#choice22").on('click',function(){
+        window.location.href="/admin/write";
+    });
+    $("#choice4").on('click',function(){
+        window.location.href="/admin/about";
+    });
+    $("#choice5").on('click',function(){
+        window.location.href="/";
+    });
+    $("#mChoice1").on('click',function(){
+        window.location.href="/admin/mobile-user";
+    });
+    $("#mChoice3").on('click',function(){
+        window.location.href="/admin/mobile-write";
+    });
+    $("#mChoice4").on('click',function(){
+        window.location.href="/admin/mobile-about";
+    });
+    $("#addDiary").on('click',function(){
+        window.location.href="/admin/mobile-write"
+    });
 });

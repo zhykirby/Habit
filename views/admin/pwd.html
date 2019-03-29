@@ -86,8 +86,21 @@
             退出登录
         </div>
     </div>
-    <div id="content" style="height: 800px">
-
+    <div id="content" class="w800 fixed">
+        <label for="opwd">输入旧密码：</label>
+        <div class="input-group w100">
+            <input type="password" class="form-control" id="opwd">    
+        </div>
+        <label for="npwd">输入新密码：</label>
+        <div class="input-group w100">
+            <input type="password" class="form-control" id="npwd">    
+        </div>
+        <label for="cpwd">再次输入新密码：</label>
+        <div class="input-group w100">
+            <input type="password" class="form-control" id="cpwd">    
+        </div>
+        <div class="submit curdiv" id="pwd-sub">提交</div>    
+        <input class="none" id="pwd-user" value="{{ userInfo.username }}">
     </div>
 </div>
 

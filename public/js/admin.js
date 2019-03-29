@@ -171,6 +171,31 @@ $(function(){
             }
         });
     });
+    $("#pwd-sub").click(function(){
+        $.ajax({
+            url:"/api/changePwd",
+            type:"POST",
+            data:{
+                opwd:$("#opwd").val(),
+                npwd:$("#npwd").val(),
+                cpwd:$("#cpwd").val(),
+                user:$("#pwd-user").val()
+            },
+            dataType:'json',
+            success:function(data){
+                $('#mobilep').next().html("<font color='red'>"+data.message+"</font>");
+                clearTimeout;
+                if(data.code === 50){
+                    setTimeout(function(){
+                        window.location.href = "/admin";
+                    },1000);
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
     $("#choice1").on('click',function(){
         $("#forChoice1").slideToggle();
     });
@@ -185,6 +210,9 @@ $(function(){
     });
     $("#choice12").on('click',function(){
         window.location.href="/admin/userInfo";
+    });
+    $("#choice13").on('click',function(){
+        window.location.href="/admin/pwd";
     });
     $("#choice21").on('click',function(){
         window.location.href="/admin/diary";

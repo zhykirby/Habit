@@ -98,7 +98,7 @@
     #mobile-none{display: flex;border-top: 1px solid gray;}
     #mobile-img{margin-top:50px;width:100vw;height: 130px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
     #mobile-title{border-bottom: 1px solid;position: fixed;;width:100vw;height: 50px;text-align: center;font-size: 2em;background: #fff;}
-    #mobile-null{width: 100vw;height: 100px;font-size: 4rem;display: none;}
+    #mobile-null{width: 100vw;height: calc(100vh - 110px);font-size: 4rem;display: none;}
     #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 280px;height: 100vh;background: #fff}
     #showMore{width: 60px;height: 50px;font-size: 3rem;padding-top: 4px;}
     #showMore:active{background: #cfcfcf;color: #fff;}
@@ -142,7 +142,7 @@
     .more-choice{font-size: 1.8rem;display: flex;flex-wrap: nowrap;width: 100%;height: 60px;line-height: 60px;padding-left: 20px;border-bottom: 1px solid}
     .more-choice:active{background: #e7e7e7;}
     .more-ico{padding-top:4px;}
-    .mobile-add{font-size: 5em;color:#fff;position:absolute;z-index: 9999;bottom: 60px;right: 5px;}
+    .mobile-add{font-size: 5em;color:cornflowerblue;position:absolute;z-index: 9999;bottom: 60px;right: 5px;}
 
     .none{visibility: hidden;width:0;height: 0;margin: 0;border: 0;padding: 0;}
     p:first-letter{display: block;margin: 0;padding: 0;margin-top: -2rem;float: left;color: #ff3366;font-size: 6rem;font-family: Georgia, Times New Roman, serif;margin-bottom: -10px;}

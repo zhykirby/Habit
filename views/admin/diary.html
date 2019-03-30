@@ -243,7 +243,7 @@
                             <a class="daily-a">阅读更多</a>
                         </div>
                         <div class="dailyRead">
-                            <a class="daily-a">删除</a>
+                            <a href="/admin/diary/delete?id={{ daily._id.toString() }}" class="daily-a">删除</a>
                         </div>
                         <input value="{{ daily.user }}" class="none" id="md-u">
                         <input value="{{ daily._id }}" class="none" id="md-i">

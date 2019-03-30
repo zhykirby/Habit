@@ -92,15 +92,22 @@ routers.get('/userInfo',function(req,res,next){
 });
 
 routers.get('/diary',function(req,res,next){
+    var dailies;
     jwt.verify(req.userInfo.token,'howie',function(err,decode){
         if(err){
             console.log('error')
             res.render('main/index');
         }else{
-            Daily.find({user:req.userInfo.username}).then(function(dailies){
-                res.render('admin/diary',{
+            Daily.find({user:req.userInfo.username}).then(function(dailie){
+                dailies = dailie;
+                return User.findOne({
+                    username:req.userInfo.username
+                });
+            }).then(function(users){
+                res.render("admin/diary",{
                     userInfo:req.userInfo,
-                    dailies:dailies
+                    dailies:dailies,
+                    users:users
                 });
             });    
         }
@@ -125,10 +132,18 @@ routers.get('/mobile-edit',function(req,res,next){
         });
     });
 });
+routers.get('/diary/delete',function(req,res,next){
+    let id = req.query.id;
+    Daily.remove({
+        _id:id
+    }).then(function(){
+        res.render("admin/status/success")
+    })
+})
 
 routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');
-})
+});
 
 
 

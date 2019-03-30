@@ -103,7 +103,7 @@
     #mobile-img{margin-top:50px;width:100vw;height: 130px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
     #mobile-title{border-bottom: 1px solid;position: fixed;;width:100vw;height: 50px;text-align: center;font-size: 2em;background: #fff;}
     #mobile-null{width: 100vw;height: calc(100vh - 110px);font-size: 4rem;display: none;}
-    #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 280px;height: 100vh;background: #fff}
+    #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 280px;height: calc(100vh + 110px);background: #fff}
     #showMore{width: 60px;height: 50px;font-size: 3rem;padding-top: 4px;}
     #showMore:active{background: #cfcfcf;color: #fff;}
 
@@ -121,7 +121,7 @@
     
     .flex{display: flex;}
     .now{flex-wrap: nowrap;}
-
+    .over{overflow: hidden;overflow-y: scroll;}
     .gap{width: 100vw;height: 9px;background: #e7e7e7;border-bottom: 1px solid gray;;}
 
     .h60{width: 100vw;height: 50px;display: flex;flex-wrap: nowrap;}

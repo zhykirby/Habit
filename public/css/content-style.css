@@ -99,7 +99,7 @@
     #mobile-img{margin-top:50px;width:100vw;height: 130px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
     #mobile-title{border-bottom: 1px solid;position: fixed;;width:100vw;height: 50px;text-align: center;font-size: 2em;background: #fff;}
     #mobile-null{width: 100vw;height: 100px;font-size: 4rem;display: none;}
-    #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 300px;height: 100vh;background: #fff}
+    #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 280px;height: 100vh;background: #fff}
     #showMore{width: 60px;height: 50px;font-size: 3rem;padding-top: 4px;}
     #showMore:active{background: #cfcfcf;color: #fff;}
 
@@ -129,17 +129,17 @@
 
     .mobile-diary{background: url('./image/admin01.jpg') no-repeat;background-size: 100% 100%;}
     .mida{margin:0 auto;font-size: 2em;}
-    .mobile-image{background-size: 100% 100%;background: url('./image/新建画布1\ -\ 副本.jpg');margin: 25px 20px 25px 20px;width: 84px;height: 80px;}
+    .mobile-image{background-size: 100% 100%;background: url('./image/新建画布1\ -\ 副本.jpg');margin: 25px 20px 25px 20px;width: 84px;height: 80px;border:1px solid}
     .mobile-username{width: 200px;margin-top: 25px;margin-bottom: 25px;height: 60px;display: flex;flex-wrap: wrap;}
     .mobileDaily{background: #fff;padding: 10px;display:flex;flex-wrap: wrap;width: 320px;height: 264px;margin-top: 15px;margin-left: 20px;margin-bottom: 15px;border: 2px solid black;border-radius: 20px;}
     .mobileDaily-title{width: 100%;height: 30px;font-size: 4rem;line-height: 30px;text-align: center;}
     .mobileDaily-date{width: 100%;height: 16px;line-height: 16px;text-align: center;}
     .mobileDaily-content{width: 100%;height: 134px;overflow: hidden;}
     .mobileDaily-hide{width: 100%;height: 20px;line-height: 20px;text-align: center;font-size: 2rem;}
-    .more-UI{background: url('./image/cat.gif') no-repeat;background-size: 100% 100%;border-bottom: 1px solid;margin-top: 50px;width: 299px;height: 300px;display: flex;flex-wrap: nowrap;}
+    .more-UI{background: url('./image/cat.gif') no-repeat;background-size: 100% 100%;border-bottom: 1px solid;margin-top: 50px;width: 100%;height: 300px;display: flex;flex-wrap: nowrap;}
     .more-img{margin-top: 220px;margin-left: 20px;width: 50px;height: 50px;background: url('./image/fish.jpg');border-radius: 25px;}
     .more-p{color:#fff;margin-top: 220px;margin-left: 20px;width: 199px;height: 100px;line-height: 60px;font-size: 2em;}
-    .more-choice{font-size: 2em;display: flex;flex-wrap: nowrap;width: 300px;height: 60px;line-height: 60px;padding-left: 20px;border-bottom: 1px solid}
+    .more-choice{font-size: 1.8rem;display: flex;flex-wrap: nowrap;width: 100%;height: 60px;line-height: 60px;padding-left: 20px;border-bottom: 1px solid}
     .more-choice:active{background: #e7e7e7;}
     .more-ico{padding-top:4px;}
     .mobile-add{font-size: 5em;color:#fff;position:absolute;z-index: 9999;bottom: 60px;right: 5px;}

@@ -30,9 +30,7 @@
     </div>
     <div class="form-group">
         <label for="mobileE-writeContent">修改心得:</label>
-        <textarea id="mobileE-writeContent" class="form-control" rows="8">
-            {{ dailies.content }}
-        </textarea>
+        <textarea id="mobileE-writeContent" class="form-control" rows="8">{{ dailies.content }}</textarea>
     </div>
     <div class="form-group">
             <label for="mobileE-date">修改日期：</label>
@@ -41,7 +39,7 @@
     <button class="btn btn-default mb" id="mobileE-sub">提交</button>    
     
     <input class="mobile-username" value="{{ userInfo.username }}">
-    <input class="mobile-dailyid" value="{{ dailies._id }}">
+    <input class="mobile-dailyid" value="{{ dailies._id.toString() }}">
 </div>
 
 

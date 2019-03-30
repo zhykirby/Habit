@@ -93,7 +93,7 @@
         <div id='content' class="fixed">
             <div class="daily-title">个人心得</div>  
             <div id="null">
-                <p>还没开始记录呢~</p>
+                <span>还没开始记录呢~</span>
             </div>
         <script> 
             var i = 1 ;
@@ -124,7 +124,7 @@
                     <input value="{{ daily.date }}" class="none" id="d-d">
                 </div>
                 <div class="daily-content">
-                    <p>{{ daily.content }}</p>
+                    <pre><p>{{ daily.content }}</p></pre>
                     <input value="{{ daily.content }}" class="none" id="d-c">
                 </div>
                 <div class="daily-hide">
@@ -135,10 +135,10 @@
                         <a href="/admin/daily-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
                     </div>
                     <div class="read-more curdiv">
-                        <a class="daily-a">阅读更多</a>
+                        <a href="/admin/read-more?id={{ daily._id.toString() }}" class="daily-a">阅读更多</a>
                     </div>
                     <div class="deleteDaily curdiv">
-                        删除
+                        <a href="/admin/diary/delete?id={{ daily._id.toString() }}" class="daily-a">删除</a>
                     </div>
                     <input value="{{ daily.user }}" class="none" id="d-u">
                     <input value="{{ daily._id }}" class="none" id="d-i">
@@ -229,7 +229,9 @@
                         <input value="{{ daily.date }}" class="none" id="md-d">
                     </div>
                     <div class="mobileDaily-content">
-                        <p>{{ daily.content }}</p>
+                        <pre>
+                            <p>{{ daily.content }}</p>
+                        </pre>
                         <input value="{{ daily.content }}" class="none" id="md-c">
                     </div>
                     <div class="mobileDaily-hide">
@@ -240,7 +242,7 @@
                             <a href="/admin/mobile-edit?id={{ daily._id.toString() }}" class="daily-a">编辑心得</a>
                         </div>
                         <div class="dailyRead">
-                            <a class="daily-a">阅读更多</a>
+                            <a href="/admin/mobile-read?id={{ daily._id.toString() }}" class="daily-a">阅读更多</a>
                         </div>
                         <div class="dailyRead">
                             <a href="/admin/diary/delete?id={{ daily._id.toString() }}" class="daily-a">删除</a>

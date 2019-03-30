@@ -9,30 +9,109 @@
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <link rel='stylesheet' href="/public/css/mobile.css">
     <style>
-        [name='upnav']{
-            margin-bottom: 0;
-            position: relative;
-        }
-                    
+        body{overflow: hidden;}
+       [name='upnav']{margin-bottom: 0;position: relative;}
+       .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
 <body>
 <div id="pc">
-    <div id="back" class="sp11 curdiv"></div>
-    success 
-    下午回来写
+    <nav class='navbar navbar-default nav-border'>
+        <div class="row h50">
+            <div class="col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
+                <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
+            </div>
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
+                <div class='midb'>
+                    <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
+                </div>
+            </div> 
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="diary">
+                <div class="midb">
+                    <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class='col-md-3 col-lg-3 h50 iconmid' id="edit">
+                <div class="midb">
+                    <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
+                </div>
+            </div>   
+            <div class="col-md-1 col-lg-1 h50 curdiv" aria-label="Left Align" onclick="window.location.href='/admin/write'">
+                <span class="glyphicon glyphicon-plus midb mida" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
+                <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
+            </div>       
+        </div>
+    </nav>
+    <div class="flex">
+        <div id="more-content">
+            <div class="flex-s">
+                <div class="contentChoice curdiv" id="choice1">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    个人中心
+                </div>
+                <div id="forChoice1" class="forc">
+                    <div class="forChoice curdiv" id="choice11">个人中心</div>
+                    <div class="forChoice curdiv" id="choice12">编辑资料</div>
+                    <div class="forChoice curdiv" id="choice13">修改密码</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice2">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </div>
+                    个人心得
+                </div>
+                <div id="forChoice2" class="forcc">
+                    <div class="forChoice curdiv" id="choice21">个人心得</div>
+                    <div class="forChoice curdiv" id="choice22">添加心得</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice3">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                    </div>
+                    Habit
+                </div>
+                <div id="forChoice3" class="forcc">
+                    <div class="forChoice curdiv" id="choice31">Habit</div>
+                    <div class="forChoice curdiv" id="choice32">添加Habit</div>
+                </div>
+                <div class="contentChoice curdiv" id="choice4">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+                    </div>
+                    关于我们
+                </div>
+                <div class="contentChoice curdiv" id="choice5">
+                    <div class="sp10">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </div>
+                    退出登录
+                </div>
+            </div>
+        </div>
+        <div id="content" class="vh100" style="align-content:flex-start;font-size:2rem;">
+            <div class="success-ico"></div>
+            <div class="success-p">
+                操作成功
+            </div>
+            <div class="submit curdiv" id="back">返回</div>
+        </div>
+    </div>
 </div>
 
 <div id="mobile">
     <nav class="navbar navbar-default" name='upnav'>
-        <div id="back" class="sp11">
+        <div id="back" class="sp11" onclick="window.location.href='/admin'">
             <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
         </div>
     </nav>
-    <div id='content' style="height:100vh">
+    <div id='mobile-content' style="align-content: flex-start">
         <div id='success'>
-            
-            <div>
+            <div class="mobile-successIco"></div>
+            <div class="mobile-successP">
                 <span>操作成功</span>
             </div>
         </div>

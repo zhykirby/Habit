@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>修改心得</title>
+    <title>阅读更多</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel='stylesheet' href="/public/css/mobile.css">
     <style>
-        .sh50{height: 50px;}
-        .white{width: 100%;height: 300px;}
-        .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
+       [name='upnav']{margin-bottom: 0;position: relative;}
+       .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
 <body>
@@ -91,41 +91,24 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="write">
-            <div class="write-title input-group">
-                <span class="input-group-addon" id="basic-addon1">  修改标题  </span>
-                <input type="text" name='dailyEdit-title' class="form-control sh50" aria-describedby="basic-addon1" placeholder="{{ dailies.title }}">                      
+        <div id="content" style="height:100vh;align-content: flex-start">
+            <div class="read-title">
+                {{ dailies.title }}
             </div>
-            <div class="write-content">
-                <div class="panel panel-default">
-                    <div class="panel-heading">修改心得</div>
-                    <div class="panel-body">
-                        <textarea name="dailyEdit-content" class="editContent">{{ dailies.content }}</textarea>
-                    </div>
-                </div>
+            <div class="read-date">
+                {{ dailies.date }}
             </div>
-            <div class="write-time input-group">
-                <span class="input-group-addon" id="basic-addon2">修改发表时间</span>
-                <input type="datetime-local" name='dailyEdit-time' class="form-control sh50" aria-describedby="basic-addon2">                      
+            <div class="read-content">
+                <pre class="pre">{{ dailies.content }}</pre>
             </div>
-            <div class="submit curdiv" id="dailyEdit-sub">
-                提交
-            </div>
-            <div>
-                <input value="{{ userInfo.username }}" id="write-id" class="none">
-                <input value="{{ dailies._id.toString() }}" id="daily-id" class="none">
-            </div>
-            <div class="white"></div>
+            <div class="submit curdiv" id="bacd" onclick="window.location.href='/admin/diary'">返回</div>
         </div>
     </div>
-       
-    
-     
 </div>
 
-<script src="../../public/js/jquery.js"></script>
-<script src="../../public/js/admin.js"></script>
-<script src="../../public/js/bootstrap.js"></script>
 
+<script src="../../../public/js/jquery.js"></script>
+<script src="../../../public/js/admin.js"></script>
+<script src="../../../public/js/bootstrap.js"></script>
 </body>
 </html>

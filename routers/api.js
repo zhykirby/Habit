@@ -174,7 +174,7 @@ routers.post("/dailyedit",function(req,res,next){
     let title = req.body.title;
     let content = req.body.content;
     let date = req.body.date;
-    let id = id;
+    let id = req.body.id;
     Daily.findById(id).then(function(dailies){
         dailies.title = title;
         dailies.content = content;
@@ -200,8 +200,14 @@ routers.post("/changePwd",function(req,res,next){
         return;
     }
     if(npwd != cpwd){
-        responseData = 52;
+        responseData.code = 52;
         responseData.message = "两次输入密码不一致";
+        res.json(responseData);
+        return;
+    }
+    if(npwd.length < 6){
+        responseData.code = 54;
+        responseData.message = "密码长度不够";
         res.json(responseData);
         return;
     }

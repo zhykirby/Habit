@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读更多</title>
+    <link rel='stylesheet' href="/public/css/mobile.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        [name='upnav']{
+            margin-bottom: 0;
+            position: relative;
+            width: 100vw;
+        }
+                    
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" name='upnav'>
+    <div id="bacd" class="sp11" onclick="window.location.href='/admin/diary'">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    </div>
+</nav>
+<div id='mobile-content' style="align-content: flex-start">
+    <div class="mread-img"></div>
+    <div class="mread-title">
+        {{ dailies.title }}
+    </div>
+    <div class="mread-date">
+        {{ dailies.date }}
+    </div>
+    <pre class="mread-content">{{ dailies.content }}</pre>
+</div>
+
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/admin.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script>
+
+</script>
+</body>
+</html>

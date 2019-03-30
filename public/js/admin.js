@@ -125,7 +125,7 @@ $(function(){
         });
     });
 
-    $("#dailyEdit-sub").click(function(){
+    $("#mobileE-sub").click(function(){
         $.ajax({
             url:"/api/dailyedit",
             type:"POST",

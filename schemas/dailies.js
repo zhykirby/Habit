@@ -17,6 +17,5 @@ const dailySchema = new Schema({
         type:String,
         default:''
     },
-    
 });
 module.exports = dailySchema;

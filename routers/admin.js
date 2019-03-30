@@ -123,6 +123,24 @@ routers.get('/daily-edit',function(req,res,next){
         });
     });
 });
+routers.get('/read-more',function(req,res,next){
+    let id = req.query.id;
+    Daily.findOne({_id:id}).then(function(dailies){
+        res.render("admin/read-more",{
+            userInfo:req.userInfo,
+            dailies:dailies
+        });
+    });
+});
+routers.get('/mobile-read',function(req,res,next){
+    let id = req.query.id;
+    Daily.findOne({_id:id}).then(function(dailies){
+        res.render("admin/mobile-read",{
+            userInfo:req.userInfo,
+            dailies:dailies
+        });
+    });
+});
 routers.get('/mobile-edit',function(req,res,next){
     let id = req.query.id;
     Daily.findOne({_id:id}).then(function(dailies){

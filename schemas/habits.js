@@ -5,18 +5,12 @@ const habitSchema = new Schema({
         type:String,
         default:''
     },
-    title:{
+    name:String,
+    startdate:{
         type:String,
         default:''
     },
-    content:{
-        type:String,
-        default:''
-    },
-    date:{
-        type:String,
-        default:''
-    },
-    
+    color:String,
+    describe:String
 });
 module.exports = habitSchema;

@@ -220,6 +220,12 @@ $(function(){
     $("#choice22").on('click',function(){
         window.location.href="/admin/write";
     });
+    $("#choice31").on('click',function(){
+        window.location.href="/admin/test";
+    });
+    $("#choice32").on('click',function(){
+        window.location.href="/admin/habit-write";
+    });
     $("#choice4").on('click',function(){
         window.location.href="/admin/about";
     });
@@ -237,5 +243,27 @@ $(function(){
     });
     $("#addDiary").on('click',function(){
         window.location.href="/admin/mobile-write"
+    });
+    $("#habit-sub").click(function(){
+        $.ajax({
+            url:"/api/habitWrite",
+            type:"POST",
+            data:{
+                user:$("#write-id").val(),
+                name:$("input[name='habit-title']").val(),
+                describe:$("input[name='habit-describe']").val(),
+                color:$("input[name='color']:checked").val(),
+                startdate:$("input[name='habit-date']").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 60){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
     });
 });

@@ -19,6 +19,7 @@
     #null{margin:50px 100px 50px 100px;width: 600px;height: 100px;font: 7rem bold;}
     #mobile-none{display: none;}
     #mobile{display: none;}
+    #color{width:600px;height: 200px;display: flex;flex-wrap: wrap;margin-left: 90px;margin-right: 90px;}
     #about{width: 800px;margin-left: calc(50vw - 400px);display: flex;flex-wrap: wrap;align-content: flex-start;}
     .about-img{margin: 50px 100px 50px 100px;width: 600px;height: 400px;background: url("./image/cat.gif") no-repeat;background-size: 100% 100%}
     .about-p{margin-left: 200px;width: 400px;line-height: 60px;}
@@ -26,6 +27,7 @@
     .below{width: 100%;height: 100%;}
     .but{cursor: pointer;}
 
+    .color{width:100px;height: 100px;display: flex;flex-wrap: nowrap;} 
     .create{height: 100%;position: absolute;right: 0;}
     .curdiv{cursor: pointer;background-color: #f8f8f8;}
     .curdiv:hover{background-color: #e7e7e7;}
@@ -47,13 +49,24 @@
     .daily-a:hover{text-decoration: none;color:black;}
     .daily-null{width: 100%;height: 800px;}
     .deleteDaily{margin-left: 210px;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
-
+    .deleteHabit{width: 20px;height: 20px;margin-left: auto;font-size: 20px;cursor: pointer;}
+    .deleteHabit:hover{background: red;color: #fff}
     .editContent{width: 670px;height: 400px}
     .fixed{align-content: flex-start}
     .flex{display: flex;}
     .flex-s{display: flex;flex-wrap: wrap;align-content: flex-start;}
 
-
+    .habit{display: flex;flex-wrap: wrap;align-content: flex-start;background: #fff;overflow:hidden;border: 2px solid black;margin:25px 50px 25px 50px;width:700px;height:250px}
+    .habitT{margin-left: 90px;margin-bottom: 20px;font: 30px bold;font-weight: bold;}
+    .habitTitle{margin-left: 90px;width: 600px;height: 50px;margin-bottom: 20px}
+    .habit-content{display: flex;flex-flow: row nowrap;align-content: flex-start;background: #6bcee6;width: 636px;height: 206px;border: 2px solid;margin-left: 20px;margin-right: 20px;}
+    .habit-ico{margin: 71px 20px;width: 60px;height: 60px;font-size: 60px;}
+    .habit-des{width: 400px;height: 202px;}
+    .habit-date{width: 152px;height: 202px;}
+    .habitDate{text-align: center;margin-top: 20px;margin-left: 26px;width: 100px;height: 90px;padding-top: 40px;font-size: 30px;}
+    .habitDatep{font-size: 20px;text-align: center;margin-bottom: 32px;margin-left: 26px;width: 100px;height: 40px;line-height: 40px}
+    .habit-title{margin-top: 20px;margin-left: 30px;width: 380px;height: 90px;padding-top: 40px;font-size: 30px;}
+    .habitDes{font-size: 20px;margin-bottom: 32px;margin-left: 30px;width: 380px;height: 40px;line-height: 40px}
     .h50{height: 50px;border-left: 1px solid black;}
     .h100{height: 100%;}
     .hidde{display: none;}
@@ -85,13 +98,25 @@
 
     .userInput{width:600px;height: 50px;margin:25px 100px 25px 100px;}
 
-    .write{display: flex;flex-flow: row wrap;}
+    .write{display: flex;flex-flow: row wrap;align-content: flex-start;}
     .write-title{width: 500px;height: 50px;margin: 50px 150px 25px 150px;align-self: flex-start;}
     .write-content{width: 700px;height: 400px;margin: 50px auto;margin-top:25px;}
     .writeContent{width: 670px;height: 400px}
     .write-time{width: 700px;height: 50px;margin:50px auto;}
     .w800{height: 800px;}
     .w100{width: 100%;margin:20px}
+    .lightPink{width:50px;height:50px;border-radius:25px;background:#f7a2ce;}
+    .deepRed{width:50px;height:50px;border-radius:25px;background:#ef718c;}
+    .lightRed{width:50px;height:50px;border-radius:25px;background:#ff716b;}
+    .red{width:50px;height:50px;border-radius:25px;background:#ef6563;}
+    .blue{width:50px;height:50px;border-radius:25px;background:#2196ce;}
+    .deepBlue{width:50px;height:50px;border-radius:25px;background:#5aa2bd;}
+    .lightBlue{width:50px;height:50px;border-radius:25px;background:#6bcee6;}
+    .orange{width:50px;height:50px;border-radius:25px;background:#ffa63a;}
+    .deepOrange{width:50px;height:50px;border-radius:25px;background:#f7b273;}
+    .yellow{width:50px;height:50px;border-radius:25px;background:#ffdb84;}
+    .purple{width:50px;height:50px;border-radius:25px;background:#b58eef;}
+    .green{width:50px;height:50px;border-radius:25px;background:#63c273;}
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:768px){
@@ -101,7 +126,7 @@
     #mobile-content{flex: 1;width: 100vw;display: flex;flex-flow: row wrap;align-content: flex-start;}
     #mobile-none{display: flex;border-top: 1px solid gray;}
     #mobile-img{margin-top:50px;width:100vw;height: 130px;display: flex;flex-wrap: nowrap;border-bottom: 1px solid gray;}
-    #mobile-title{border-bottom: 1px solid;position: fixed;;width:100vw;height: 50px;text-align: center;font-size: 2em;background: #fff;}
+    #mobile-title{z-index: 9999;border-bottom: 1px solid;position: fixed;;width:100vw;height: 50px;text-align: center;font-size: 2em;background: #fff;}
     #mobile-null{width: 100vw;height: calc(100vh - 110px);font-size: 4rem;display: none;}
     #mobile-more{border-right: 1px solid;flex-shrink: 0;display: none;width: 280px;height: 100vh;background: #fff}
     #showMore{width: 60px;height: 50px;font-size: 3rem;padding-top: 4px;}
@@ -166,4 +191,14 @@
     .vw33{width: 33%;height: 100%;padding-top:calc(30px - 1em);padding-left: calc(16.5% - 1em);}
     
     .white{background: #fff;}
+    .MdeleteHabit{width: 18px;height: 20px;margin-left: auto;font-size: 18px;}
+    .Mhabit{display: flex;flex-wrap: wrap;align-content: flex-start;background: #6bcee6;overflow:hidden;border: 2px solid black;margin-left: 20px;margin-top: 20px;width: 320px;height: 144px}
+    .Mhabit-content{display: flex;flex-flow: row nowrap;align-content: flex-start;width: 316px;height: 126px;}
+    .Mhabit-ico{margin: 31px 10px;width: 40px;height: 40px;font-size: 40px;}
+    .Mhabit-des{width: 160px;height: 122px;}
+    .Mhabit-date{width: 92px;height: 122px;}
+    .MhabitDate{text-align: center;margin-left: 16px;width: 70px;height: 60px;padding-top: 20px;font-size: 30px;}
+    .MhabitDatep{font-size: 16px;text-align: center;margin-left: 16px;width: 70px;height: 30px;line-height: 30px}
+    .Mhabit-title{margin-left: 10px;width: 150px;height: 60px;padding-top: 20px;font-size: 30px;}
+    .MhabitDes{font-size: 16px;margin-left: 10px;width: 150px;height: 30px;line-height: 30px}
 }

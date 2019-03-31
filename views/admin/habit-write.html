@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>编辑个人资料</title>
+    <title>添加一个Habit吧~</title>
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
-
-        #content{
-            height:1020px;width:802px;border: 1px solid black;border-top: 0;border-bottom: 0;display: flex;flex-wrap: wrap;
-        }
-        [name=describtion]{height: 150px;}
-        [name=userDes]{height: 130px;width: 600px;}
         .sh50{height: 50px;}
-        #username{width: 1px;height: 1px;visibility: hidden;}
+        .white{width: 100%;height: 300px;}
         .nav-border{width: 100vw;margin-bottom:0;border-bottom: 1px solid black}
     </style>
 </head>
@@ -25,11 +19,11 @@
         <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50 curdiv" id="more" title="更多">
             <span class="glyphicon glyphicon-menu-hamburger midb mida" aria-hidden="true"></span>
         </div>
-        <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心" onclick="window.location.href='/admin'">
+        <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="user" title="个人中心">
             <div class='midb'>
                 <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>
             </div>
-        </div>
+        </div> 
         <div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 h50 iconmid' id="diary" title="记录心得">
             <div class="midb">
                 <span class="glyphicon glyphicon-edit mida" aria-hidden="true"></span>
@@ -39,15 +33,13 @@
             <div class="midb">
                 <span class="glyphicon glyphicon-list-alt mida" aria-hidden="true"></span>
             </div>
-        </div>  
-        <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>  
+        </div>   
+        <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50" style="background:#f8f8f8"></div>
         <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 h50 curdiv" id="exit" title="退出登录">
             <span class="glyphicon glyphicon-off midb mida" aria-hidden="true"></span>
         </div>       
-    </div>        
+    </div>
 </nav>
-{% for user in users %}
-{% if user._id == userInfo._id %}
 <div class="flex">
     <div id="more-content">
         <div class="flex-s">
@@ -96,60 +88,87 @@
             </div>
         </div>
     </div>
-    <div id='content'>
-        <div id='tou'></div>
-        <div id="userInput">
-            <div class="surround">
-                <div class="userInput">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                        用户名：{{ userInfo.username }}（*用户名不可修改）
-                        </div>
-                    </div>
-                </div>
+    
+    <div id="content" class="write">
+        <div class="about-img"></div>
+        <div class="habitT">给Habit取一个名字吧：（五个中文字以内）</div>
+        <div class="habitTitle input-group">
+            <span class="input-group-addon" id="basic-addon1">Habit</span>
+            <input type="text" name="habit-title" class="form-control sh50" maxlength="5" aria-describedby="basic-addon1">
+        </div>
+        <div class="habitT">挑选颜色：</div>
+        <div id="color">
+            <div class="color">
+                <input type="radio" name="color" checked="checked" value="f762ce">
+                <div class="lightPink"></div>
             </div>
-            
-            <div class="surround">
-                <div class="userInput input-group">
-                    <span class="input-group-addon" id="basic-addon1">昵称</span>
-                    <input type="text" name='name' class="form-control sh50" placeholder="{{ user.name }}" aria-describedby="basic-addon1">              
-                </div>
+            <div class="color">
+                <input type="radio" name="color" value="ef718c">
+                <div class="deepRed"></div>
             </div>
-            <div class="surround">
-                <div class="userInput input-group">
-                    <span class="input-group-addon" id="basic-addon2">出生日期</span>
-                    <input type="date" name='birthday' class="form-control sh50" aria-describedby="basic-addon2">
-                </div>
+            <div class="color">
+                <input type="radio" name="color" value="ff716b">
+                <div class="lightRed"></div>
             </div>
-            <div class="surround">
-                <div class="userInput input-group">
-                    <span class="input-group-addon" id="basic-addon3">邮箱</span>
-                    <input type="email" name='email' placeholder="{{ user.email }}" class="form-control sh50" aria-describedby="basic-addon3">
-                </div>            
+            <div class="color">
+                <input type="radio" name="color" value="ef6563">
+                <div class="red"></div>
             </div>
-            <div class="surround" style="height:200px;">
-                <div class="userInput input-group" name='describtion'>
-                    <span>个人介绍：</span>
-                    <textarea class='userDes' name='userDes' placeholder="{{ user.describtion }}" aria-describedby="basic-addon4"></textarea>
-                </div>
+            <div class="color">
+                <input type="radio" name="color" value="2196ce">
+                <div class="blue"></div>
             </div>
-            <div class="surronud" class='sh50' id="userInfoSub">
-                <div class="submit curdiv">提交</div>
+            <div class="color">
+                <input type="radio" name="color" value="5aa2bd">
+                <div class="deepBlue"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="6bcee6">
+                <div class="lightBlue"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="ffa63a">
+                <div class="orange"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="f7b273">
+                <div class="deepOrange"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="ffdb84">
+                <div class="yellow"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="b58eef">
+                <div class="purple"></div>
+            </div>
+            <div class="color">
+                <input type="radio" name="color" value="63c273">
+                <div class="green"></div>
             </div>
         </div>
-        
-        <div id='username'>
-            <input name="username" value="{{ user.username }}">
+        <div class="habitT">什么时候开始Habit：</div>
+        <div class="habitTitle input-group">
+            <span class="input-group-addon" id="basic-addon2">Time</span>
+            <input type="date" name="habit-date" class="form-control sh50" aria-describedby="basic-addon2">
         </div>
-        
+        <div class="habitT">添加点描述吧：</div>
+        <div class="habitTitle input-group">
+            <span class="input-group-addon" id="basic-addon3">Describe</span>
+            <input type="text" name="habit-describe" class="form-control sh50" maxlength="18" aria-describedby="basic-addon3">
+        </div>
+        <div class="submit curdiv" id="habit-sub">
+            提交
+        </div>
+        <div>
+            <input value="{{ userInfo.username }}" id="write-id" class="none">
+        </div>
+        <div class="white"></div>
     </div>
 </div>
-{% endif %}
-{% endfor %}
 
 <script src="../../public/js/jquery.js"></script>
-<script src="../../public/js/bootstrap.js"></script>
-<script src="../../public/js/userInfo.js"></script>
 <script src="../../public/js/admin.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
 </body>
 </html>

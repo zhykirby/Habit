@@ -3,6 +3,7 @@ const routers = express.Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const Daily = require('../models/Daily');
+const Habit = require('../models/Habit');
 var responseData;
 
 routers.use(function(req,res,next){
@@ -232,4 +233,23 @@ routers.post("/changePwd",function(req,res,next){
         console.log(e);
     });
 });
+routers.post("/habitWrite",function(req,res,next){
+    let name = req.body.name;
+    let startdate = req.body.startdate;
+    let color = req.body.color;
+    let describe = req.body.describe;
+    let user = req.body.user;
+    const habit = new Habit({
+        user:user,
+        name:name,
+        startdate:startdate,
+        color:color,
+        describe:describe
+    });
+    habit.save();
+    responseData.code = 60;
+    responseData.message = "创建成功";
+    res.json(responseData);
+})
+
 module.exports = routers;

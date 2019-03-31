@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const routers = express.Router();
-const Content = require('../models/Content');
+const Habit = require('../models/Habit');
 const User = require('../models/User');
 const Daily = require('../models/Daily');
 
@@ -42,11 +42,26 @@ routers.get('/mobile-write',function(req,res,next){
 });
 
 routers.get('/test',function(req,res,next){
+    var habits;
     jwt.verify(req.userInfo.token,'howie',function(err,decode){
         if(err){
             console.log('error')
             res.render('main/index');
         }else{
+            /*
+            Habit.find({user:req.userInfo.username}).then(function(habit){
+                habits = habit;
+                return User.findOne({
+                    username:req.userInfo.username
+                });
+            }).then(function(users){
+                res.render("admin/diary",{
+                    userInfo:req.userInfo,
+                    habits:habits,
+                    users:users
+                });
+            });
+            **/
             User.findOne({username:req.userInfo.username}).then(function(users){
                 res.render("admin/test",{
                     userInfo:req.userInfo,
@@ -158,7 +173,11 @@ routers.get('/diary/delete',function(req,res,next){
         res.render("admin/status/success")
     })
 })
-
+routers.get("/habit-write",function(req,res,next){
+    res.render("admin/habit-write",{
+        userInfo:req.userInfo
+    });
+});
 routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');
 });

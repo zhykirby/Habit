@@ -93,7 +93,7 @@
     .none{width: 0;height: 0;margin: 0;padding: 0;border: 0;}
     
     p:first-letter{display: block;margin: 0;padding: 0;margin-top: -2rem;float: left;color: #ff3366;font-size: 8rem;font-family: Georgia, Times New Roman, serif;}
-    .pre{font-size:2rem;height:420px;line-height:40px;}
+    .pre{font-size:2rem;height:420px;line-height:40px;white-space: pre-wrap;word-wrap: break-word;}
     .edit-more{margin-left: 0;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
     .read-more{margin-left: 0;width:150px;height: 50px;box-shadow: 5px 5px 5px #888888;line-height: 50px;text-align: center;font-size: 2rem;}
     .read-title{width: 800px;height: 100px;line-height: 100px;text-align: center;font-size: 3em;}

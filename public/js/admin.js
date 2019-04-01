@@ -266,4 +266,26 @@ $(function(){
             }
         });
     });
+    $("#Mhabit-sub").click(function(){
+        $.ajax({
+            url:"/api/habitWrite",
+            type:"POST",
+            data:{
+                user:$("#write-id").val(),
+                name:$("#mh-name").val(),
+                describe:$("#mh-describe").val(),
+                color:$("#card-color").val(),
+                startdate:$("#mh-date").val()
+            },
+            dataType:'json',
+            success:function(data){
+                if (data.code === 60){
+                    window.location.href = '/admin/status/success';
+                }
+            },
+            error:function(err){
+                throw err;
+            }
+        });
+    });
 });

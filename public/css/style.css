@@ -72,6 +72,7 @@ body{margin: 0;padding: 0;border:0;overflow-y: scroll;}
 .title-l{width: 100%;height: 40px;margin: 0;font-size:1.5em}
 .under-bold{text-decoration: underline;font: 3rem bold;}
 .under-italic{font-style: italic;text-decoration: underline;color:blue;cursor: pointer;}
+.title{font-weight:bold;font-size:60px;padding-top:200px;text-transform: none;color:#fff;}
 
 @media only screen and (max-device-width:768px){
     #pc{display: none;}

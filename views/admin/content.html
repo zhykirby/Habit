@@ -8,7 +8,7 @@
     <link rel='stylesheet' href="/public/css/content-style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <style>
-        [name=admin-content]{height: 1100px;position: absolute;}
+        [name=admin-content]{height: 1100px;position: absolute;align-content: flex-start;}
         .nav-border{margin-bottom:0;border-bottom: 1px solid black;width: 100vw;}
     </style>
 </head>
@@ -114,12 +114,30 @@
            </div>
            <div id="goNen">
                <div id="cards">
-                   <div class="cards curdiv" onclick="window.location.href='/admin/userInfo'">编辑个人资料页（占位）</div>               
-                   <div class="cards curdiv">添加Habit</div>               
-                   <div class="cards curdiv" onclick="window.location.href='/admin/write'">记录心得</div>               
-                   <div class="cards curdiv">仍在开发</div>                             
-                   <div class="cards curdiv" onclick="window.location.href='/admin/pwd'">修改密码</div>         
-                   <div class="cards curdiv" onclick="window.location.href='/admin/about'">关于我们</div>       
+                    <div class="cards curdiv1" onclick="window.location.href='/admin/userInfo'">
+                        <div class="cards-user"></div>
+                        <div class="cards-p">编辑资料</div>
+                    </div>               
+                    <div class="cards curdiv1" onclick="window.location.href='/admin/habit-write'">
+                        <div class="cards-habit"></div>
+                        <div class="cards-p">添加Habit</div>
+                    </div>               
+                    <div class="cards curdiv1" onclick="window.location.href='/admin/write'">
+                        <div class="cards-write"></div>
+                        <div class="cards-p">记录心得</div>
+                    </div>                                            
+                    <div class="cards curdiv1" onclick="window.location.href='/admin/pwd'">
+                        <div class="cards-pwd"></div>                        
+                        <div class="cards-p">修改密码</div>
+                    </div>         
+                    <div class="cards curdiv1" onclick="window.location.href='/admin/about'">
+                        <div class="cards-about"></div>
+                        <div class="cards-p">关于我们</div>
+                    </div> 
+                    <div class="cards curdiv1">
+                        <div class="cards-more"></div>
+                        <div class="cards-p">仍在开发</div>
+                    </div>      
                </div>
            </div>
         </div>

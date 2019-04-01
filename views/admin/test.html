@@ -97,7 +97,7 @@
         <div id="content" class="fixed">
             <div class="daily-title">Habit</div>  
             <div id="null">
-                <span>预览版</span>
+                <span>还没开始写呢</span>
             </div>
         <script> 
             var i = 1 ;
@@ -117,24 +117,39 @@
                 $("#content").css('height','calc(100vh + '+250*(i-2)+'px');
             }
         </script>
+        {% for habit in habits %}
             <div class="habit">
+                <input class="none" id="startdate" value="{{ habit.startdate }}">
+                <script>
+                    var startdate = $("#startdate").val();
+                    var _d1 = new Date(startdate);
+                    var _d2 = new Date();
+                    var d1 = _d1.getTime();
+                    var d2 = _d2.getTime();
+                    var time = parseInt(Math.abs(d1-d2)/1000/60/60/24);
+                </script>
                 <div class="deleteHabit">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </div>
-                <div class="habit-content">
+                <div class="habit-content" style="background:#{{ habit.color }}">
                     <div class="habit-ico">
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                     </div>
                     <div class="habit-des">
-                        <div class="habit-title">早睡</div>
-                        <div class="habitDes">早睡早起身体好</div>
+                        <div class="habit-title">{{ habit.name }}</div>
+                        <div class="habitDes">{{ habit.describe }}</div>
                     </div>
                     <div class="habit-date">
-                        <div class="habitDate">9天</div>
+                        <div class="habitDate">
+                            <script>
+                                $(".habitDate").html(time+"天")    
+                            </script>
+                        </div>
                         <div class="habitDatep">共计坚持</div>
                     </div>
                 </div>
             </div>
+        {% endfor %}    
         </div>
     </div>    
 </div>
@@ -146,7 +161,7 @@
         </div>
         Habit
     </div>
-    <div class="mobile-add">
+    <div class="mobile-add" onclick="window.location.href='/admin/mobile-habit'">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
     </div>
     <div class="flex now over">
@@ -184,32 +199,31 @@
                 关于我们
             </div>
         </div>
-        <div id="mobile-content" class="mobile-habit" style="height: calc(100vh + 320px)">
+        <div id="mobile-content" class="mobile-habit">
             <div class="jintianhaoleia">
-                <!--
-                    <div id="mobile-null">
-                    <span>还没有Habit呢~</span>
+                <div id="mobile-null">
+                    <span>还没有一个Habit呢~</span>
                 </div>
-                -->
             <script> 
                 var j = 1 ;
             </script>
-            {% for habit in Habits %}
+            {% for habit in habits %}
             <script>
                 j = j + 1;
             </script>
             {% endfor %}
             <script>
                 if(j === 1){
-                    $("#mobile-null").show();
+                    $("#mobile-null").show(); 
                 }
                 else{
+                    j = j + 1;
                     $("#mobile-null").hide();
-                    $("#mobile-content").css('height','calc(100vh + '+264*(j-2)+'px - 60px');   
+                    $("#mobile-content").css('height','calc(100vh + '+160*(j-3)+'px - 60px');   
                 }
             </script>
-                <span style="font-size:20px">预览版</span>
-                <div class="Mhabit">
+            {% for habit in habits %}
+                <div class="Mhabit" style="background:#{{habit.color }}">
                     <div class="MdeleteHabit">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </div>
@@ -218,87 +232,20 @@
                             <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                         </div>
                         <div class="Mhabit-des">
-                            <div class="Mhabit-title">早睡</div>
-                            <div class="MhabitDes">早睡早起身体好</div>
+                            <div class="Mhabit-title">{{ habit.name }}</div>
+                            <div class="MhabitDes">{{ habit.describe }}</div>
                         </div>
                         <div class="Mhabit-date">
-                            <div class="MhabitDate">9天</div>
+                            <div class="MhabitDate">
+                                <script>
+                                    $(".MhabitDate").html(time+"天")    
+                                </script>
+                            </div>
                             <div class="MhabitDatep">共计坚持</div>
                         </div>
                     </div>
                 </div>
-                <div class="Mhabit" style="background:#ffdb84">
-                    <div class="MdeleteHabit">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </div>
-                    <div class="Mhabit-content">
-                        <div class="Mhabit-ico">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        </div>
-                        <div class="Mhabit-des">
-                            <div class="Mhabit-title">按时吃饭</div>
-                            <div class="MhabitDes">按时吃饭才能不得胃病</div>
-                        </div>
-                        <div class="Mhabit-date">
-                            <div class="MhabitDate">32天</div>
-                            <div class="MhabitDatep">共计坚持</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Mhabit" style="background:#ff716b">
-                    <div class="MdeleteHabit">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </div>
-                    <div class="Mhabit-content">
-                        <div class="Mhabit-ico">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        </div>
-                        <div class="Mhabit-des">
-                            <div class="Mhabit-title">刷题</div>
-                            <div class="MhabitDes">刷题是个让脑子灵活的好习惯</div>
-                        </div>
-                        <div class="Mhabit-date">
-                            <div class="MhabitDate">3天</div>
-                            <div class="MhabitDatep">共计坚持</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Mhabit" style="background:#7baace">
-                    <div class="MdeleteHabit">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </div>
-                    <div class="Mhabit-content">
-                        <div class="Mhabit-ico">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        </div>
-                        <div class="Mhabit-des">
-                            <div class="Mhabit-title">看一本小说</div>
-                            <div class="MhabitDes">读书是人类进步的阶梯</div>
-                        </div>
-                        <div class="Mhabit-date">
-                            <div class="MhabitDate">13天</div>
-                            <div class="MhabitDatep">共计坚持</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Mhabit" style="background:#f7a2ce">
-                    <div class="MdeleteHabit">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </div>
-                    <div class="Mhabit-content">
-                        <div class="Mhabit-ico">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        </div>
-                        <div class="Mhabit-des">
-                            <div class="Mhabit-title">起床喝杯水</div>
-                            <div class="MhabitDes">多喝热水</div>
-                        </div>
-                        <div class="Mhabit-date">
-                            <div class="MhabitDate">10天</div>
-                            <div class="MhabitDatep">共计坚持</div>
-                        </div>
-                    </div>
-                </div>
+            {% endfor %}    
             <nav id="mobile-none" class="navbar navbar-default navbar-fixed-bottom vh10">
                 <div class="vw34" id="mobile-user">
                     <span class="glyphicon glyphicon-user mida" aria-hidden="true"></span>

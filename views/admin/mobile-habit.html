@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建Habit</title>
+    <link rel='stylesheet' href="/public/css/mobile.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <style>
+        [name='upnav']{margin-bottom: 0;position: relative;width: 100vw;display: flex;flex-wrap: nowrap;align-content: flex-start;}             
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" name='upnav'>
+    <div class="sp11" onclick="window.location.href='/admin/test'">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    </div>
+    
+    <div class="sp11 mar-lef" id="Mhabit-sub">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    </div>
+</nav>
+<div class="flex-w">
+    <div id="card" class="lightPink">
+        <input type="hidden" id="card-color" value="f7a2ce">
+    </div>
+    <div class="habit-title">挑选卡片背景色：</div>
+    <div class="color">
+        <div class="color-1 lightPink"></div>
+        <div class="color-1 deepRed"></div>
+        <div class="color-1 lightRed"></div>
+        <div class="color-1 red"></div>
+        <div class="color-1 blue"></div>
+        <div class="color-1 deepBlue"></div>
+    </div>
+    <div class="color">
+        <div class="color-1 lightBlue"></div>
+        <div class="color-1 orange"></div>
+        <div class="color-1 deepOrange"></div>
+        <div class="color-1 yellow"></div>
+        <div class="color-1 purple"></div>
+        <div class="color-1 green"></div>
+    </div>
+    <div class="habit-title" style="margin-bottom:20px">给Habit取一个名字吧：（五个中文字以内）</div>
+    <div class="whitespace">
+        <input type="text" class="form-control" maxlength="5" id="mh-name">
+    </div>
+    <div class="habit-title">什么时候开始Habit：</div>
+    <div class="whitespace" style="width:100%;">
+        <input type="date" class="form-control" id="mh-date">
+    </div>
+    <div class="habit-title">添加点描述吧：</div>
+    <div class="whitespace" style="width: 100%;font-size:16px">
+        <textarea class="form-control" maxlength="18" rows="2" id="mh-describe"></textarea>
+    </div>
+    <div class="habit-title">赶紧开始你的Habit吧！</div>
+    <div class="mread-img" style="margin-left: 20px;"></div>
+    <input type="hidden" value="{{ userInfo.username }}" id="write-id">
+</div>
+
+
+
+
+
+
+
+
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/admin.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script>
+    $(function(){
+        $(".lightPink").on('click',function(){
+            $("#card").css("background","#f7a2ce");
+            $("#card-color").val("f7a2ce");
+        });
+        $(".deepRed").on('click',function(){
+            $("#card").css("background","#ef718c");
+            $("#card-color").val("ef718c");
+        });
+        $(".lightRed").on('click',function(){
+            $("#card").css("background","#ff716b");
+            $("#card-color").val("ff716b");
+        });
+        $(".red").on('click',function(){
+            $("#card").css("background","#ef6563");
+            $("#card-color").val("ef6563");
+        });
+        $(".blue").on('click',function(){
+            $("#card").css("background","#2196ce");
+            $("#card-color").val("2196ce");
+        });
+        $(".deepBlue").on('click',function(){
+            $("#card").css("background","#5aa2bd");
+            $("#card-color").val("5aa2bd");
+        });
+        $(".lightBlue").on('click',function(){
+            $("#card").css("background","#6bcee6");
+            $("#card-color").val("6bcee6");
+        });
+        $(".orange").on('click',function(){
+            $("#card").css("background","#ffa63a");
+            $("#card-color").val("ffa63a");
+        });
+        $(".deepOrange").on('click',function(){
+            $("#card").css("background","#f7b273");
+            $("#card-color").val("f7b273");
+        });
+        $(".yellow").on('click',function(){
+            $("#card").css("background","#ffdb84");
+            $("#card-color").val("ffdb84");
+        });
+        $(".purple").on('click',function(){
+            $("#card").css("background","#b58eef");
+            $("#card-color").val("b58eef");
+        });
+        $(".green").on('click',function(){
+            $("#card").css("background","#63c273");
+            $("#card-color").val("63c273");
+        });
+    })
+</script>
+</body>
+</html>

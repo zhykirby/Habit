@@ -48,23 +48,15 @@ routers.get('/test',function(req,res,next){
             console.log('error')
             res.render('main/index');
         }else{
-            /*
             Habit.find({user:req.userInfo.username}).then(function(habit){
                 habits = habit;
                 return User.findOne({
                     username:req.userInfo.username
                 });
             }).then(function(users){
-                res.render("admin/diary",{
-                    userInfo:req.userInfo,
-                    habits:habits,
-                    users:users
-                });
-            });
-            **/
-            User.findOne({username:req.userInfo.username}).then(function(users){
                 res.render("admin/test",{
                     userInfo:req.userInfo,
+                    habits:habits,
                     users:users
                 });
             });
@@ -175,6 +167,11 @@ routers.get('/diary/delete',function(req,res,next){
 })
 routers.get("/habit-write",function(req,res,next){
     res.render("admin/habit-write",{
+        userInfo:req.userInfo
+    });
+});
+routers.get("/mobile-habit",function(req,res,next){
+    res.render("admin/mobile-habit",{
         userInfo:req.userInfo
     });
 });

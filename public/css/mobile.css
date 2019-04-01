@@ -1,12 +1,15 @@
 #back:active{background: #e7e7e7;color: #fff;}
 #userInfo-sub{width: 80px;height: 60xp;}
 #user-content{display: flex;flex-wrap: wrap;}
+#card{width: 150px;height: 80px;margin-top: 20px;margin-left: calc(50vw - 75px);margin-bottom: 20px;border: 1px solid;}
 
 .mb{width: 80px;}
 .mobile-username{visibility: hidden;}
 .mobile-dailyid{visibility: hidden;}
+.flex-w{display: flex;flex-wrap: wrap;align-content: flex-start;}
 .mobile-title{margin-left:calc(50% - 90px);line-height: 50px;font-size: 2rem}
 .sp11{width: 60px;height: 50px;font-size: 2rem;padding-top: calc(25px - 1rem);padding-left: calc(30px - 1rem);}
+.sp11:active{background: #e7e7e7;color: #fff;}
 .user-content{display: flex;margin-left: 20px;margin-right:20px;font-size:2rem;width: 100vw;height: 60px;line-height: 60px;border-bottom: 1px solid;}
 .mla{margin-left: auto;}
 .user-img{width: 80px;height: 80px;margin: 20px auto;background: url("./image/新建画布1\ -\ 副本.jpg");}
@@ -19,3 +22,20 @@
 .mread-title{width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 2em;}
 .mread-date{width: 100%;height: 30px;line-height: 30px;text-align: center;font-size: 1em;}
 .mread-content{line-height: 40px;height: 360px;width: 300px;margin-left: calc(50vw - 150px);font-size: 1em;}
+.mar-lef{margin-left:auto;}
+.color{display: flex;flex-wrap: nowrap;width: 330px;height: 50px;margin-left: 20px;margin-right: auto;margin-top: 20px;}
+.color-1{width: 30px;height: 30px;border-radius: 15px;margin: 10px 15px 10px 10px}
+.habit-title{height: 30px;font-size: 20px;line-height: 30px;font-weight: bold;margin: 20px;margin-bottom:0;}
+.lightPink{background:#f7a2ce;}
+.deepRed{background:#ef718c;}
+.lightRed{background:#ff716b;}
+.red{background:#ef6563;}
+.blue{background:#2196ce;}
+.deepBlue{background:#5aa2bd;}
+.lightBlue{background:#6bcee6;}
+.orange{background:#ffa63a;}
+.deepOrange{background:#f7b273;}
+.yellow{background:#ffdb84;}
+.purple{background:#b58eef;}
+.green{background:#63c273;}
+.whitespace{margin:20px;margin-bottom: 0;}

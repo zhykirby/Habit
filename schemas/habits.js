@@ -11,6 +11,6 @@ const habitSchema = new Schema({
         default:''
     },
     color:String,
-    describe:String
+    describe:String,
 });
 module.exports = habitSchema;

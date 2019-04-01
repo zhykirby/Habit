@@ -129,7 +129,10 @@
                     var time = parseInt(Math.abs(d1-d2)/1000/60/60/24);
                 </script>
                 <div class="deleteHabit">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <a href="/admin/habit/delete?id={{ habit._id.toString() }}" class="habit-a">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+                    
                 </div>
                 <div class="habit-content" style="background:#{{ habit.color }}">
                     <div class="habit-ico">
@@ -219,13 +222,16 @@
                 else{
                     j = j + 1;
                     $("#mobile-null").hide();
-                    $("#mobile-content").css('height','calc(100vh + '+160*(j-3)+'px - 60px');   
+                    $("#mobile-content").css('height','calc(100vh + '+160*(j-3)+'px - 60px');  
+                    $("#mobile-more").css('height','calc(100vh + '+160*(j-3)+'px'); 
                 }
             </script>
             {% for habit in habits %}
                 <div class="Mhabit" style="background:#{{habit.color }}">
                     <div class="MdeleteHabit">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <a href="/admin/habit/delete?id={{ habit._id.toString() }}" class="mobile-a">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>    
                     </div>
                     <div class="Mhabit-content">
                         <div class="Mhabit-ico">

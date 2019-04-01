@@ -65,6 +65,8 @@
     .flex{display: flex;}
     .flex-s{display: flex;flex-wrap: wrap;align-content: flex-start;}
 
+    .habit-a{display: block;;width:100%;height: 100%;color:black;}
+    .habit-a:hover{color:#fff}
     .habit{display: flex;flex-wrap: wrap;align-content: flex-start;background: #fff;overflow:hidden;border: 2px solid black;margin:25px 50px 25px 50px;width:700px;height:250px}
     .habitT{margin-left: 90px;margin-bottom: 20px;font: 30px bold;font-weight: bold;}
     .habitTitle{margin-left: 90px;width: 600px;height: 50px;margin-bottom: 20px}
@@ -182,8 +184,8 @@
     .more-choice:active{background: #e7e7e7;}
     .more-ico{padding-top:4px;}
     .mobile-add{font-size: 5em;color:cornflowerblue;position: fixed;z-index: 9999;bottom: 60px;right: 5px;}
-
-
+    .mobile-a{display: block;;color:black;width:100%;height: 100%;}
+    .mobile-a:hover{color: #fff;}
     .none{visibility: hidden;width:0;height: 0;margin: 0;border: 0;padding: 0;}
     p:first-letter{display: block;margin: 0;padding: 0;margin-top: -2rem;float: left;color: #ff3366;font-size: 6rem;font-family: Georgia, Times New Roman, serif;margin-bottom: -10px;}
     

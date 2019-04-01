@@ -163,8 +163,16 @@ routers.get('/diary/delete',function(req,res,next){
         _id:id
     }).then(function(){
         res.render("admin/status/success")
-    })
-})
+    });
+});
+routers.get('/habit/delete',function(req,res,next){
+    let id = req.query.id;
+    Habit.remove({
+        _id:id
+    }).then(function(){
+        res.render("admin/status/success")
+    });
+});
 routers.get("/habit-write",function(req,res,next){
     res.render("admin/habit-write",{
         userInfo:req.userInfo

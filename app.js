@@ -60,7 +60,7 @@ mongoose.connect(url,{useNewUrlParser:true},function(err){
     }
     else{
         console.log('连接成功');
-        const server = app.listen(443,function(){
+        const server = app.listen(8888,function(){
             console.log('服务器开启');
         });
     }

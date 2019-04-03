@@ -187,7 +187,28 @@ routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');
 });
 
-
+routers.get("/admin",function(req,res,next){
+    var u;
+    var d;
+    var h;
+    User.find().then(function(users){
+        u = users;
+        return Daily.find();
+    }).then(function(dailies){
+        d = dailies;
+        return Habit.find();
+    }).then(function(habits){
+        h = habits;
+        res.render("admin/admin",{
+            users:u,
+            dailies:d,
+            habits:h,
+            userInfo:req.userInfo
+        });
+    }).catch(function(e){
+        console.log(e);
+    });
+});
 
 
 

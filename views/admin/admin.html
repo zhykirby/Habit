@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>让我看看你们都写了什么jb</title>
+    <link rel='stylesheet' href="/public/css/bootstrap.css">
+</head>
+<body>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>昵称</th>
+        <th>邮箱</th>
+        <th>密码</th>
+        <th>生日</th>
+        <th>介绍</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.birthday }}</td>
+        <td>{{ user.describtion }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<table class="table table-hover table-stripe">
+    <tr>
+        <th>用户</td>
+        <th>标题</td>
+        <th>内容</td>
+        <th>日期</td>
+    </tr>
+    {% for daily in dailies %}
+    <tr>
+        <td>{{ daily.user }}</td>
+        <td>{{ daily.title }}</td>
+        <td>{{ daily.content }}</td>
+        <td>{{ daily.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>用户</td>
+        <th>标题</td>
+        <th>介绍</td>
+        <th>日期</td>
+    </tr>
+    {% for habit in habits %}
+    <tr>
+        <td>{{ habit.user }}</td>
+        <td>{{ habit.name }}</td>
+        <td>{{ habit.describe }}</td>
+        <td>{{ habit.startdate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script src='../../public/js/bootstrap.js'></script>
+</body>
+</html>

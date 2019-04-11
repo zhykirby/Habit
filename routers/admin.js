@@ -186,6 +186,9 @@ routers.get("/mobile-habit",function(req,res,next){
 routers.get('/status/success',function(req,res,next){
     res.render('admin/status/success');
 });
+routers.get('/status/error',function(req,res,next){
+    res.render('admin/status/error');
+});
 
 routers.get("/admin",function(req,res,next){
     var u;

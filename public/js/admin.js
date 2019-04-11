@@ -16,7 +16,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -57,7 +58,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -96,7 +98,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -120,7 +123,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -142,7 +146,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -167,7 +172,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);;
             }
         });
     });
@@ -192,7 +198,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -262,7 +269,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });
@@ -284,7 +292,8 @@ $(function(){
                 }
             },
             error:function(err){
-                throw err;
+                window.location.href = '/admin/status/error';
+                console.log(err);
             }
         });
     });

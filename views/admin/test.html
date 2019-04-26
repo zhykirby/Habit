@@ -121,12 +121,12 @@
             <div class="habit">
                 <input class="none" id="startdate" value="{{ habit.startdate }}">
                 <script>
-                    var startdate = $("#startdate").val();
-                    var _d1 = new Date(startdate);
-                    var _d2 = new Date();
-                    var d1 = _d1.getTime();
-                    var d2 = _d2.getTime();
-                    var time = parseInt(Math.abs(d1-d2)/1000/60/60/24);
+                    let startdate = $("#startdate").val();
+                    let _d1 = new Date(startdate);
+                    let _d2 = new Date();
+                    let d1 = _d1.getTime();
+                    let d2 = _d2.getTime();
+                    let time = parseInt(Math.abs(d1-d2)/1000/60/60/24);
                 </script>
                 <div class="deleteHabit">
                     <a href="/admin/habit/delete?id={{ habit._id.toString() }}" class="habit-a">
@@ -226,7 +226,19 @@
                     $("#mobile-more").css('height','calc(100vh + '+160*(j-3)+'px'); 
                 }
             </script>
+
             {% for habit in habits %}
+
+                <input class="none" id="{{ habit._id.toString() }}" value="{{ habit.startdate }}">
+                <script>
+                    var startdateM = $("#{{ habit._id.toString() }}").val();
+                    var _d1m = new Date(startdateM);
+                    var _d2m = new Date();
+                    var d1m = _d1m.getTime();
+                    var d2m = _d2m.getTime();
+                    var timem = parseInt(Math.abs(d1m-d2m)/1000/60/60/24);
+                </script>
+                
                 <div class="Mhabit" style="background:#{{habit.color }}">
                     <div class="MdeleteHabit">
                         <a href="/admin/habit/delete?id={{ habit._id.toString() }}" class="mobile-a">
@@ -242,9 +254,9 @@
                             <div class="MhabitDes">{{ habit.describe }}</div>
                         </div>
                         <div class="Mhabit-date">
-                            <div class="MhabitDate">
+                            <div class="{{ habit._id.toString() }} MhabitDate" id="">
                                 <script>
-                                    $(".MhabitDate").html(time+"天")    
+                                    $(".{{ habit._id.toString() }}").html(timem+"天")    
                                 </script>
                             </div>
                             <div class="MhabitDatep">共计坚持</div>

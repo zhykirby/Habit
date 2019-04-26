@@ -119,9 +119,9 @@
         </script>
         {% for habit in habits %}
             <div class="habit">
-                <input class="none" id="startdate" value="{{ habit.startdate }}">
+                <input class="none" id="{{ habit._id.toString() }}" value="{{ habit.startdate }}">
                 <script>
-                    let startdate = $("#startdate").val();
+                    let startdate = $("#{{ habit._id.toString() }}").val();
                     let _d1 = new Date(startdate);
                     let _d2 = new Date();
                     let d1 = _d1.getTime();
@@ -143,9 +143,9 @@
                         <div class="habitDes">{{ habit.describe }}</div>
                     </div>
                     <div class="habit-date">
-                        <div class="habitDate">
+                        <div class="{{ habit._id.toString() }} habitDate">
                             <script>
-                                $(".habitDate").html(time+"天")    
+                                $(".{{ habit._id.toString() }}").html(time+"天")    
                             </script>
                         </div>
                         <div class="habitDatep">共计坚持</div>

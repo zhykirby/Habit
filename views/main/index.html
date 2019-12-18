@@ -16,73 +16,10 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 </head>
 
 <body>
-<!--  适配于电脑端用户 .visible-md .visible-lg  -->
-<div id="pc">
-	<div id='content'>
-		
-		<div id='contain'>
-			<div class="row" id='container'>
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
-					<div class="three w100">
-						<div class="title">Habit</div>
-					</div>
-					<div class="three w100">
-						
-						<button class="myButt five" onclick="window.location.href='/login'">
-							<div class="layer">立刻登录</div>
-							马上体验
-						</button>
-					</div>
-					<div class="three w100"></div>
-				</div>
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
-			</div>
-			
-		</div>
-	</div>
-	<div id='intro' class="container-fluid">
-		<div id='title'>
-			<p class="title-title">Habit</p>
-			<p class="title-mid">冰冻三尺，非一日之寒。</p>
-			<p class="title-mid">滴水穿石，非一日之攻。</p>
-			<p class="title-xl">但养成一个<span class="under-bold">好习惯</span>，只要<span class="under-bold">21天</span>。</p>
-			<p class="title-l">现在开始使用<span class="under-italic" onclick="window.location.href='/login'">Habit</span>，开始养成你的好习惯。</p>
-		</div>
-		<div class="row intro-p">
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
-				<p class="title2">Habit是什么？</p>
-				<p class="text">是一个能帮你养成良好习惯并且不会中途而废的Web应用。</p>
-				<p class="title2">我在Habit能干什么？</p>
-				<p class="text">主要是两大功能，Habit和记录心得。以后会开放其他功能。</p>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
-				<p class="title3">功能1：Habit</p>
-				<p class="text">你能在Habit分页查看创建的习惯并且创建新的习惯，习惯有计时设定，时刻提醒你坚持了多久。</p>
-				<p class="title3">功能2：记录心得</p>
-				<p class="text">你能在心得页查看或者创建在养成习惯时所记下的点滴心得并且能编辑或删除，以后会开放分享与评论功能。</p>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
-				<p class="title-l mauto">现在</p>
-				<p class="title-l mauto1">进入新的旅程</p>
-				<p class="title-l mauto2">从养成</p>
-				<p class="title-l under-italic mauto3" onclick="window.location.href='/login'">Habit</p>
-				<p class="title-l mauto2">开始吧。</p>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="mobile">
-	<div id="mobile-main" class="page">
-		<button class="regB" onclick="window.location.href='/login'">
-			立刻登录<br>
-			Habit
-		</button>
-		
-		<div class="jian-xia" onclick="window.location.hash='#page1'"></div>
-	</div>
-	<div class="page" id="page1">
-		<div class="jian-shang" onclick="window.location.hash='#mobile-main'"></div>
+<!--  适配于电脑端用户 .visible-md .visible-lg  
+
+
+<div class="jian-shang" onclick="window.location.hash='#mobile-main'"></div>
 		<div class="txt">
 			<p class="mobile-title-title">Habit</p>
 			<p class="mobile-title-mid">冰冻三尺，非一日之寒。</p>
@@ -121,6 +58,76 @@ body { margin: 0; padding: 0;background: black; overflow: hidden;}
 			<p class="mobile-under-italic" onclick="window.location.href='/login'">Habit</p>
 			<p>开始吧。</p>
 		</div>
+
+
+		<div id='title'>
+			<p class="title-title">Habit</p>
+			<p class="title-mid">冰冻三尺，非一日之寒。</p>
+			<p class="title-mid">滴水穿石，非一日之攻。</p>
+			<p class="title-xl">但养成一个<span class="under-bold">好习惯</span>，只要<span class="under-bold">21天</span>。</p>
+			<p class="title-l">现在开始使用<span class="under-italic" onclick="window.location.href='/login'">Habit</span>，开始养成你的好习惯。</p>
+		</div>
+		<div class="row intro-p">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
+				<p class="title2">Habit是什么？</p>
+				<p class="text">是一个能帮你养成良好习惯并且不会中途而废的Web应用。</p>
+				<p class="title2">我在Habit能干什么？</p>
+				<p class="text">主要是两大功能，Habit和记录心得。以后会开放其他功能。</p>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
+				<p class="title3">功能1：Habit</p>
+				<p class="text">你能在Habit分页查看创建的习惯并且创建新的习惯，习惯有计时设定，时刻提醒你坚持了多久。</p>
+				<p class="title3">功能2：记录心得</p>
+				<p class="text">你能在心得页查看或者创建在养成习惯时所记下的点滴心得并且能编辑或删除，以后会开放分享与评论功能。</p>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
+				<p class="title-l mauto">现在</p>
+				<p class="title-l mauto1">进入新的旅程</p>
+				<p class="title-l mauto2">从养成</p>
+				<p class="title-l under-italic mauto3" onclick="window.location.href='/login'">Habit</p>
+				<p class="title-l mauto2">开始吧。</p>
+			</div>
+		</div>
+-->
+<div id="pc">
+	<div id='content'>
+		
+		<div id='contain'>
+			<div class="row" id='container'>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100">
+					<div class="three w100">
+						<div class="title">Habit</div>
+					</div>
+					<div class="three w100">
+						
+						<button class="myButt five" onclick="window.location.href='/login'">
+							<div class="layer">立刻登录</div>
+							马上体验
+						</button>
+					</div>
+					<div class="three w100"></div>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 h100"></div>
+			</div>
+			
+		</div>
+	</div>
+	<div id='intro' class="container-fluid" style="font-size: 100px;">
+		ICP证：<a href="http://www.beian.miit.gov.cn">浙ICP备19010516号</a>
+	</div>
+</div>
+<div id="mobile">
+	<div id="mobile-main" class="page">
+		<button class="regB" onclick="window.location.href='/login'">
+			立刻登录<br>
+			Habit
+		</button>
+		
+		<div class="jian-xia" onclick="window.location.hash='#page1'"></div>
+	</div>
+	<div class="page" id="page1" style="font-size:70px">
+		ICP证：<a href="http://www.beian.miit.gov.cn">浙ICP备19010516号</a>
 	</div>
 </div>
 

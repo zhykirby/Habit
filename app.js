@@ -20,7 +20,6 @@ app.use(function(req,res,next){
     if(req.cookies.get('userInfo')){
         try{
             req.userInfo=JSON.parse(req.cookies.get('userInfo'));
-
             next();
         }catch(e) {
             next();

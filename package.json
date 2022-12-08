@@ -6,9 +6,9 @@
         "start": "node app.js"
     },
     "dependencies": {
-        "body-parser": "^1.18.3",
+        "body-parser": "^1.20.1",
         "cookies": "^0.7.1",
-        "express": "^4.16.3",
+        "express": "^4.18.2",
         "markdown": "^0.5.0",
         "mongoose": "^5.2.8",
         "swig": "^1.4.2",
